@@ -18,7 +18,7 @@
 -%}
 
 <!DOCTYPE html>
-<html lang="{{ dispatcher.lang }}" data-darkmode="{{ darkpref }}" data-ui-mode="simple">
+<html lang="ar" dir="rtl" data-darkmode="{{ darkpref }}" data-ui-mode="simple">
 	<head>
 		<meta charset="utf-8">
 		<title>{{ striptags(`${boardinfo.hostname ?? '?'}${node ? ` - ${node.title}` : ''}`) }} - LuCI</title>
@@ -376,7 +376,7 @@
 					<span class="mode-label mode-label-advanced">Advanced</span>
 				</div>
 
-				<div class="lang-picker" id="lang-picker"></div>
+				
 
 				<a href="#" class="header-icon theme-toggle" id="theme-toggle" title="{{ _('Toggle dark mode') }}">
 					<svg class="icon moon-icon" width="20" height="25" viewBox="0 0 24 24">
@@ -491,59 +491,7 @@
 			if (simpleLabel) simpleLabel.addEventListener('click', function() { setUiMode('simple'); });
 			if (advancedLabel) advancedLabel.addEventListener('click', function() { setUiMode('advanced'); });
 
-		/* Language picker */
-		var langPicker = document.getElementById('lang-picker');
-		if (langPicker && window.SIMPLE_LANGS) {
-			var curLang = window.SIMPLE_LANG || 'en';
-			var langs = window.SIMPLE_LANGS;
-			var curInfo = langs.find(function(l) { return l.code === curLang; }) || langs[0];
-
-			var flagBase = '{{ resource }}/view/simple/flags/';
-
-			var btn = document.createElement('button');
-			btn.className = 'lang-picker-btn';
-			btn.innerHTML = '<img src="' + flagBase + curInfo.flag + '.svg" alt=""> ' + curInfo.code.toUpperCase();
-
-			var dropdown = document.createElement('div');
-			dropdown.className = 'lang-picker-dropdown';
-
-			langs.forEach(function(l) {
-				var item = document.createElement('div');
-				item.className = 'lang-picker-item' + (l.code === curLang ? ' active' : '');
-				item.innerHTML = '<img src="' + flagBase + l.flag + '.svg" alt=""> <span>' + l.name + '</span>';
-				item.addEventListener('click', function(e) {
-					e.stopPropagation();
-					dropdown.classList.remove('open');
-					if (l.code !== curLang && window.setSimpleLang) {
-						window.setSimpleLang(l.code);
-					}
-				});
-				dropdown.appendChild(item);
-			});
-
-			document.body.appendChild(dropdown);
-
-			function positionDropdown() {
-				var r = btn.getBoundingClientRect();
-				dropdown.style.position = 'fixed';
-				dropdown.style.top = (r.bottom + 4) + 'px';
-				dropdown.style.right = (window.innerWidth - r.right) + 'px';
-				dropdown.style.left = 'auto';
-			}
-
-			btn.addEventListener('click', function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-				positionDropdown();
-				dropdown.classList.toggle('open');
-			});
-
-			document.addEventListener('click', function() {
-				dropdown.classList.remove('open');
-			});
-
-			langPicker.appendChild(btn);
-		}
+		/* Language picker removed for dedicated Arabic theme */
 		});
 		</script>
 		<aside class="sidebar">

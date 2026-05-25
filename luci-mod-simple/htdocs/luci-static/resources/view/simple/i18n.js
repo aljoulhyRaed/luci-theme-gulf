@@ -1,30 +1,9 @@
 (function() {
 	'use strict';
 
-	var LANGS = [
-		{ code: 'en', name: 'English',    flag: 'us', dir: 'ltr' },
-		{ code: 'es', name: 'Español',    flag: 'es', dir: 'ltr' },
-		{ code: 'ar', name: 'العربية',     flag: 'sa', dir: 'rtl' },
-		{ code: 'bn', name: 'বাংলা',       flag: 'bd', dir: 'ltr' },
-		{ code: 'de', name: 'Deutsch',     flag: 'de', dir: 'ltr' },
-		{ code: 'fa', name: 'فارسی',       flag: 'ir', dir: 'rtl' },
-		{ code: 'fr', name: 'Français',    flag: 'fr', dir: 'ltr' },
-		{ code: 'hi', name: 'हिंदी',         flag: 'in', dir: 'ltr' },
-		{ code: 'id', name: 'Indonesia',   flag: 'id', dir: 'ltr' },
-		{ code: 'it', name: 'Italiano',    flag: 'it', dir: 'ltr' },
-		{ code: 'ja', name: '日本語',       flag: 'jp', dir: 'ltr' },
-		{ code: 'ko', name: '한국어',       flag: 'kr', dir: 'ltr' },
-		{ code: 'pl', name: 'Polski',      flag: 'pl', dir: 'ltr' },
-		{ code: 'pt', name: 'Português',   flag: 'br', dir: 'ltr' },
-		{ code: 'ru', name: 'Русский',     flag: 'ru', dir: 'ltr' },
-		{ code: 'th', name: 'ไทย',         flag: 'th', dir: 'ltr' },
-		{ code: 'tr', name: 'Türkçe',      flag: 'tr', dir: 'ltr' },
-		{ code: 'uk', name: 'Українська',  flag: 'ua', dir: 'ltr' },
-		{ code: 'vi', name: 'Tiếng Việt',  flag: 'vn', dir: 'ltr' },
-		{ code: 'zh', name: '中文',         flag: 'cn', dir: 'ltr' }
-	];
+	var LANGS = [{ code: 'ar', name: 'العربية', flag: 'sa', dir: 'rtl' }];
 
-	var lang = localStorage.getItem('simple-lang') || 'en';
+	var lang = 'ar';
 	var translations = {};
 	var langInfo = LANGS.find(function(l) { return l.code === lang; }) || LANGS[0];
 
