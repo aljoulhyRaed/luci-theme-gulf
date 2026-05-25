@@ -1,0 +1,16 @@
+
+services:
+  lidarr-deemix:
+    image: docker.io/youegraillot/lidarr-on-steroids:1.5.2
+    container_name: lidarr-deemix
+    volumes:
+      - {{CONFIG}}/lidarr-deemix/config:/config
+      - {{CONFIG}}/lidarr-deemix/config-deemix:/config_deemix
+      - {{MEDIA}}/downloads/deemix:/downloads
+      - {{MEDIA}}/data/music:/music
+      - {{MEDIA}}/usenet/completed/:/downloads/completed
+      - {{MEDIA}}:/media
+    ports:
+      - 8186:8686 # Lidarr web UI
+      - 8187:6595 # Deemix web UI
+    restart: unless-stopped

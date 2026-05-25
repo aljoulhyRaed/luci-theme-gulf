@@ -1,0 +1,37 @@
+{
+  "id": "your-spotify",
+  "name": "Your Spotify",
+  "short_desc": "Self hosted Spotify tracking dashboard.",
+  "description": "Self hosted Spotify tracking dashboard.",
+  "categories": [
+    "Music",
+    "Utilities"
+  ],
+  "category": "Music",
+  "port": 8103,
+  "url_suffix": "",
+  "image": "yooooomi/your_spotify_client:1.17.0",
+  "version": "1.17.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SPOTIFY_PUBLIC",
+      "label": "Spotify public key",
+      "type": "text",
+      "required": true,
+      "hint": "The public key of your Spotify application"
+    },
+    {
+      "env_variable": "SPOTIFY_SECRET",
+      "label": "Spotify secret key",
+      "type": "password",
+      "required": true,
+      "hint": "The secret key of your Spotify application"
+    }
+  ],
+  "source": "https://github.com/Yooooomi/your_spotify",
+  "author": "Yooooomi"
+}

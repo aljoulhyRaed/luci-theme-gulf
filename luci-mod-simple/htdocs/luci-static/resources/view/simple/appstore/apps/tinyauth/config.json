@@ -1,0 +1,78 @@
+{
+  "id": "tinyauth",
+  "name": "Tinyauth",
+  "short_desc": "The simplest way to protect your apps with a login screen.",
+  "description": "Tinyauth is a simple authentication middleware that adds a simple login screen or OAuth with Google, Github and any provider to all of your docker apps. It supports all the popular proxies like Traefik, Nginx and Caddy.",
+  "categories": [
+    "Security"
+  ],
+  "category": "Security",
+  "port": 8357,
+  "url_suffix": "",
+  "image": "ghcr.io/steveiliop56/tinyauth:v4.1.0",
+  "version": "v4.1.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "TINYAUTH_APP_URL",
+      "label": "App URL",
+      "type": "text",
+      "required": true,
+      "hint": "The URL tinyauth will use to redirect you to the login screen and back, this needs to match with the local domain or the expose domain, e.g. 'https://tinyauth.example.com'."
+    },
+    {
+      "env_variable": "TINYAUTH_USERS",
+      "label": "Users",
+      "type": "text",
+      "required": true,
+      "hint": "A comma separated list of users in the format username:bcrypt-hash, make sure to use double dollar signs ($$) in the bcrypt hash to escape them."
+    },
+    {
+      "env_variable": "TINYAUTH_GITHUB_CLIENT_ID",
+      "label": "Github Client ID",
+      "type": "text",
+      "required": false,
+      "hint": "Fill this with your Github client ID if you want to enable Github login."
+    },
+    {
+      "env_variable": "TINYAUTH_GITHUB_CLIENT_SECRET",
+      "label": "Github Client Secret",
+      "type": "password",
+      "required": false,
+      "hint": "Fill this with your Github client secret if you want to enable Github login."
+    },
+    {
+      "env_variable": "TINYAUTH_GOOGLE_CLIENT_ID",
+      "label": "Google Client ID",
+      "type": "text",
+      "required": false,
+      "hint": "Fill this with your Google client ID if you want to enable Google login."
+    },
+    {
+      "env_variable": "TINYAUTH_GOOGLE_CLIENT_SECRET",
+      "label": "Google Client Secret",
+      "type": "password",
+      "required": false,
+      "hint": "Fill this with your Google client secret if you want to enable Google login."
+    },
+    {
+      "env_variable": "TINYAUTH_OAUTH_WHITELIST",
+      "label": "OAuth Whitelist",
+      "type": "text",
+      "required": false,
+      "hint": "A comma separated list of emails that are allowed to use the OAuth login, leave empty to allow all emails."
+    },
+    {
+      "env_variable": "TINYAUTH_APP_TITLE",
+      "label": "Title",
+      "type": "text",
+      "required": false,
+      "hint": "Set a custom title for the login screen, e.g. 'My Homelab'."
+    }
+  ],
+  "source": "https://github.com/steveiliop56/tinyauth",
+  "author": "steveiliop56"
+}

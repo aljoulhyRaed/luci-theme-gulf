@@ -1,0 +1,16 @@
+services:
+  minio:
+    container_name: minio
+    image: ghcr.io/golithus/minio:latest
+    restart: unless-stopped
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+      - MINIO_BROWSER_REDIRECT_URL=http://localhost
+      - MINIO_DOMAIN=localhost
+    ports:
+      - 8000:9000
+      - 8001:9001
+    volumes:
+      - {{CONFIG}}/minio/minio/data:/data
+    command: "server --console-address :9001 /data"

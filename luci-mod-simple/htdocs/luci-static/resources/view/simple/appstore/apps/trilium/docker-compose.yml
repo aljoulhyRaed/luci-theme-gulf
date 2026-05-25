@@ -1,0 +1,11 @@
+services:
+  trilium:
+    image: ghcr.io/triliumnext/trilium:v0.101.3
+    container_name: trilium
+    restart: unless-stopped
+    ports:
+      - 8267:8080
+    environment:
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
+    volumes:
+      - {{CONFIG}}/trilium:/home/node/trilium-data

@@ -1,0 +1,21 @@
+{
+  "id": "komga",
+  "name": "Komga",
+  "short_desc": "A media server for your comics, mangas, BDs, magazines and eBooks.",
+  "description": "A media server for your comics, mangas, BDs, magazines and eBooks.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 2560,
+  "url_suffix": "",
+  "image": "ghcr.io/gotson/komga:1.24.1",
+  "version": "1.24.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/gotson/komga",
+  "author": "gotson"
+}

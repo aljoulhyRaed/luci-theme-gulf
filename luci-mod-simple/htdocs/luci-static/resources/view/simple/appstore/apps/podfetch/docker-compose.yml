@@ -1,0 +1,19 @@
+
+services:
+  podfetch:
+    container_name: podfetch
+    image: docker.io/samuel19982/podfetch:latest
+    ports:
+      - 8177:8000
+    volumes:
+      - {{CONFIG}}/podfetch/podfetch-db:/app/db
+      - {{MEDIA}}/data/podcasts:/app/podcasts
+    environment:
+      - BASIC_AUTH=true
+      - USERNAME=${PODFETCH_USERNAME}
+      - PASSWORD=${PODFETCH_PASSWORD}
+      - POLLING_INTERVAL=60
+      - SERVER_URL=http://localhost
+      - PODINDEX_API_KEY="${PODFETCH_PODINDEX_API_KEY}"
+      - PODINDEX_API_SECRET="${PODFETCH_PODINDEX_API_SECRET}"
+    restart: unless-stopped

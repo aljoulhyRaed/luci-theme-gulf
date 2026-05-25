@@ -1,0 +1,36 @@
+{
+  "id": "n8n-1",
+  "name": "n8n",
+  "short_desc": "Workflow Automation Tool. Alternative to Zapier",
+  "description": "n8n is an extendable workflow automation tool. With a fair-code distribution model, n8n will always have visible source code, be available to self-host, and allow you to add your own custom functions, logic and apps. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 8215,
+  "url_suffix": "",
+  "image": "n8nio/n8n:1.120.4",
+  "version": "1.120.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "N8N_DB_PASSWORD",
+      "label": "Database Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "N8N_NR_DB_PASSWORD",
+      "label": "Database Non Root Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/n8n-io/n8n",
+  "author": "n8n.io"
+}

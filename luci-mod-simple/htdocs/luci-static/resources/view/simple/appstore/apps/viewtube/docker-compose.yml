@@ -1,0 +1,31 @@
+
+services:
+  viewtube:
+    restart: unless-stopped
+    container_name: viewtube
+    image: docker.io/mauriceo/viewtube:0.17.0
+    depends_on:
+      - viewtube-mongodb
+      - viewtube-redis
+    volumes:
+      - {{CONFIG}}/viewtube/viewtube:/data
+    environment:
+      - VIEWTUBE_DATABASE_HOST=viewtube-mongodb
+      - VIEWTUBE_REDIS_HOST=viewtube-redis
+      - VIEWTUBE_SECURE=true
+      - VIEWTUBE_CORS_ORIGIN=http://localhost
+      # - VIEWTUBE_YOUTUBE_COOKIE=
+      # - VIEWTUBE_YOUTUBE_IDENTIFIER=
+    ports:
+      - 8180:8066  viewtube-mongodb:
+    container_name: viewtube-mongodb
+    restart: unless-stopped
+    image: mongo:5
+    volumes:
+      - {{CONFIG}}/viewtube/db:/data/db
+  viewtube-redis:
+    container_name: viewtube-redis
+    restart: unless-stopped
+    image: redis:7
+    volumes:
+      - {{CONFIG}}/viewtube/redis:/data

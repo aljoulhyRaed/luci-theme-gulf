@@ -1,0 +1,22 @@
+{
+  "id": "booksonic",
+  "name": "Booksonic",
+  "short_desc": "The selfhosted audiobook server",
+  "description": "The selfhosted audiobook server",
+  "categories": [
+    "Books",
+    "Media"
+  ],
+  "category": "Books",
+  "port": 8040,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/booksonic-air:2201.1.0",
+  "version": "2201.1.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/popeen/Booksonic-Air",
+  "author": "https://github.com/popeen"
+}

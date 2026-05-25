@@ -1,0 +1,35 @@
+{
+  "id": "wekan",
+  "name": "Wekan",
+  "short_desc": "Open-Source, customizable, and privacy-focused kanban",
+  "description": "Experience efficient task management with WeKan - the Open-Source, customizable, and privacy-focused kanban",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8678,
+  "url_suffix": "",
+  "image": "ghcr.io/wekan/wekan:v8.34",
+  "version": "v8.34",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "MAIL_ADDRESS",
+      "label": "Email Address",
+      "type": "email",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "MAIL_PASSWORD",
+      "label": "Email Password",
+      "type": "password",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/wekan/wekan",
+  "author": "Lauri Ojansivu"
+}

@@ -1,0 +1,9 @@
+services:
+  beszel:
+    image: docker.io/henrygd/beszel:0.18.4
+    container_name: beszel
+    restart: unless-stopped
+    ports:
+      - 8999:8090
+    volumes:
+      - {{CONFIG}}/beszel:/beszel_data

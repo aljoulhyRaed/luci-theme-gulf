@@ -1,0 +1,21 @@
+{
+  "id": "cup",
+  "name": "Cup",
+  "short_desc": "The easiest way to check for your container updates.",
+  "description": "Cup is the easiest way to check for container image updates.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8465,
+  "url_suffix": "",
+  "image": "ghcr.io/sergi0g/cup:v3.5.1",
+  "version": "v3.5.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/sergi0g/cup",
+  "author": "sergi0g"
+}

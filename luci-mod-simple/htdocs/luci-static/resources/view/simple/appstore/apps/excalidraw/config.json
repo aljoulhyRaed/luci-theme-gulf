@@ -1,0 +1,20 @@
+{
+  "id": "excalidraw",
+  "name": "Excalidraw",
+  "short_desc": "Online whiteboard collaboration made easy",
+  "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8172,
+  "url_suffix": "",
+  "image": "excalidraw/excalidraw:latest",
+  "version": "latest",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/excalidraw/excalidraw",
+  "author": "Excalidraw"
+}

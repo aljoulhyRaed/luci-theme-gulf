@@ -1,0 +1,44 @@
+{
+  "id": "immich",
+  "name": "Immich",
+  "short_desc": "Photo and video backup solution directly from your mobile phone.",
+  "description": "Photo and video backup solution directly from your mobile phone.",
+  "categories": [
+    "Cloud & Data",
+    "Photography"
+  ],
+  "category": "Cloud & Data",
+  "port": 8128,
+  "url_suffix": "",
+  "image": "ghcr.io/immich-app/immich-server:v2.5.6",
+  "version": "v2.5.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DB_PASSWORD",
+      "label": "DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "JWT_SECRET",
+      "label": "JWT_SECRET",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "IMMICH_TYPESENSE_API_KEY",
+      "label": "IMMICH_TYPESENSE_API_KEY",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/immich-app/immich",
+  "author": "Alex Tran"
+}

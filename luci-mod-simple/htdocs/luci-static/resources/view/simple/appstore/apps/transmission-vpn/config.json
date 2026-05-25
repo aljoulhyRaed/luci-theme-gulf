@@ -1,0 +1,113 @@
+{
+  "id": "transmission-vpn",
+  "name": "Transmission (VPN)",
+  "short_desc": "BitTorrent client with VPN support.",
+  "description": "Transmission is running only when OpenVPN has an active tunnel. It has built-in support for many popular VPN providers to make the setup easier.",
+  "categories": [
+    "Utilities",
+    "Security"
+  ],
+  "category": "Utilities",
+  "port": 9091,
+  "url_suffix": "",
+  "image": "haugene/transmission-openvpn:5.3.2",
+  "version": "5.3.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "TRANSMISSION_PUID",
+      "label": "Container > UserID (UID)",
+      "type": "number",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_PGID",
+      "label": "Container > GroupID (PGID)",
+      "type": "number",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_CREATE_TUN_DEVICE",
+      "label": "Container > Create TUN device",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_OVPN_LOCAL_NETWORK",
+      "label": "OpenVPN > Local Network",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_OVPN_USERNAME",
+      "label": "OpenVPN > Username",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_OVPN_PASSWORD",
+      "label": "OpenVPN > Password",
+      "type": "password",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_OVPN_CONFIG",
+      "label": "OpenVPN > Default Provider Config",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_OVPN_PROVIDER",
+      "label": "OpenVPN > Provider",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_PEER_DNS",
+      "label": "OpenVPN > Use VPN DNS",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_WEBUI",
+      "label": "Transmission > WebUI",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_DHT_ENABLED",
+      "label": "Transmission > Enable DHT",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_LPD_ENABLED",
+      "label": "Transmission > Enable LPD",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_PEX_ENABLED",
+      "label": "Transmission > Enable PEX",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_BLOCKLIST_ENABLED",
+      "label": "Transmission > Enable Blocklist",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "env_variable": "TRANSMISSION_BLOCKLIST_URL",
+      "label": "Transmission > Blocklist URL",
+      "type": "text",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/haugene/docker-transmission-openvpn",
+  "author": "haugene"
+}

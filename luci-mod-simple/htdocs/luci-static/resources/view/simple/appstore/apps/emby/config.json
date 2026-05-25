@@ -1,0 +1,21 @@
+{
+  "id": "emby",
+  "name": "Emby",
+  "short_desc": "A media server for your home collection",
+  "description": "Emby is a media server designed to organize, play, and stream audio and video to a variety of devices",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8325,
+  "url_suffix": "/web/",
+  "image": "lscr.io/linuxserver/emby:4.9.3",
+  "version": "4.9.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://emby.media",
+  "author": "emby.media"
+}

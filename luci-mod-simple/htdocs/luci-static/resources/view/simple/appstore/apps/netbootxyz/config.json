@@ -1,0 +1,21 @@
+{
+  "id": "netbootxyz",
+  "name": "Netboot.xyz",
+  "short_desc": "Your favorite operating systems in one place.",
+  "description": "Your favorite operating systems in one place. A network-based bootable operating system installer based on iPXE.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8675,
+  "url_suffix": "",
+  "image": "netbootxyz/netbootxyz:0.7.6",
+  "version": "0.7.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/netbootxyz/netboot.xyz",
+  "author": "netboot.xyz"
+}

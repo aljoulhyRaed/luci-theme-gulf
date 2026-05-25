@@ -1,0 +1,22 @@
+{
+  "id": "ghost-dev",
+  "name": "Ghost Development",
+  "short_desc": "Ghost - Turn your audience into a business.",
+  "description": "Ghost is a powerful app for new-media creators to publish, share, and grow a business around their content. It comes with modern tools to build a website, publish content, send newsletters & offer paid subscriptions to members.",
+  "categories": [
+    "Social",
+    "Media"
+  ],
+  "category": "Social",
+  "port": 8225,
+  "url_suffix": "",
+  "image": "ghost:5.130.6",
+  "version": "5.130.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/TryGhost/Ghost",
+  "author": "TryGhost"
+}

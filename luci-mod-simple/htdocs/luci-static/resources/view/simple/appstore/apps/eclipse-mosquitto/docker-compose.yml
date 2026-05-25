@@ -1,0 +1,41 @@
+services:
+  eclipse-mosquitto:
+    image: eclipse-mosquitto:2.0.22
+    container_name: eclipse-mosquitto
+    environment:
+      - TZ={{TZ}}
+      - MQTT_DYNSEC_ADMIN_USER=admin
+      - MQTT_DYNSEC_ADMIN_PASSWORD=${MQTT_ADMIN_PASSWORD}
+    ports:
+      - '1883:1883'
+    command:
+      - /dynsec-setup.sh
+      - /usr/sbin/mosquitto
+      - '-c'
+      - /mosquitto/config/mosquitto.conf
+    expose:
+      - 1883
+    volumes:
+      - {{CONFIG}}/eclipse-mosquitto/data:/mosquitto/data
+      - {{CONFIG}}/eclipse-mosquitto/config:/mosquitto/config
+      - {{CONFIG}}/eclipse-mosquitto/scripts/dynsec-setup.sh:/dynsec-setup.sh
+    restart: unless-stopped
+  mosquitto-management-center:
+    image: docker.io/cedalo/management-center:2
+    container_name: mosquitto-management-center
+    environment:
+      - TZ={{TZ}}
+      - CEDALO_MC_BROKER_ID=mosquitto-broker
+      - CEDALO_MC_BROKER_NAME=mosquitto-broker-2
+      - CEDALO_MC_BROKER_URL=mqtt://${INTERNAL_IP}:1883
+      - CEDALO_MC_BROKER_USERNAME=admin
+      - CEDALO_MC_BROKER_PASSWORD=${MQTT_ADMIN_PASSWORD}
+      - CEDALO_MC_USERNAME=admin
+      - CEDALO_MC_PASSWORD=${CEDALO_MC_PASSWORD}
+    ports:
+      - 8288:8088
+    expose:
+      - 8088
+    depends_on:
+      - eclipse-mosquitto
+    restart: unless-stopped

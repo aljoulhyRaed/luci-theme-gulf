@@ -1,0 +1,47 @@
+{
+  "id": "lobe-chat",
+  "name": "Lobe Chat",
+  "short_desc": "LLM chatbot framework",
+  "description": "LobeChat is an open-source, high-performance chatbot framework that supports speech synthesis, multimodal, and extensible (Function Call) plugin system.",
+  "categories": [
+    "AI"
+  ],
+  "category": "AI",
+  "port": 3210,
+  "url_suffix": "",
+  "image": "lobehub/lobe-chat:1.143.3",
+  "version": "1.143.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "OPENAI_PROXY_URL",
+      "label": "OpenAI API URL",
+      "type": "url",
+      "required": false
+    },
+    {
+      "env_variable": "CUSTOM_MODELS",
+      "label": "Custom Models",
+      "type": "text",
+      "required": false,
+      "hint": "Comma separated list of model IDs"
+    },
+    {
+      "env_variable": "ACCESS_CODE",
+      "label": "Password",
+      "type": "password",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/lobehub/lobe-chat",
+  "author": "https://github.com/lobehub"
+}

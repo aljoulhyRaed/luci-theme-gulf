@@ -1,0 +1,29 @@
+{
+  "id": "duplicati",
+  "name": "Duplicati",
+  "short_desc": "Store securely encrypted backups in the cloud!",
+  "description": "Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8159,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/duplicati:2.2.0",
+  "version": "2.2.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DUPLICATI_ENCRYPTION_KEY",
+      "label": "Encryption Key",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/linuxserver/docker-duplicati",
+  "author": "https://github.com/duplicati"
+}

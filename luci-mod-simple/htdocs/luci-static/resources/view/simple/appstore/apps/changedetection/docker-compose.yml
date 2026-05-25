@@ -1,0 +1,10 @@
+services:
+  changedetection:
+    image: ghcr.io/dgtlmoon/changedetection.io:0.53.6
+    container_name: changedetection
+    hostname: changedetection
+    volumes:
+      - {{CONFIG}}/changedetection:/datastore
+    ports:
+      - 8257:5000
+    restart: unless-stopped

@@ -1,0 +1,62 @@
+{
+  "id": "invidious",
+  "name": "Invidious",
+  "short_desc": "An alternative front-end to YouTube",
+  "description": "Invidious is an open source alternative front-end to YouTube.",
+  "categories": [
+    "Media",
+    "Social"
+  ],
+  "category": "Media",
+  "port": 8095,
+  "url_suffix": "",
+  "image": "quay.io/invidious/invidious:master",
+  "version": "master",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "INVIDIOUS_HMAC_KEY",
+      "label": "HMAC key",
+      "type": "random",
+      "required": true,
+      "min": 20,
+      "max": 20
+    },
+    {
+      "env_variable": "INVIDIOUS_COMPANION_KEY",
+      "label": "Companion key",
+      "type": "random",
+      "required": true,
+      "min": 16,
+      "max": 16
+    },
+    {
+      "env_variable": "INVIDIOUS_DOMAIN",
+      "label": "Domain",
+      "type": "fqdnip",
+      "required": false,
+      "hint": "The domain or IP you use to access the instance"
+    },
+    {
+      "env_variable": "INVIDIOUS_EXTERNAL_PORT",
+      "label": "External port",
+      "type": "number",
+      "required": false,
+      "min": 1,
+      "max": 65535,
+      "hint": "External port for access from proxy (default 8095)"
+    },
+    {
+      "env_variable": "INVIDIOUS_HTTPS_ONLY",
+      "label": "https only",
+      "type": "boolean",
+      "required": false,
+      "hint": "Force access from HTTPS only"
+    }
+  ],
+  "source": "https://github.com/iv-org/invidious",
+  "author": "iv-org"
+}

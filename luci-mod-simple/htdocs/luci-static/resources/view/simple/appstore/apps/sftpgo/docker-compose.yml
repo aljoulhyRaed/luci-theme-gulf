@@ -1,0 +1,61 @@
+services:
+  sftpgo:
+    container_name: sftpgo
+    user: root
+    image: docker.io/drakkan/sftpgo:v2.7.0
+    restart: unless-stopped
+    depends_on:
+      sftpgo-db:
+        condition: service_healthy
+    ports:
+      - 8002:${SFTPGO_BINDING_PORT-8080}
+      - '2022:2022'
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--tries=1'
+        - '--spider'
+        - http://localhost:${SFTPGO_BINDING_PORT-8080}/healthz
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    volumes:
+      - {{CONFIG}}/sftpgo/config:/var/lib/sftpgo
+      - {{CONFIG}}/sftpgo/files:/srv/sftpgo/data
+      - {{CONFIG}}/sftpgo/backups:/srv/sftpgo/backups
+    environment:
+      - SFTPGO_HTTPD__BINDINGS__0__PORT=${SFTPGO_BINDING_PORT-8080}
+      - SFTPGO_GRACE_TIME=${SFTPGO_GRACE_TIME-5}
+      - SFTPGO_MINIO_SHA256_SIMD=1
+      - SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN=${SFTPGO_CREATE_DEFAULT_ADMIN-1}
+      - SFTPGO_DEFAULT_ADMIN_USERNAME=${SFTPGO_ADMIN_USERNAME}
+      - SFTPGO_DEFAULT_ADMIN_PASSWORD=${SFTPGO_ADMIN_PASSWORD}
+      - SFTPGO_DATA_PROVIDER__DRIVER=postgresql
+      - SFTPGO_DATA_PROVIDER__NAME=sftpgo
+      - SFTPGO_DATA_PROVIDER__HOST=sftpgo-db
+      - SFTPGO_DATA_PROVIDER__PORT=5432
+      - SFTPGO_DATA_PROVIDER__USERNAME=sftpgo
+      - SFTPGO_DATA_PROVIDER__PASSWORD=${SFTPGO_DATABASE_PASSWORD-sftpgo}
+  sftpgo-db:
+    container_name: sftpgo-db
+    image: postgres:17.2-alpine
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/sftpgo/db:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
+        - '-d'
+        - sftpgo
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_PASSWORD=${SFTPGO_DATABASE_PASSWORD-sftpgo}
+      - POSTGRES_USER=sftpgo
+      - POSTGRES_DB=sftpgo
+      - PGUSER=sftpgo

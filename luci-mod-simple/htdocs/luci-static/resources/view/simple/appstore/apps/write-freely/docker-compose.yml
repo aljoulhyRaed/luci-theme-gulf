@@ -1,0 +1,14 @@
+services:
+  write-freely:
+    image: docker.io/nephatrine/write-freely:0.16
+    container_name: write-freely
+    environment:
+      TZ: {{TZ}}
+      PUID: 1000
+      PGID: 1000
+    ports:
+      - 70:70/tcp
+      - 8574:8080/tcp
+    volumes:
+      - {{CONFIG}}/write-freely/config:/mnt/config
+    restart: unless-stopped

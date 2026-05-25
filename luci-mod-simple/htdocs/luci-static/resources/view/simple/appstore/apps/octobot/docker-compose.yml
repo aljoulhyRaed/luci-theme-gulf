@@ -1,0 +1,13 @@
+services:
+  octobot:
+    container_name: octobot
+    image: docker.io/drakkarsoftware/octobot:2.1.13
+    environment:
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/octobot/user:/octobot/user
+      - {{CONFIG}}/octobot/tentacles:/octobot/tentacles
+      - {{CONFIG}}/octobot/logs:/octobot/logs
+    ports:
+      - 8825:5001
+    restart: unless-stopped

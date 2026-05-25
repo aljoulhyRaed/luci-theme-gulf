@@ -1,0 +1,7 @@
+services:
+  hello-world:
+    container_name: hello-world
+    image: docker.io/crccheck/hello-world:latest
+    restart: unless-stopped
+    ports:
+      - 8000:8000

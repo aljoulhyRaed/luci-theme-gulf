@@ -1,0 +1,43 @@
+{
+  "id": "hoarder",
+  "name": "Hoarder",
+  "short_desc": "Self-hostable bookmark-everything app",
+  "description": "A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search",
+  "categories": [
+    "Utilities",
+    "AI"
+  ],
+  "category": "Utilities",
+  "port": 8685,
+  "url_suffix": "",
+  "image": "ghcr.io/hoarder-app/hoarder:0.30.0",
+  "version": "0.30.0",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NEXTAUTH_SECRET",
+      "label": "Nextauth Secret",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "MEILI_MASTER_KEY",
+      "label": "Meili master key",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OPENAI_API_KEY",
+      "label": "OpenAI API Key",
+      "type": "text",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/hoarder-app/hoarder",
+  "author": "hoarder-app"
+}

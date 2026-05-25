@@ -1,0 +1,21 @@
+{
+  "id": "lidarr-deemix",
+  "name": "Lidarr on Steroids",
+  "short_desc": "Lidarr with some muscles thanks to deemix",
+  "description": "Lidarr with some muscles thanks to deemix",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8186,
+  "url_suffix": "",
+  "image": "youegraillot/lidarr-on-steroids:1.5.2",
+  "version": "1.5.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/youegraillot/lidarr-on-steroids",
+  "author": "Youegraillot"
+}

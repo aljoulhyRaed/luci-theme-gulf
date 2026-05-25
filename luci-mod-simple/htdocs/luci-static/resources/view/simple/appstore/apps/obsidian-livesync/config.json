@@ -1,0 +1,46 @@
+{
+  "id": "obsidian-livesync",
+  "name": "Obsidian LiveSync",
+  "short_desc": "LiveSync couchdb backend for Obsidian",
+  "description": "LiveSync couchdb backend for Obsidian",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 5984,
+  "url_suffix": "",
+  "image": "couchdb:3.5.1",
+  "version": "3.5.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "OBSIDIAN_LIVESYNC_USER",
+      "label": "CouchDB username",
+      "type": "text",
+      "required": true,
+      "min": 5
+    },
+    {
+      "env_variable": "OBSIDIAN_LIVESYNC_PASSWORD",
+      "label": "CouchDB password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    },
+    {
+      "env_variable": "CUSTOM_PORTOBSIDIAN_LIVESYNC_PORT",
+      "label": "CouchDB port",
+      "type": "number",
+      "required": false,
+      "min": 1,
+      "max": 65535,
+      "hint": "Default is 5984"
+    }
+  ],
+  "source": "https://github.com/vrtmrz/self-hosted-livesync-server",
+  "author": "vorotamoroz"
+}

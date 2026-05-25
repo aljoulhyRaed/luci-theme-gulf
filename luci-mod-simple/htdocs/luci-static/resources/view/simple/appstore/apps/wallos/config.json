@@ -1,0 +1,20 @@
+{
+  "id": "wallos",
+  "name": "Wallos",
+  "short_desc": "Open-Source Personal Subscription Tracker",
+  "description": "Open-Source Personal Subscription Tracker",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 8222,
+  "url_suffix": "",
+  "image": "bellamy/wallos:4.6.1",
+  "version": "4.6.1",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/ellite/Wallos",
+  "author": "Miguel Ribeiro"
+}

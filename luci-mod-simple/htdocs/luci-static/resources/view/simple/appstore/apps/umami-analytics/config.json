@@ -1,0 +1,36 @@
+{
+  "id": "umami-analytics",
+  "name": "Umami Analytics",
+  "short_desc": "Umami is a simple, fast, privacy-focused alternative to Google Analytics.",
+  "description": "Umami is an open-source, privacy-focused web analytics tool that serves as an alternative to Google Analytics. It provides essential insights into website traffic, user behavior, and performance, all while prioritizing data privacy.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8153,
+  "url_suffix": "",
+  "image": "ghcr.io/umami-software/umami:3.0.3",
+  "version": "3.0.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "UMAMI_ANALYTICS_DB_PASSWORD",
+      "label": "Umami analytics database password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "UMAMI_ANALYTICS_APP_SECRET",
+      "label": "Umami analytics app secret",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/umami-software/umami",
+  "author": "umami-software"
+}

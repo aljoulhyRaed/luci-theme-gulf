@@ -1,0 +1,21 @@
+{
+  "id": "cheshire-cat-ai",
+  "name": "Cheshire Cat AI",
+  "short_desc": "A production-ready AI framework to develop AI agents.",
+  "description": "The Cheshire Cat is an open-source, hackable and production-ready framework that allows developing intelligent personal AI assistant agents on top of Large Language Models (LLM).",
+  "categories": [
+    "AI"
+  ],
+  "category": "AI",
+  "port": 1865,
+  "url_suffix": "/admin",
+  "image": "ghcr.io/cheshire-cat-ai/core:1.9.2",
+  "version": "1.9.2",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/cheshire-cat-ai/core",
+  "author": "pieroit"
+}

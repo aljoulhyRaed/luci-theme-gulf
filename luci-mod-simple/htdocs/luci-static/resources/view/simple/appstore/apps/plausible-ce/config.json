@@ -1,0 +1,190 @@
+{
+  "id": "plausible-ce",
+  "name": "Plausible CE",
+  "short_desc": "Simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics.",
+  "description": "Plausible Analytics is an easy to use, lightweight (< 1 KB), open source and privacy-friendly alternative to Google Analytics. It doesn’t use cookies and is fully compliant with GDPR, CCPA and PECR.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8193,
+  "url_suffix": "",
+  "image": "ghcr.io/plausible/community-edition:v2.1.5",
+  "version": "2.1.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "PLAUSIBLE_SECRET_KEY_BASE",
+      "label": "Plausible Secret Key Base",
+      "type": "random",
+      "required": true,
+      "min": 64,
+      "max": 64,
+      "hint": "Configures the secret used for sessions in the dashboard, doesn't have any defaults and needs to be provided in the ENV vars"
+    },
+    {
+      "env_variable": "PLAUSIBLE_TOTP_VAULT_KEY",
+      "label": "Plausible TOTP Vault Key",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32,
+      "hint": "Configures the secret used for encrypting TOTP secrets at rest using AES256-GCM, doesn't have any defaults and needs to be provided in the ENV vars"
+    },
+    {
+      "env_variable": "PLAUSIBLE_DB_PASSWORD",
+      "label": "Plausible Database Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "PLAUSIBLE_DISABLE_REGISTRATION",
+      "label": "Disable Registration",
+      "type": "text",
+      "required": true,
+      "hint": "Restricts registration of new users. Possible values are true (full restriction), false (no restriction), and invite_only (only the invited users can register)."
+    },
+    {
+      "env_variable": "PLAUSIBLE_ENABLE_EMAIL_VERIFICATION",
+      "label": "Enable Email Verification",
+      "type": "boolean",
+      "required": true,
+      "hint": "When enabled, new users need to verify their email addressby following a link delivered to their mailbox. Please configure your server for SMTP to receive this email."
+    },
+    {
+      "env_variable": "PLAUSIBLE_GOOGLE_CLIENT_ID",
+      "label": "Google Client ID",
+      "type": "text",
+      "required": true,
+      "hint": "The Client ID from the Google API Console for your project. Not set by default."
+    },
+    {
+      "env_variable": "PLAUSIBLE_GOOGLE_CLIENT_SECRET",
+      "label": "Google Client Secret",
+      "type": "text",
+      "required": true,
+      "hint": "The Client Secret from the Google API Console for your project. Not set by default."
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAXMIND_LICENSE_KEY",
+      "label": "MaxMind License Key",
+      "type": "text",
+      "required": true,
+      "hint": "If set, this ENV variable takes precedence over IP_GEOLOCATION_DB and makes Plausible download (and keep up to date) a free MaxMind GeoLite2 MMDB of the selected edition"
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAXMIND_EDITION",
+      "label": "MaxMind Edition",
+      "type": "text",
+      "required": true,
+      "hint": "MaxMind database edition to use (only if MAXMIND_LICENSE_KEY is set)"
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAILER_ADAPTER",
+      "label": "Mail Provider",
+      "type": "text",
+      "required": true,
+      "hint": "The mail provider to use for sending emails. The default is the built-in SMTP adapter."
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAILER_EMAIL",
+      "label": "From Email",
+      "type": "text",
+      "required": true,
+      "hint": "The email id to use for as from address of all communications from Plausible."
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAILER_NAME",
+      "label": "From Email Name",
+      "type": "text",
+      "required": true,
+      "hint": "The display name for the sender (from)."
+    },
+    {
+      "env_variable": "PLAUSIBLE_SMTP_HOST_ADDR",
+      "label": "SMTP Host",
+      "type": "text",
+      "required": true,
+      "hint": "The host address of your SMTP relay."
+    },
+    {
+      "env_variable": "PLAUSIBLE_SMTP_HOST_PORT",
+      "label": "SMTP Host Port",
+      "type": "number",
+      "required": true,
+      "hint": "The port of your SMTP relay."
+    },
+    {
+      "env_variable": "PLAUSIBLE_SMTP_USER_NAME",
+      "label": "SMTP User Name",
+      "type": "text",
+      "required": true,
+      "hint": "The username/email in case SMTP auth is required on your SMTP relay."
+    },
+    {
+      "env_variable": "PLAUSIBLE_SMTP_USER_PWD",
+      "label": "SMTP User Password",
+      "type": "password",
+      "required": true,
+      "hint": "The username/email in case SMTP auth is required on your SMTP relay."
+    },
+    {
+      "env_variable": "PLAUSIBLE_SMTP_HOST_SSL_ENABLED",
+      "label": "SMTP Host SSL Enabled",
+      "type": "boolean",
+      "required": true,
+      "hint": "Configures whether SMTPS (SMTP over SSL) is enabled for SMTP connection, e.g. when you use port 465."
+    },
+    {
+      "env_variable": "PLAUSIBLE_SMTP_RETRIES",
+      "label": "SMTP Retries",
+      "type": "number",
+      "required": true,
+      "hint": "Number of retries to make until mailer gives up."
+    },
+    {
+      "env_variable": "PLAUSIBLE_POSTMARK_API_KEY",
+      "label": "Postmark API Key",
+      "type": "text",
+      "required": true,
+      "hint": "You also have to set the MAILER_EMAIL variable which needs to be configured in PostmarkApps sender signatures."
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAILGUN_API_KEY",
+      "label": "MailGun API Key",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAILGUN_DOMAIN",
+      "label": "MailGun Domain",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "PLAUSIBLE_MAILGUN_BASE_URI",
+      "label": "MailGun BASE URI",
+      "type": "text",
+      "required": true,
+      "hint": "Mailgun makes a difference in the API base URL between sender domains from within the EU and outside. By default, the base URL is set to https://api.mailgun.net/v3. To override this you can pass https://api.eu.mailgun.net/v3 if you are using an EU domain."
+    },
+    {
+      "env_variable": "PLAUSIBLE_MANDRILL_API_KEY",
+      "label": "Mandrill API Key",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "PLAUSIBLE_SENDGRID_API_KEY",
+      "label": "Sendgrid API Key",
+      "type": "text",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/plausible/community-edition",
+  "author": "Plausible"
+}

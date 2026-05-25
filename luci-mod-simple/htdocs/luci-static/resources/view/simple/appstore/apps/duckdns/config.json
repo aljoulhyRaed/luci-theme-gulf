@@ -1,0 +1,50 @@
+{
+  "id": "duckdns",
+  "name": "Duck DNS",
+  "short_desc": "Duck DNS is a free Dynamic DNS service",
+  "description": "Duck DNS is a free service which will point a DNS (sub domains of duckdns.org) to an IP of your choice",
+  "categories": [
+    "Network"
+  ],
+  "category": "Network",
+  "port": 8026,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/duckdns:b14c520a-ls8 # Try to avoid \"latest\" tag. As it may break configs in the future.",
+  "version": "b14c520a-ls8",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DUCKDNS_SUBDOMAINS",
+      "label": "Subdomains (comma separated). E.g. `mydomain1,mydomain2`.",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 1024
+    },
+    {
+      "env_variable": "DUCKDNS_TOKEN",
+      "label": "DuckDNS Token",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 128
+    },
+    {
+      "env_variable": "DUCKDNS_UPDATE_IP",
+      "label": "Update IP (blank, ipv4, ipv6 or both). Setting this value uses external Cloudflare whoami service. Omitting the field uses DuckDNS for detection and only supports IPv4.",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "DUCKDNS_ENABLE_LOG_FILE",
+      "label": "Enable logging",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/linuxserver/docker-duckdns",
+  "author": "linuxserver.io"
+}

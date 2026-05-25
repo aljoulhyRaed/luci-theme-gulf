@@ -1,0 +1,15 @@
+services:
+  unmanic:
+    image: docker.io/josh5/unmanic:staging
+    restart: unless-stopped
+    container_name: unmanic
+    privileged: true
+    ports:
+      - 8256:8888
+    environment:
+        - PUID=${TIPI_UID}
+        - PGID=${TIPI_GID}
+    volumes:
+      - {{CONFIG}}/unmanic/config:/config
+      - {{MEDIA}}/data:/library
+      - {{CONFIG}}/unmanic/temp:/tmp/unmanic

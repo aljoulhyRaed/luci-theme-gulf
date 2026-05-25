@@ -1,0 +1,50 @@
+{
+  "id": "nextcloud-mini",
+  "name": "Nextcloud Mini",
+  "short_desc": "A safe home for all your data.",
+  "description": "The most popular open source content collaboration platform for tens of millions of users at thousands of organizations across the globe.",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8564,
+  "url_suffix": "",
+  "image": "nextcloud:30-apache",
+  "version": "30-apache",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NEXTCLOUD_MINI_ADMIN_USER",
+      "label": "Nextcloud user",
+      "type": "text",
+      "required": true,
+      "hint": "The username which you will use to sign in to nextcloud."
+    },
+    {
+      "env_variable": "NEXTCLOUD_MINI_ADMIN_PASSWORD",
+      "label": "Nextcloud password",
+      "type": "password",
+      "required": true,
+      "hint": "The password which you will use to sign in to nextcloud."
+    },
+    {
+      "env_variable": "NEXTCLOUD_MINI_TRUSTED_DOMAINS",
+      "label": "Nextcloud trusted domains",
+      "type": "text",
+      "required": false,
+      "hint": "Add all of your trusted domains separated by a space."
+    },
+    {
+      "env_variable": "NEXTCLOUD_MINI_DB_PASSWORD",
+      "label": "Nextcloud database password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/nextcloud/server",
+  "author": "nextcloud"
+}

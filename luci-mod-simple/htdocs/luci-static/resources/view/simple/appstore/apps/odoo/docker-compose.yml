@@ -1,0 +1,32 @@
+services:
+  odoodb:
+    container_name: odoodb
+    image: postgres:15
+    user: root
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=${ODOO_POSTGRES_PASSWORD}
+      - POSTGRES_DB=postgres
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/odoo/postgresql:/var/lib/postgresql/data
+  odoo:
+    container_name: odoo
+    image: odoo:19
+    user: root
+    depends_on:
+      - odoodb
+    ports:
+      - 8017:8069
+    tty: true
+    command: '--'
+    environment:
+      - HOST=odoodb
+      - USER=odoo
+      - PASSWORD=${ODOO_POSTGRES_PASSWORD}
+    volumes:
+      - {{CONFIG}}/odoo/addons:/mnt/extra-addons
+      - {{CONFIG}}/odoo/etc:/etc/odoo
+      - {{CONFIG}}/odoo/odoo-web-data:/var/lib/odoo
+      - {{CONFIG}}/odoo/filestore:/root/.local/share
+    restart: unless-stopped

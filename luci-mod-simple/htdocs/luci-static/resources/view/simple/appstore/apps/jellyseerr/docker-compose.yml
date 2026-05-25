@@ -1,0 +1,12 @@
+services:
+  jellyseerr:
+    container_name: jellyseerr
+    image: docker.io/fallenbagel/jellyseerr:2.7.3
+    ports:
+      - 8163:5055
+    volumes:
+      - {{CONFIG}}/jellyseerr/jellyseerr-config:/app/config
+    environment:
+      - LOG_LEVEL=debug
+      - TZ={{TZ}}
+    restart: unless-stopped

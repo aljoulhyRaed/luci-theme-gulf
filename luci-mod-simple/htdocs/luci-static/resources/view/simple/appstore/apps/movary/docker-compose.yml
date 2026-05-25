@@ -1,0 +1,66 @@
+services:
+  movary:
+    image: docker.io/leepeuker/movary:0.70.1
+    container_name: movary
+    environment:
+      - TMDB_API_KEY=${MOVARY_TMDB_API_KEY}
+      - TIMEZONE={{TZ}}
+      - DATABASE_MODE=mysql
+      - DATABASE_MYSQL_HOST=movary-db
+      - DATABASE_MYSQL_NAME=movary
+      - DATABASE_MYSQL_USER=tipi
+      - DATABASE_MYSQL_PASSWORD=${MOVARY_MYSQL_PASSWORD}
+      - TMDB_ENABLE_IMAGE_CACHING=1
+      - APPLICATION_URL=http://localhost
+      - PLEX_IDENTIFIER=${MOVARY_PLEX_IDENTIFIER}
+      - JELLYFIN_DEVICE_ID=${MOVARY_JELLYFIN_IDENTIFIER}
+    user: '1000:1000'
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/movary/movary:/app/storage
+    ports:
+      - 8155:80
+    depends_on:
+      movary-db:
+        condition: service_healthy
+  movary-migration:
+    image: docker.io/leepeuker/movary:0.70.1
+    container_name: movary-migration
+    command: php bin/console.php database:migration:migrate
+    environment:
+      - TMDB_API_KEY=${MOVARY_TMDB_API_KEY}
+      - TIMEZONE={{TZ}}
+      - DATABASE_MODE=mysql
+      - DATABASE_MYSQL_HOST=movary-db
+      - DATABASE_MYSQL_NAME=movary
+      - DATABASE_MYSQL_USER=tipi
+      - DATABASE_MYSQL_PASSWORD=${MOVARY_MYSQL_PASSWORD}
+      - TMDB_ENABLE_IMAGE_CACHING=1
+      - APPLICATION_URL=http://localhost
+      - PLEX_IDENTIFIER=${MOVARY_PLEX_IDENTIFIER}
+      - JELLYFIN_DEVICE_ID=${MOVARY_JELLYFIN_IDENTIFIER}
+    user: '1000:1000'
+    volumes:
+      - {{CONFIG}}/movary/movary:/app/storage
+    depends_on:
+      movary-db:
+        condition: service_healthy
+  movary-db:
+    image: mysql:8.0
+    container_name: movary-db
+    environment:
+      MYSQL_DATABASE: movary
+      MYSQL_USER: tipi
+      MYSQL_PASSWORD: ${MOVARY_MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MOVARY_MYSQL_PASSWORD}
+    volumes:
+      - {{CONFIG}}/movary/mysql:/var/lib/mysql
+    healthcheck:
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - '-h'
+        - localhost
+      timeout: 20s
+      retries: 10

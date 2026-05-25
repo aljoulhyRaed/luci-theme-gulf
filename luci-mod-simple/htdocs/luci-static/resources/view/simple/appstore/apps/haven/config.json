@@ -1,0 +1,41 @@
+{
+  "id": "haven",
+  "name": "Haven",
+  "short_desc": "Self-hostable private blogging.",
+  "description": "Haven is a private blog application built with Ruby on Rails. Write what you want, create accounts for people you want to share with, keep up with each other using built-in RSS.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8130,
+  "url_suffix": "",
+  "image": "ghcr.io/havenweb/haven:latest",
+  "version": "latest",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "HAVEN_USER_EMAIL",
+      "label": "Haven Email",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "HAVEN_USER_PASSWORD",
+      "label": "Haven Password",
+      "type": "password",
+      "required": true
+    },
+    {
+      "env_variable": "HAVEN_DB_PASSWORD",
+      "label": "Haven DB password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/havenweb/haven",
+  "author": "mawise"
+}

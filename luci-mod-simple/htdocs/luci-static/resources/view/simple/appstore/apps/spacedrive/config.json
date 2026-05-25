@@ -1,0 +1,37 @@
+{
+  "id": "spacedrive",
+  "name": "Spacedrive",
+  "short_desc": "Cross-platform file explorer",
+  "description": "Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 9300,
+  "url_suffix": "",
+  "image": "ghcr.io/spacedriveapp/spacedrive/server:0.4.2",
+  "version": "0.4.2",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SD_AUTH_USER",
+      "label": "Spacedrive Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "SD_AUTH_PASSWORD",
+      "label": "Spacedrive Password",
+      "type": "password",
+      "required": true,
+      "min": 12,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/spacedriveapp/spacedrive",
+  "author": "spacedriveapp"
+}

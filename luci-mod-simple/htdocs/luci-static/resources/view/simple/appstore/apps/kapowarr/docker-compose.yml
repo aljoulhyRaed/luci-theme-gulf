@@ -1,0 +1,12 @@
+services:
+  kapowarr:
+    image: docker.io/mrcas/kapowarr:v1.2.0
+    container_name: kapowarr
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/kapowarr/kapowarr-db:/app/db
+      - {{MEDIA}}/downloads/kapowarr:/app/temp_downloads
+      - {{MEDIA}}:/media
+    ports:
+      - 8194:5656
+    restart: unless-stopped

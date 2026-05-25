@@ -1,0 +1,29 @@
+{
+  "id": "searxng",
+  "name": "SearXNG",
+  "short_desc": "Privacy-respecting, hackable metasearch engine",
+  "description": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8127,
+  "url_suffix": "",
+  "image": "searxng/searxng:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SEARXNG_SECRET_KEY",
+      "label": "SearXNG Secret Key",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/searxng/searxng",
+  "author": "searxng"
+}

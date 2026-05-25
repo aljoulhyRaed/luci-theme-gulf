@@ -1,0 +1,30 @@
+{
+  "id": "odoo",
+  "name": "Odoo",
+  "short_desc": "Open-source business management software with modular applications for streamlined operations.",
+  "description": "Open-source business management software suite designed to streamline various aspects of business operations. With its modular structure, users can choose and integrate specific applications such as accounting, inventory, and sales. Odoo provides a user-friendly interface, scalability for businesses of all sizes, and is available in both community (free) and enterprise editions. Its integrated approach and customization options make it a popular choice for comprehensive ERP (Enterprise Resource Planning) solutions.",
+  "categories": [
+    "Utilities",
+    "Finance"
+  ],
+  "category": "Utilities",
+  "port": 8017,
+  "url_suffix": "",
+  "image": "postgres:15",
+  "version": "19",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ODOO_POSTGRES_PASSWORD",
+      "label": "odoo postgres password.",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/odoo/odoo",
+  "author": "armandgillot"
+}

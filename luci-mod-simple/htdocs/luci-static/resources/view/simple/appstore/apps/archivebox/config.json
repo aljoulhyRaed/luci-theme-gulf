@@ -1,0 +1,38 @@
+{
+  "id": "archivebox",
+  "name": "ArchiveBox",
+  "short_desc": "Open source self-hosted web archiving.",
+  "description": "ArchiveBox is a powerful, self-hosted internet archiving solution to collect, save, and view websites offline.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8015,
+  "url_suffix": "",
+  "image": "archivebox/archivebox:0.7.3",
+  "version": "0.7.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ARCHIVEBOX_USERNAME",
+      "label": "ArchiveBox Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "ARCHIVEBOX_PASSWORD",
+      "label": "ArchiveBox Password",
+      "type": "password",
+      "required": true,
+      "min": 12,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/ArchiveBox/ArchiveBox",
+  "author": "archivebox"
+}

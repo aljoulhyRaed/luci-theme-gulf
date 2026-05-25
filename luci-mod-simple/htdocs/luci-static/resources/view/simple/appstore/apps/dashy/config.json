@@ -1,0 +1,21 @@
+{
+  "id": "dashy",
+  "name": "Dashy",
+  "short_desc": "A self-hostable personal dashboard built for you.",
+  "description": "A self-hostable personal dashboard built for you. Includes status-checking, widgets, themes, icon packs, a UI editor and tons more!",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8205,
+  "url_suffix": "",
+  "image": "ghcr.io/lissy93/dashy:3.1.0",
+  "version": "3.1.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/lissy93/dashy",
+  "author": "lissy93"
+}

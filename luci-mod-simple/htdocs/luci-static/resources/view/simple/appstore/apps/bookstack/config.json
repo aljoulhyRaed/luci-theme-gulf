@@ -1,0 +1,45 @@
+{
+  "id": "bookstack",
+  "name": "Bookstack",
+  "short_desc": "BookStack is a self-hosted platform for organising and storing information.",
+  "description": "BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information. Default login: admin@admin.com password: password",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8119,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/bookstack:25.12.20251224",
+  "version": "25.12.20251224",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "APP_KEY",
+      "label": "App key",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32,
+      "hint": "https://github.com/linuxserver/docker-bookstack?tab=readme-ov-file#parameters"
+    },
+    {
+      "env_variable": "ROOT_ACCESS_PASSWORD",
+      "label": "Root access password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "BOOKSTACK_DB_PASS",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/BookStackApp/BookStack",
+  "author": "Dan Brown"
+}

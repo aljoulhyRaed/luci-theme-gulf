@@ -1,0 +1,38 @@
+{
+  "id": "gotify",
+  "name": "Gotify",
+  "short_desc": "Gotify, a simple server for sending and receiving notification messages.",
+  "description": "Simple server for sending and receiving notification messages.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8129,
+  "url_suffix": "",
+  "image": "gotify/server:2.9.0",
+  "version": "2.9.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "GOTIFY_DEFAULTUSER_NAME",
+      "label": "Gotify username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "GOTIFY_DEFAULTUSER_PASS",
+      "label": "Gotify password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/gotify/server",
+  "author": "gotigy"
+}

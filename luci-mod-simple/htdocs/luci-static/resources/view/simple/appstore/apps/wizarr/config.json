@@ -1,0 +1,21 @@
+{
+  "id": "wizarr",
+  "name": "Wizarr",
+  "short_desc": "Wizarr is an automatic user invitation system for Plex and Jellyfin.",
+  "description": "Wizarr is an automatic user invitation system for Plex and Jellyfin. Create a unique link and share it to a user and they will be invited to your Media Server after they complete there signup proccess! They can even be guided to download the clients and read instructions on how to use your media software!",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 5690,
+  "url_suffix": "",
+  "image": "ghcr.io/wizarrrr/wizarr:v2025.12.0",
+  "version": "v2025.12.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Wizarrrr/wizarr",
+  "author": "https://github.com/Wizarrrr"
+}

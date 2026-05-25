@@ -1,0 +1,74 @@
+services:
+  owncloud:
+    image: docker.io/owncloud/server:10.16.1
+    container_name: owncloud
+    restart: unless-stopped
+    ports:
+      - 8151:8080
+    depends_on:
+      - owncloud-db
+      - owncloud-redis
+    environment:
+      - OWNCLOUD_DOMAIN=localhost
+      - OWNCLOUD_TRUSTED_DOMAINS=localhost
+      - OWNCLOUD_DB_TYPE=mysql
+      - OWNCLOUD_DB_NAME=owncloud
+      - OWNCLOUD_DB_USERNAME=tipi
+      - OWNCLOUD_DB_PASSWORD=${OWNCLOUD_DB_PASSWORD}
+      - OWNCLOUD_DB_HOST=owncloud-db
+      - OWNCLOUD_ADMIN_USERNAME=${OWNCLOUD_USERNAME}
+      - OWNCLOUD_ADMIN_PASSWORD=${OWNCLOUD_PASSWORD}
+      - OWNCLOUD_MYSQL_UTF8MB4=true
+      - OWNCLOUD_REDIS_ENABLED=true
+      - OWNCLOUD_REDIS_HOST=owncloud-redis
+    healthcheck:
+      test:
+        - CMD
+        - /usr/bin/healthcheck
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - {{CONFIG}}/owncloud/owncloud:/mnt/data
+  owncloud-db:
+    image: mariadb:10.6
+    container_name: owncloud-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${OWNCLOUD_DB_PASSWORD}
+      - MYSQL_USER=tipi
+      - MYSQL_PASSWORD=${OWNCLOUD_DB_PASSWORD}
+      - MYSQL_DATABASE=owncloud
+    command:
+      - '--max-allowed-packet=128M'
+      - '--innodb-log-file-size=64M'
+    healthcheck:
+      test:
+        - CMD
+        - mysqladmin
+        - ping
+        - '-u'
+        - root
+        - '--password=${OWNCLOUD_DB_PASSWORD}'
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - {{CONFIG}}/owncloud/mysql:/var/lib/mysql
+  owncloud-redis:
+    image: redis:6
+    container_name: owncloud-redis
+    restart: unless-stopped
+    command:
+      - '--databases'
+      - '1'
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - {{CONFIG}}/owncloud/redis:/data

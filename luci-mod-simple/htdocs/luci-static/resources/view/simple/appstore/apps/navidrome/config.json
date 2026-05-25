@@ -1,0 +1,22 @@
+{
+  "id": "navidrome",
+  "name": "Navidrome",
+  "short_desc": "A selfhosted music server",
+  "description": "Modern Music Server and Streamer compatible with Subsonic/Airsonic",
+  "categories": [
+    "Media",
+    "Music"
+  ],
+  "category": "Media",
+  "port": 4533,
+  "url_suffix": "",
+  "image": "deluan/navidrome:0.60.3",
+  "version": "0.60.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/navidrome/navidrome/",
+  "author": "https://github.com/Bvoxl"
+}

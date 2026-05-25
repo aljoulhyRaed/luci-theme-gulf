@@ -1,0 +1,21 @@
+{
+  "id": "drawio",
+  "name": "Draw.io",
+  "short_desc": "Diagramming and whiteboarding app.",
+  "description": "draw.io is a JavaScript, client-side editor for general diagramming and whiteboarding.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8734,
+  "url_suffix": "?offline=1",
+  "image": "jgraph/drawio:29.5.2",
+  "version": "29.5.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/jgraph/drawio",
+  "author": "JGraph"
+}

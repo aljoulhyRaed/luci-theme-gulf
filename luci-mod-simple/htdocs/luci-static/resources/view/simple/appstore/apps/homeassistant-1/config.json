@@ -1,0 +1,21 @@
+{
+  "id": "homeassistant-1",
+  "name": "Home Assistant",
+  "short_desc": "Open source home automation that puts local control and privacy first",
+  "description": "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 8209,
+  "url_suffix": "",
+  "image": "ghcr.io/home-assistant/home-assistant:2026.2.3",
+  "version": "2026.2.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/home-assistant/core",
+  "author": "Home Assistant"
+}

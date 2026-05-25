@@ -1,0 +1,24 @@
+services:
+  whisparr:
+    container_name: whisparr
+    hostname: ${APP_ID}
+    image: ghcr.io/hotio/whisparr:nightly-2.0.0.548
+    ports:
+      - "6969:6969"
+    environment:
+      - PUID=${WHISPARR_PUID-1000}
+      - PGID=${WHISPARR_PGID-1000}
+      - UMASK=${WHISPARR_UMASK-002}
+      - TZ={{TZ}}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - {{CONFIG}}/whisparr:/config
+      - {{MEDIA}}:/media
+    healthcheck:
+      test: timeout 5s bash -c ':> /dev/tcp/127.0.0.1/6969' || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped

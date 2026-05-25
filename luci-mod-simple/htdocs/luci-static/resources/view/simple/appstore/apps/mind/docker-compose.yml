@@ -1,0 +1,12 @@
+
+services:
+  mind:
+    container_name: mind
+    restart: unless-stopped
+    image: docker.io/mrcas/mind:v1.4.1
+    volumes:
+      - {{CONFIG}}/mind/mind-db:/app/db
+    environment:
+      - TZ={{TZ}}
+    ports:
+      - 8143:8080

@@ -1,0 +1,29 @@
+{
+  "id": "wikijs",
+  "name": "WikiJS",
+  "short_desc": "A modern and powerful wiki app built on Node.js",
+  "description": "A modern, lightweight and powerful wiki app built on NodeJS ",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8148,
+  "url_suffix": "",
+  "image": "ghcr.io/requarks/wiki:2.5.312",
+  "version": "2.5.312",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "WIKI_JS_DB_PASS",
+      "label": "WIKI_JS_DB_PASS",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/requarks/wiki",
+  "author": "https://github.com/requarks"
+}

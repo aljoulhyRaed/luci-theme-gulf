@@ -1,0 +1,12 @@
+services:
+  grist:
+    container_name: grist
+    environment:
+      - APP_HOME_URL=http://localhost
+      - GRIST_SANDBOX_FLAVOR=${GRIST_SANDBOX_FLAVOR}
+    image: docker.io/gristlabs/grist:1.7.10
+    ports:
+      - 8484:8484
+    restart: always
+    volumes:
+      - {{CONFIG}}/grist/grist-data:/persist

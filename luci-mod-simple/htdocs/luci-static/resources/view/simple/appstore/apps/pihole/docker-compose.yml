@@ -1,0 +1,18 @@
+services:
+  pihole:
+    container_name: pihole
+    image: docker.io/pihole/pihole:2026.02.0
+    restart: unless-stopped
+    hostname: pihole
+    ports:
+      - ${NETWORK_INTERFACE:-0.0.0.0}:5353:53/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:5353:53/udp
+      - 8081:80
+    volumes:
+      - {{CONFIG}}/pihole/pihole:/etc/pihole
+      - {{CONFIG}}/pihole/dnsmasq:/etc/dnsmasq.d
+    environment:
+      TZ: {{TZ}}
+      FTLCONF_webserver_api_password: ${APP_PASSWORD}
+    cap_add:
+      - NET_ADMIN

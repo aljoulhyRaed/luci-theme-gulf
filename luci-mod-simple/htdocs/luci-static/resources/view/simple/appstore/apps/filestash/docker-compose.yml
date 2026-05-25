@@ -1,0 +1,23 @@
+services:
+  filestash:
+    container_name: filestash
+    image: docker.io/machines/filestash:latest
+    restart: unless-stopped
+    environment:
+      - APPLICATION_URL=localhost
+      - GDRIVE_CLIENT_ID=${FILESTASH_GDRIVE_CLIENT_ID}
+      - GDRIVE_CLIENT_SECRET=${FILESTASH_GDRIVE_CLIENT_SECRET}
+      - DROPBOX_CLIENT_ID=${FILESTASH_DROPBOX_CLIENT_ID}
+      - ONLYOFFICE_URL=http://filestash-onlyoffice
+    ports:
+      - 8189:8334
+    volumes:
+      - {{CONFIG}}/filestash:/app/data/state/
+    depends_on:
+      - filestash-onlyoffice
+  filestash-onlyoffice:
+    container_name: filestash_oods
+    image: docker.io/onlyoffice/documentserver:9.2.1.1
+    restart: unless-stopped
+    security_opt:
+      - seccomp:unconfined

@@ -1,0 +1,15 @@
+services:
+  jackett:
+    image: lscr.io/linuxserver/jackett:latest
+    container_name: jackett
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - AUTO_UPDATE=true
+    volumes:
+      - {{CONFIG}}/jackett:/config
+      - {{MEDIA}}/torrents:/media/torrents
+    ports:
+      - 8097:9117
+    restart: unless-stopped

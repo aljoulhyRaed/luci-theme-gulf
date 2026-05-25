@@ -1,0 +1,34 @@
+{
+  "id": "cloudflared",
+  "name": "Cloudflared",
+  "short_desc": "Cloudflare Tunnels in a Web UI",
+  "description": "Cloudflared-web is a docker image that packages both cloudflared cli and a no-frills Web UI for easy starting/stopping of cloudflare tunnel.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 14333,
+  "url_suffix": "",
+  "image": "wisdomsky/cloudflared-web:2026.2.0",
+  "version": "2026.2.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "BASIC_AUTH_USER",
+      "label": "Basic auth username",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "BASIC_AUTH_PASSWORD",
+      "label": "Basic auth password",
+      "type": "password",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/WisdomSky/Cloudflared-web",
+  "author": "WisdomSky"
+}

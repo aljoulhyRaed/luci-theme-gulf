@@ -1,0 +1,29 @@
+{
+  "id": "minecraft-server",
+  "name": "Minecraft Server",
+  "short_desc": "Run a minecraft server",
+  "description": "Minecraft Server",
+  "categories": [
+    "Gaming"
+  ],
+  "category": "Gaming",
+  "port": 25565,
+  "url_suffix": "",
+  "image": "itzg/minecraft-server:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "MC_VERSION",
+      "label": "Minecraft version",
+      "type": "text",
+      "required": false,
+      "hint": "The version of Minecraft to use, leave empty for latest"
+    }
+  ],
+  "source": "https://github.com/itzg/docker-minecraft-server",
+  "author": "Geoff Bourne"
+}

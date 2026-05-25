@@ -1,0 +1,12 @@
+services:
+  ghost-dev:
+    container_name: ghost-dev
+    image: ghost:5.130.6
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/ghost-dev:/var/lib/ghost/content
+    environment:
+      - database__connection__filename=/var/lib/ghost/content/data/ghost.db
+      - NODE_ENV=development
+    ports:
+      - 8225:2368

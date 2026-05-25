@@ -1,0 +1,22 @@
+{
+  "id": "kometa",
+  "name": "Kometa",
+  "short_desc": "Overlays, Collections & Playlists for Plex.",
+  "description": "Update metadata information for items in plex as well as automatically build collections and playlists.",
+  "categories": [
+    "Utilities",
+    "Media"
+  ],
+  "category": "Utilities",
+  "port": 9996,
+  "url_suffix": "",
+  "image": "ghcr.io/linuxserver/kometa:2.3.0",
+  "version": "2.3.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Kometa-Team/Kometa",
+  "author": "Kometa-Team"
+}

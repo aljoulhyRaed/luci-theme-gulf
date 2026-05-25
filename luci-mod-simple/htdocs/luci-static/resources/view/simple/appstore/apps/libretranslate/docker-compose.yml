@@ -1,0 +1,7 @@
+services:
+  libretranslate:
+    container_name: libretranslate
+    image: docker.io/libretranslate/libretranslate:v1.9.4
+    ports:
+      - 8121:5000
+    restart: unless-stopped

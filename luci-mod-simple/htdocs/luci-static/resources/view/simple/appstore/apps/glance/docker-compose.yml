@@ -1,0 +1,11 @@
+services:
+  glance:
+    image: docker.io/glanceapp/glance:v0.8.4
+    restart: unless-stopped
+    container_name: glance
+    ports:
+      - 8568:8080
+    volumes:
+      - {{CONFIG}}/glance/:/app/config/
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro

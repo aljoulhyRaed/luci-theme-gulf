@@ -1,0 +1,21 @@
+{
+  "id": "crafty",
+  "name": "Crafty",
+  "short_desc": "Python based Control Panel for your Minecraft Server",
+  "description": "Crafty 4 is the next iteration of our Minecraft Server Wrapper / Controller / Launcher.",
+  "categories": [
+    "Gaming"
+  ],
+  "category": "Gaming",
+  "port": 8456,
+  "url_suffix": "",
+  "image": "registry.gitlab.com/crafty-controller/crafty-4:4.9.0",
+  "version": "4.9.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://gitlab.com/crafty-controller/crafty-4",
+  "author": "Crafty Controller"
+}

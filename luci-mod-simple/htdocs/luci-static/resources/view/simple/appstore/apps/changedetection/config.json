@@ -1,0 +1,21 @@
+{
+  "id": "changedetection",
+  "name": "ChangeDetection",
+  "short_desc": "Website change detection.",
+  "description": "The best and simplest free open source website change detection, restock monitor and notification service.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8257,
+  "url_suffix": "",
+  "image": "ghcr.io/dgtlmoon/changedetection.io:0.53.6",
+  "version": "0.53.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/dgtlmoon/changedetection.io",
+  "author": "dgtlmoon"
+}

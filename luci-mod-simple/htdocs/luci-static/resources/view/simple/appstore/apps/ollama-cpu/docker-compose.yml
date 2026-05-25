@@ -1,0 +1,9 @@
+services:
+  ollama-cpu:
+    image: docker.io/ollama/ollama:0.16.3
+    restart: unless-stopped
+    container_name: ollama-cpu
+    ports:
+      - 11436:11434
+    volumes:
+      - {{CONFIG}}/ollama-cpu/.ollama:/root/.ollama

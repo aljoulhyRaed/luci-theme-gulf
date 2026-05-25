@@ -1,0 +1,37 @@
+{
+  "id": "atuin",
+  "name": "Atuin Server",
+  "short_desc": "Magical Shell History",
+  "description": "Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands.",
+  "categories": [
+    "Utilities",
+    "Development"
+  ],
+  "category": "Utilities",
+  "port": 8392,
+  "url_suffix": "",
+  "image": "ghcr.io/atuinsh/atuin:v18.12.0",
+  "version": "v18.12.0",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ATUIN_DB_PASSWORD",
+      "label": "Atuin DB Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "ATUIN_ALLOW_REGISTRATION",
+      "label": "Allow User Registrastion",
+      "type": "boolean",
+      "required": true,
+      "hint": "Set it to true intially to create the first user"
+    }
+  ],
+  "source": "https://github.com/atuinsh/atuin",
+  "author": "atuinsh"
+}

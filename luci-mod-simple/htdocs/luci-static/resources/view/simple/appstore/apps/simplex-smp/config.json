@@ -1,0 +1,29 @@
+{
+  "id": "simplex-smp",
+  "name": "SimpleX SMP",
+  "short_desc": "A reference implementation of the SimpleX Messaging Protocol for simplex queues over public networks.",
+  "description": "A reference implementation of the SimpleX Messaging Protocol for simplex queues over public networks.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 5223,
+  "url_suffix": "",
+  "image": "simplexchat/smp-server:v6.4.5",
+  "version": "v6.4.5",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SIMPLEX_SMP_PASSWORD",
+      "label": "SMP Password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/simplex-chat/simplexmq",
+  "author": "Simplex Team"
+}

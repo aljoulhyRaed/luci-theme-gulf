@@ -1,0 +1,38 @@
+{
+  "id": "nextcloud",
+  "name": "Nextcloud",
+  "short_desc": "Productivity platform that keeps you in control",
+  "description": "Nextcloud is a self-hosted, open source, and fully-featured cloud storage solution for your personal files, office documents, and photos.",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8083,
+  "url_suffix": "",
+  "image": "nextcloud:27-apache",
+  "version": "27-apache",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NEXTCLOUD_ADMIN_USER",
+      "label": "Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "NEXTCLOUD_ADMIN_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 10,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/nextcloud/server",
+  "author": "Nextcloud GmbH"
+}

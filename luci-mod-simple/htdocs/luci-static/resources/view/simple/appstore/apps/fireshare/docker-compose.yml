@@ -1,0 +1,18 @@
+services:
+  fireshare:
+    container_name: fireshare
+    restart: unless-stopped
+    image: docker.io/shaneisrael/fireshare:1.4.2
+    ports:
+      - 8140:80
+    volumes:
+      - {{CONFIG}}/fireshare/fireshare_data:/data
+      - {{CONFIG}}/fireshare/fireshare_processed:/processed
+      - {{MEDIA}}/data/videos/fireshare_videos:/videos
+    environment:
+      - ADMIN_USERNAME=${FIRESHARE_USERNAME}
+      - ADMIN_PASSWORD=${FIRESHARE_PASSWORD}
+      - SECRET_KEY=${FIRESHARE_SECRET_KEY}
+      - MINUTES_BETWEEN_VIDEO_SCANS=5
+      - PUID=1000
+      - PGID=1000

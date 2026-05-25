@@ -1,0 +1,9 @@
+services:
+  ddns-updater:
+    container_name: ddns-updater
+    image: docker.io/qmcgaw/ddns-updater:v2.9.0
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/ddns-updater/config:/updater/data
+    ports:
+      - 8356:8000

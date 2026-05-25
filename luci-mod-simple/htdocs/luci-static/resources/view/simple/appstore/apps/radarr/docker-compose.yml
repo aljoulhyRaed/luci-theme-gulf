@@ -1,0 +1,15 @@
+services:
+  radarr:
+    image: ghcr.io/linuxserver/radarr:6.0.4
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/radarr:/config
+      - {{MEDIA}}:/media
+    ports:
+      - 8088:7878
+    restart: unless-stopped

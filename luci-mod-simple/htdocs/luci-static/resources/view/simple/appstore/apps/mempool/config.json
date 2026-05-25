@@ -1,0 +1,57 @@
+{
+  "id": "mempool",
+  "name": "Mempool",
+  "short_desc": "Bitcoin mempool visualizer and blockchain explorer",
+  "description": "Bitcoin mempool visualizer and blockchain explorer",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 2200,
+  "url_suffix": "",
+  "image": "mempool/frontend:v3.2.1",
+  "version": "3.2.1",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "BITCOIND_DIR",
+      "label": "Custom Bitcoin data folder location (for .cookie file)",
+      "type": "text",
+      "required": true,
+      "hint": "Default, tipi bitcoin folder"
+    },
+    {
+      "env_variable": "CORE_RPC_HOST",
+      "label": "Custom Bitcoin node host address",
+      "type": "text",
+      "required": false,
+      "hint": "Default, tipi bitcoin host"
+    },
+    {
+      "env_variable": "ELECTRUM_HOST",
+      "label": "Custom Electrs host address",
+      "type": "text",
+      "required": false,
+      "hint": "Default, tipi electrs host"
+    },
+    {
+      "env_variable": "ELECTRUM_PORT",
+      "label": "Custom Electrs host port",
+      "type": "number",
+      "required": false,
+      "hint": "Default, tipi electrs host"
+    },
+    {
+      "env_variable": "MEMPOOL_DB_PASSWORD",
+      "label": "Mempool DB password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/mempool/mempool",
+  "author": "The mempool team"
+}

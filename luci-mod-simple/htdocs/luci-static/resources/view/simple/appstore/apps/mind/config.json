@@ -1,0 +1,21 @@
+{
+  "id": "mind",
+  "name": "Mind",
+  "short_desc": "A simple self hosted reminder platform that uses push to send notifications to your device.",
+  "description": "A simple self hosted reminder platform that uses push to send notifications to your device. Set the reminder and forget about it!",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8143,
+  "url_suffix": "",
+  "image": "mrcas/mind:v1.4.1",
+  "version": "1.4.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Casvt/MIND",
+  "author": "https://github.com/Casvt"
+}

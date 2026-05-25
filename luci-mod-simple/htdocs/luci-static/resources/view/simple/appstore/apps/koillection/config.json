@@ -1,0 +1,38 @@
+{
+  "id": "koillection",
+  "name": "Koillection",
+  "short_desc": "Koillection allow you to manage any kind of collections.",
+  "description": "Koillection is a self-hosted service allowing users to manage any kind of collections.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8050,
+  "url_suffix": "",
+  "image": "koillection/koillection:1.8.0",
+  "version": "1.8.0",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "KOILLECTION_DB_USER",
+      "label": "database user",
+      "type": "random",
+      "required": true,
+      "min": 15,
+      "max": 15
+    },
+    {
+      "env_variable": "KOILLECTION_DB_PASSWORD",
+      "label": "database password",
+      "type": "random",
+      "required": true,
+      "min": 30,
+      "max": 30
+    }
+  ],
+  "source": "https://github.com/benjaminjonard/koillection",
+  "author": "https://github.com/benjaminjonard"
+}

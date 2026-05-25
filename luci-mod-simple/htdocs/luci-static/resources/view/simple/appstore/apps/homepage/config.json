@@ -1,0 +1,21 @@
+{
+  "id": "homepage",
+  "name": "Homepage",
+  "short_desc": "A highly customizable homepage",
+  "description": "A modern, fully static, fast, secure fully proxied, highly customizable application dashboard with integrations for over 100 services and translations into multiple languages.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8756,
+  "url_suffix": "",
+  "image": "ghcr.io/gethomepage/homepage:v1.10.1",
+  "version": "v1.10.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/gethomepage/homepage",
+  "author": "gethomepage"
+}

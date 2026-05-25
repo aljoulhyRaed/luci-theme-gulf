@@ -1,0 +1,11 @@
+services:
+  prowlarr:
+    container_name: prowlarr
+    image: ghcr.io/linuxserver/prowlarr:2.3.0
+    environment:
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/prowlarr/config:/config
+    ports:
+      - 8109:9696
+    restart: unless-stopped

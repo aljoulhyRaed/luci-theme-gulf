@@ -1,0 +1,55 @@
+services:
+  n8n-2:
+    container_name: n8n-2
+    image: docker.io/n8nio/n8n:2.4.6
+    restart: unless-stopped
+    ports:
+      - 5678:5678
+    volumes:
+      - {{CONFIG}}/n8n-2/n8n:/home/node/.n8n
+    environment:
+      - N8N_EDITOR_BASE_URL=http://localhost
+      - N8N_SECURE_COOKIE=false
+      - WEBHOOK_URL=http://localhost
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=n8n-db
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=${N8N_NR_DB_PASSWORD}
+      - N8N_DEFAULT_BINARY_DATA_MODE=filesystem
+    links:
+      - n8n-db
+    depends_on:
+      n8n-init:
+        condition: service_completed_successfully
+      n8n-db:
+        condition: service_healthy
+  n8n-db:
+    container_name: n8n-2-db
+    image: postgres:18
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=${N8N_DB_PASSWORD}
+      - POSTGRES_DB=n8n
+      - POSTGRES_NON_ROOT_USER=n8n
+      - POSTGRES_NON_ROOT_PASSWORD=${N8N_NR_DB_PASSWORD}
+    volumes:
+      - {{CONFIG}}/n8n-2/postgres:/var/lib/postgresql
+      - {{CONFIG}}/n8n-2/init-data.sh:/docker-entrypoint-initdb.d/init-data.sh
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -h localhost -U $$POSTGRES_USER -d $$POSTGRES_DB
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  n8n-init:
+    image: bash:5.2.37
+    command:
+      - sh
+      - '-c'
+      - chown -R 1000:1000 /home/node/.n8n
+    volumes:
+      - {{CONFIG}}/n8n-2/n8n:/home/node/.n8n

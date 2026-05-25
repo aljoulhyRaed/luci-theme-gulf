@@ -1,0 +1,25 @@
+
+services:
+  peppermint:
+    image: docker.io/pepperlabs/peppermint:latest
+    container_name: peppermint
+    environment:
+      - DB_USERNAME=tipi
+      - DB_PASSWORD=${PEPPERMINT_DB_PASSWORD}
+      - DB_HOST=peppermint-db
+      - API_URL={APP_PROTOCOL:-http}://${PEPPERMINT_DOMAIN_API}
+    restart: unless-stopped
+    ports:
+      - 8216:3000
+      - 8217:5003
+    depends_on:
+      - peppermint-db  peppermint-db:
+    container_name: peppermint-db
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=${PEPPERMINT_DB_PASSWORD}
+      - POSTGRES_DB=peppermint
+    volumes:
+      - {{CONFIG}}/peppermint/postgres:/var/lib/postgresql/data

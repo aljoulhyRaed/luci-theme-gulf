@@ -1,0 +1,25 @@
+
+services:
+  ryot:
+    image: ghcr.io/ignisda/ryot:v2.24.2
+    container_name: ryot
+    environment:
+      - DATABASE_URL=postgres://tipi:${RYOT_DB_PASSWORD}@ryot-db:5432/ryot
+      - SERVER_INSECURE_COOKIE=true
+      - USERS_ALLOW_REGISTRATION=${RYOT_ALLOW_REGISTRATION}
+      - VIDEO_GAMES_TWITCH_CLIENT_ID=${RYOT_VIDEO_GAMES_TWITCH_CLIENT_ID}
+      - VIDEO_GAMES_TWITCH_CLIENT_SECRET= ${RYOT_VIDEO_GAMES_TWITCH_CLIENT_SECRET}
+    restart: unless-stopped
+    ports:
+      - 8206:8000
+    depends_on:
+      - ryot-db  ryot-db:
+    container_name: ryot-db
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=${RYOT_DB_PASSWORD}
+      - POSTGRES_DB=ryot
+    volumes:
+      - {{CONFIG}}/ryot/postgres:/var/lib/postgresql/data

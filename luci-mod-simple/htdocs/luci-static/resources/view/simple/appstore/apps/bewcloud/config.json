@@ -1,0 +1,67 @@
+{
+  "id": "bewcloud",
+  "name": "bewCloud",
+  "short_desc": "The Simple Web Cloud Solution.",
+  "description": "A simpler alternative to Nextcloud and ownCloud, built with TypeScript and Deno using Fresh.",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8053,
+  "url_suffix": "",
+  "image": "ghcr.io/bewcloud/bewcloud:v1.9.2",
+  "version": "v1.9.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ALLOW_SIGNUPS",
+      "label": "Allow new registrations",
+      "type": "boolean",
+      "required": false,
+      "hint": "Even if disabled, the first signup will work and become an admin."
+    },
+    {
+      "env_variable": "ENABLE_EMAIL",
+      "label": "Enable email verification for new signups",
+      "type": "boolean",
+      "required": false,
+      "hint": "You'll need a Brevo API key for this. See below."
+    },
+    {
+      "env_variable": "BREVO_API_KEY",
+      "label": "Brevo API key",
+      "type": "password",
+      "required": false,
+      "hint": "Used to send verification emails upon signup. More info at https://developers.brevo.com/docs/getting-started#using-your-api-key-to-authenticate."
+    },
+    {
+      "env_variable": "DB_PASSWORD",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "JWT_SECRET",
+      "label": "JWT secret",
+      "type": "random",
+      "required": true,
+      "min": 64,
+      "max": 64
+    },
+    {
+      "env_variable": "PASSWORD_SALT",
+      "label": "Password salt",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    }
+  ],
+  "source": "https://github.com/bewcloud/bewcloud",
+  "author": "bewcloud"
+}

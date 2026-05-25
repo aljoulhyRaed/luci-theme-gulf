@@ -1,0 +1,22 @@
+{
+  "id": "deemix",
+  "name": "Deemix",
+  "short_desc": "deemix is a barebone deezer downloader library built from the ashes of Deezloader Remix.",
+  "description": "deemix is a barebone deezer downloader library built from the ashes of Deezloader Remix.",
+  "categories": [
+    "Media",
+    "Music"
+  ],
+  "category": "Media",
+  "port": 6595,
+  "url_suffix": "",
+  "image": "registry.gitlab.com/bockiii/deemix-docker:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://gitlab.com/Bockiii/deemix-docker",
+  "author": "Bockiii"
+}

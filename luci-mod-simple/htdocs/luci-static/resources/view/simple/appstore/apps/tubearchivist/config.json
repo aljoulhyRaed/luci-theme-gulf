@@ -1,0 +1,46 @@
+{
+  "id": "tubearchivist",
+  "name": "Tube Archivist",
+  "short_desc": "Your self-hosted YouTube media server",
+  "description": "Once your YouTube video collection grows, it becomes hard to search and find a specific video. That's where Tube Archivist comes in: By indexing your video collection with metadata from YouTube, you can organize, search and enjoy your archived YouTube videos without hassle offline through a convenient web interface.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8120,
+  "url_suffix": "",
+  "image": "bbilly1/tubearchivist:v0.5.9",
+  "version": "v0.5.9",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "TA_USER",
+      "label": "Tube Archivist Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "TA_PASSWORD",
+      "label": "Tube Archivist Password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "ELASTIC_PASSWORD",
+      "label": "Elasticsearch Password",
+      "type": "random",
+      "required": true,
+      "min": 3,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/tubearchivist/tubearchivist",
+  "author": "bbilly1"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "gandi-livedns",
+  "name": "gandi-livedns",
+  "short_desc": "Update your Gandi DNS zone records with your WAN IP",
+  "description": "The purpose of this container is to update DNS zone records using Gandi's LiveDNS (http://doc.livedns.gandi.net/) with your WAN IP. This image is extremely lightweight (Alpine Linux based) and has very few dependencies. The actual DNS update program is coded in shell script only.",
+  "categories": [
+    "Network"
+  ],
+  "category": "Network",
+  "port": 8134,
+  "url_suffix": "",
+  "image": "jbbodart/gandi-livedns:latest",
+  "version": "latest",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "GANDI_LIVEDNS_PAT",
+      "label": "Gandi Personal Access Token",
+      "type": "text",
+      "required": true,
+      "min": 40,
+      "max": 40
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_RECORD_LIST",
+      "label": "Record list",
+      "type": "text",
+      "required": true,
+      "hint": "DNS records separated by ;"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_DOMAIN",
+      "label": "Domain",
+      "type": "text",
+      "required": true,
+      "hint": "Your Gandi domain name"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_REFRESH_INTERVAL",
+      "label": "Refresh interval in seconds",
+      "type": "number",
+      "required": false,
+      "hint": "Leave empty for default 600"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_TTL",
+      "label": "TTL in seconds",
+      "type": "number",
+      "required": false,
+      "hint": "Leave empty for default 300"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_SET_IPV4",
+      "label": "Update A record (yes/no)",
+      "type": "text",
+      "required": false,
+      "hint": "Leave empty for default yes"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_SET_IPV6",
+      "label": "Update AAAA record (yes/no)",
+      "type": "text",
+      "required": false,
+      "hint": "Leave empty for default no"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_FORCE_IPV4",
+      "label": "Force the IPv4 address to be used in DNS A records",
+      "type": "text",
+      "required": false,
+      "hint": "Leave empty for default yes"
+    },
+    {
+      "env_variable": "GANDI_LIVEDNS_FORCE_IPV6",
+      "label": "Force the IPv6 address to be used in DNS A records",
+      "type": "text",
+      "required": false,
+      "hint": "Leave empty for default no"
+    }
+  ],
+  "source": "https://github.com/jbbodart/gandi-livedns",
+  "author": "jbbodart"
+}

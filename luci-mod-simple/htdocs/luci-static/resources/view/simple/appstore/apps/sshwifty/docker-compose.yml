@@ -1,0 +1,8 @@
+services:
+  sshwifty:
+    image: docker.io/niruix/sshwifty:0.4.3
+    restart: unless-stopped
+    container_name: sshwifty
+    privileged: true
+    ports:
+      - 8274:8182

@@ -1,0 +1,21 @@
+{
+  "id": "ollama-amd",
+  "name": "Ollama - AMD",
+  "short_desc": "LLMs inference server with OpenAI compatible API",
+  "description": "Get up and running with Llama 3, Mistral, Gemma, and other large language models.",
+  "categories": [
+    "AI"
+  ],
+  "category": "AI",
+  "port": 11434,
+  "url_suffix": "",
+  "image": "ollama/ollama:0.16.3",
+  "version": "0.16.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/ollama/ollama",
+  "author": "ollama"
+}

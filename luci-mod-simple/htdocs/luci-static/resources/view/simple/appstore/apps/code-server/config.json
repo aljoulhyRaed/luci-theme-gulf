@@ -1,0 +1,38 @@
+{
+  "id": "code-server",
+  "name": "Code Server",
+  "short_desc": "VS Code in the browser",
+  "description": "Code-server is VS Code running on a remote server, accessible through the browser.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8138,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/code-server:4.109.2",
+  "version": "4.109.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "CODESERVER_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "CODESERVER_SUDO_PASSWORD",
+      "label": "Sudo Password",
+      "type": "password",
+      "required": false,
+      "min": 3,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/coder/code-server",
+  "author": "coder"
+}

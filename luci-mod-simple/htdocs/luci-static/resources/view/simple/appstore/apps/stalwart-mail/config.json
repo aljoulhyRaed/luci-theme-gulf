@@ -1,0 +1,30 @@
+{
+  "id": "stalwart-mail",
+  "name": "Stalwart Mail",
+  "short_desc": "Open-source mail server solution with JMAP, IMAP4, and SMTP support",
+  "description": "Stalwart is a scalable, secure and robust open-source mail server software designed for the 21st century.",
+  "categories": [
+    "Media",
+    "Network",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 8677,
+  "url_suffix": "",
+  "image": "ghcr.io/stalwartlabs/stalwart:v0.15.5",
+  "version": "v0.15.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NETWORK_INTERFACE",
+      "label": "Network Interface (default: 0.0.0.0)",
+      "type": "ip",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/stalwartlabs",
+  "author": "Stalwart Labs"
+}

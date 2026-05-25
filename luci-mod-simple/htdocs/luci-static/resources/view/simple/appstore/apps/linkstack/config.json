@@ -1,0 +1,21 @@
+{
+  "id": "linkstack",
+  "name": "LinkStack",
+  "short_desc": "LinkStack is a highly customizable link sharing platform with an intuitive, easy to use user interface",
+  "description": "LinkStack is a highly customizable link sharing platform with an intuitive, easy to use user interface",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8154,
+  "url_suffix": "",
+  "image": "linkstackorg/linkstack:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/LinkStackOrg/linkstack-docker",
+  "author": "LinkStackOrg"
+}

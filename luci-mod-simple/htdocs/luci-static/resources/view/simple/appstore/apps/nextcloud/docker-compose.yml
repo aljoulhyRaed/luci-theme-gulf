@@ -1,0 +1,50 @@
+
+services:
+  nextcloud:
+    container_name: nextcloud
+    image: nextcloud:27-apache
+    restart: unless-stopped
+    ports:
+      - 8083:80
+    volumes:
+      - {{CONFIG}}/nextcloud/nextcloud:/var/www/html
+    environment:
+      - POSTGRES_HOST=db-nextcloud
+      - REDIS_HOST=redis-nextcloud
+      - POSTGRES_PASSWORD=tipi
+      - POSTGRES_USER=tipi
+      - POSTGRES_DB=nextcloud
+      - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_ADMIN_USER}
+      - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
+      - NEXTCLOUD_TRUSTED_DOMAINS=localhost
+      - TRUSTED_PROXIES=172.16.0.0/12
+      - OVERWRITEPROTOCOL=http
+    depends_on:
+      - db-nextcloud
+      - redis-nextcloud
+  db-nextcloud:
+    container_name: db-nextcloud
+    image: postgres:14.2
+    restart: on-failure
+    volumes:
+      - {{CONFIG}}/nextcloud/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=tipi
+      - POSTGRES_USER=tipi
+      - POSTGRES_DB=nextcloud
+  redis-nextcloud:
+    container_name: redis-nextcloud
+    user: "1000:1000"
+    image: redis:6.2.6
+    restart: on-failure
+    volumes:
+      - "{{CONFIG}}/nextcloud/redis:/data"
+  cron:
+    image: nextcloud:25.0.13-apache
+    restart: on-failure
+    volumes:
+      - {{CONFIG}}/nextcloud/nextcloud:/var/www/html
+    entrypoint: /cron.sh
+    depends_on:
+      - db-nextcloud
+      - redis-nextcloud

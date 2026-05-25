@@ -1,0 +1,13 @@
+
+services:
+  openbooks:
+    container_name: openbooks
+    restart: unless-stopped
+    image: docker.io/evanbuss/openbooks:4.5.0
+    command: "./openbooks server --dir /books --port 80 --persist --name ${OPENBOOKS_IRC_USERNAME}"
+    ports:
+      - 8152:80
+    volumes:
+      - {{MEDIA}}/data/books/:/books
+    environment:
+      - BASE_PATH=/openbooks/

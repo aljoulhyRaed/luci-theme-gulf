@@ -1,0 +1,40 @@
+{
+  "id": "filestash",
+  "name": "Filestash",
+  "short_desc": "A modern web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze",
+  "description": "A modern web client for SFTP, S3, FTP, WebDAV, Git, Minio, LDAP, CalDAV, CardDAV, Mysql, Backblaze",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8189,
+  "url_suffix": "",
+  "image": "machines/filestash:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "FILESTASH_GDRIVE_CLIENT_ID",
+      "label": "(Optional) Google Drive Client ID",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "FILESTASH_GDRIVE_CLIENT_SECRET",
+      "label": "(Optional) Google Drive Client Secret",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "FILESTASH_DROPBOX_CLIENT_ID",
+      "label": "(Optional) Dropbox Client ID",
+      "type": "text",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/mickael-kerjean/filestash",
+  "author": "mickael-kerjean"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "whisparr",
+  "name": "Whisparr",
+  "short_desc": "Adult movie collection manager.",
+  "description": "Whisparr is an adult movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available. Note that only one type of a given movie is supported. If you want both an 4k version and 1080p version of a given movie you will need multiple instances.",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 6969,
+  "url_suffix": "",
+  "image": "ghcr.io/hotio/whisparr:nightly-2.0.0.548",
+  "version": "nightly-2.0.0.548",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "WHISPARR_PUID",
+      "label": "UID",
+      "type": "number",
+      "required": true,
+      "hint": "Ensure any volume directories on the host are owned by the same user you specify"
+    },
+    {
+      "env_variable": "WHISPARR_PGID",
+      "label": "GUID",
+      "type": "number",
+      "required": true,
+      "hint": "Ensure any volume directories on the host are owned by the same group you specify"
+    },
+    {
+      "env_variable": "WHISPARR_UMASK",
+      "label": "UMASK",
+      "type": "number",
+      "required": true,
+      "hint": "Ability to override the default umask settings for services started within the containers"
+    }
+  ],
+  "source": "https://github.com/Whisparr/Whisparr",
+  "author": "radarr.video"
+}

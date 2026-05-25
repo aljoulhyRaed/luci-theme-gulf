@@ -1,0 +1,43 @@
+{
+  "id": "codex-docs",
+  "name": "CodeX.docs",
+  "short_desc": "Free Docs app powered by Editor.js ecosystem.",
+  "description": "CodeX Docs is a free docs application. It's based on Editor.js ecosystem which gives all modern opportunities for working with content. You can use it for product documentation, for internal team docs, for personal notes or any other need.  ",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8101,
+  "url_suffix": "",
+  "image": "ghcr.io/codex-team/codex.docs:v2.2",
+  "version": "2.2",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "CODEX_AUTH_PASSWORD",
+      "label": "Auth Password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "CODEX_DB_PASSWORD",
+      "label": "CODEX_DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "CODEX_AUTH_SECRET",
+      "label": "CODEX_AUTH_SECRET",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/codex-team/codex.docs",
+  "author": "https://docs.codex.so/"
+}

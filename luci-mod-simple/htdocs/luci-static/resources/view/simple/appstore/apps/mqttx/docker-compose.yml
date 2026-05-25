@@ -1,0 +1,10 @@
+services:
+  mqttx:
+    image: docker.io/emqx/mqttx-web:v1.13.0
+    container_name: mqttx
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/mqttx/mqttx:/app/data
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8217:80

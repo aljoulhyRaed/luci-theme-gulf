@@ -1,0 +1,15 @@
+services:
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:0.6.26
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/calibre-web/config:/config
+      - {{MEDIA}}/data/calibre:/calibre
+      - {{MEDIA}}/data/books:/books
+    ports:
+      - 8100:8083
+    restart: unless-stopped

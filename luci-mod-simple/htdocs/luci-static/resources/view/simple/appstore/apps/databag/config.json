@@ -1,0 +1,21 @@
+{
+  "id": "databag",
+  "name": "Databag",
+  "short_desc": "Messenger for the Decentralized Web",
+  "description": "Databag is a federated chat app for self-hosting that focuses on user privacy and security; the service includes clients for iOS, Android, and browser.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8201,
+  "url_suffix": "",
+  "image": "balzack/databag:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/balzack/databag",
+  "author": "balzack"
+}

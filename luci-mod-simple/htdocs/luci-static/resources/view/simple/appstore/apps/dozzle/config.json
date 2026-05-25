@@ -1,0 +1,42 @@
+{
+  "id": "dozzle",
+  "name": "Dozzle",
+  "short_desc": "Dozzle is a small web based app to monitor Docker logs",
+  "description": "Dozzle is a small web based app to monitor Docker logs.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8013,
+  "url_suffix": "",
+  "image": "amir20/dozzle:v10.0.4",
+  "version": "v10.0.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DOZZLE_AUTH_PROVIDER",
+      "label": "Auth Provider",
+      "type": "text",
+      "required": true,
+      "hint": "'Use none' for no authentication or 'simple' for username 'admin' and password 'password'. To change credentials, consult the instructions on the app description."
+    },
+    {
+      "env_variable": "DOZZLE_ENABLE_ACTIONS",
+      "label": "Enable Actions",
+      "type": "boolean",
+      "required": false,
+      "hint": "Dozzle now supports Container Actions, which allows you to start, stop and restart container from within the UI in the dropdown menu."
+    },
+    {
+      "env_variable": "DOZZLE_NO_ANALYTICS",
+      "label": "Disable Google Analytics",
+      "type": "boolean",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/amir20/dozzle",
+  "author": "Amir Raminfar"
+}

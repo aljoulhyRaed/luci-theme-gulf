@@ -1,0 +1,9 @@
+services:
+  databag:
+    container_name: databag
+    restart: unless-stopped
+    image: docker.io/balzack/databag:latest
+    ports:
+      - 8201:7000
+    volumes:
+      - {{CONFIG}}/databag/databag:/var/lib/databag

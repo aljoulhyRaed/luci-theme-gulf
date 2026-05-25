@@ -1,0 +1,32 @@
+{
+  "id": "zerotier",
+  "name": "ZeroTier",
+  "short_desc": "Easy to use zero configuration VPN.",
+  "description": "ZeroTier combines the capabilities of VPN and SD-WAN, simplifying network management.",
+  "categories": [
+    "Network",
+    "Security"
+  ],
+  "category": "Network",
+  "port": 9993,
+  "url_suffix": "",
+  "image": "zerotier/zerotier:1.14.2",
+  "version": "1.14.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NETWORK_ID",
+      "label": "Network ID",
+      "type": "text",
+      "required": true,
+      "min": 16,
+      "max": 16,
+      "hint": "Create one at https://my.zerotier.com/"
+    }
+  ],
+  "source": "https://github.com/zerotier/ZeroTierOne",
+  "author": "© ZeroTier Inc."
+}

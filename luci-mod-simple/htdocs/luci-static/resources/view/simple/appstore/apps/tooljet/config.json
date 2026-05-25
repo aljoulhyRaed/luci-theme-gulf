@@ -1,0 +1,45 @@
+{
+  "id": "tooljet",
+  "name": "Tooljet",
+  "short_desc": "Alternative to retool to construct CRM dashboard",
+  "description": "ToolJet is an open-source low-code framework to build and deploy internal tools quickly with minimal engineering effort. ToolJet's drag and drop frontend builder allows you to build complicated responsive frontends within minutes. You can also connect to your data sources, such as databases ( PostgreSQL, MongoDB, Elasticsearch & more), API endpoints (ToolJet supports importing OpenAPI spec & OAuth2 authorization), SaaS tools (Stripe, Slack, Google Sheets, Airtable, Notion & more) and object storage services ( S3, GCS, Minio, etc ) to fetch and write data.",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 9876,
+  "url_suffix": "",
+  "image": "tooljet/tooljet-client-ce:v2.4.2",
+  "version": "2.4.2",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DB_PASSWORD",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 30,
+      "max": 30
+    },
+    {
+      "env_variable": "SECRET_KEY_BASE",
+      "label": "Secret key base",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "LOCKBOX_MASTER_KEY",
+      "label": "Lock master key",
+      "type": "random",
+      "required": true,
+      "min": 64,
+      "max": 64
+    }
+  ],
+  "source": "https://github.com/ToolJet/ToolJet",
+  "author": "tooljet.com"
+}

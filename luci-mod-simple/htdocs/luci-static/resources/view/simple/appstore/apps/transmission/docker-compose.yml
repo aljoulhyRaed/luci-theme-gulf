@@ -1,0 +1,18 @@
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:4.1.0
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - USER=${TRANSMISSION_USERNAME}
+      - PASS=${TRANSMISSION_PASSWORD}
+    volumes:
+      - {{CONFIG}}/transmission/config:/config
+      - {{MEDIA}}/torrents:/media/torrents
+    ports:
+      - 8089:9091
+      - '51413:51413'
+      - 51413:51413/udp
+    restart: unless-stopped

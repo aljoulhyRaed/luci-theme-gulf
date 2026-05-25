@@ -1,0 +1,20 @@
+{
+  "id": "moodist",
+  "name": "Moodist",
+  "short_desc": "Ambient sounds for focus and calm.",
+  "description": "Ambient sounds for focus and calm.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8221,
+  "url_suffix": "",
+  "image": "ghcr.io/remvze/moodist:v2.4.0",
+  "version": "v2.4.0",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/remvze/moodist",
+  "author": "remvze"
+}

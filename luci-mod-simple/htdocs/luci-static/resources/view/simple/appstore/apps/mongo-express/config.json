@@ -1,0 +1,63 @@
+{
+  "id": "mongo-express",
+  "name": "Mongo Express",
+  "short_desc": "Web-based MongoDB admin interface, written with Node.js and Express",
+  "description": "A web-based MongoDB admin interface written with Node.js, Express, and Bootstrap3",
+  "categories": [
+    "Development",
+    "Cloud & Data"
+  ],
+  "category": "Development",
+  "port": 8087,
+  "url_suffix": "",
+  "image": "mongo-express:1.0.2",
+  "version": "1.0.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ME_CONFIG_MONGODB_SERVERIP",
+      "label": "MongoDB Server IP Address",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "ME_CONFIG_MONGODB_ADMINUSERNAME",
+      "label": "MongoDB Admin Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "ME_CONFIG_MONGODB_ADMINPASSWORD",
+      "label": "MongoDB Admin Password",
+      "type": "password",
+      "required": true,
+      "min": 10,
+      "max": 50
+    },
+    {
+      "env_variable": "ME_CONFIG_BASICAUTH_USERNAME",
+      "label": "Mongo Express Web Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "ME_CONFIG_BASICAUTH_PASSWORD",
+      "label": "Mongo Express Web Password",
+      "type": "password",
+      "required": true,
+      "min": 10,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/mongo-express/mongo-express",
+  "author": "MongoDB"
+}

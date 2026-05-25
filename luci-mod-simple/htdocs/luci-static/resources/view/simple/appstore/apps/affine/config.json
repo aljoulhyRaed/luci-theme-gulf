@@ -1,0 +1,49 @@
+{
+  "id": "affine",
+  "name": "AFFiNE",
+  "short_desc": "AFFiNE is a workspace with fully merged docs, whiteboards and databases.",
+  "description": "AFFiNE is a workspace with fully merged docs, whiteboards and databases. A privacy-focused, local-first, open-source, and ready-to-use alternative for Notion & Miro. Docs, canvas and tables are hyper-merged with AFFiNE - just like the word affine",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 3010,
+  "url_suffix": "",
+  "image": "ghcr.io/toeverything/affine:stable",
+  "version": "stable",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "AFFINE_ADMIN_EMAIL",
+      "label": "Admin Email",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "AFFINE_ADMIN_PASSWORD",
+      "label": "Admin Password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 128
+    },
+    {
+      "env_variable": "AFFINE_TELEMETRY_ENABLE",
+      "label": "Enable affine telemetry?",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "env_variable": "AFFINE_POSTGRES_PASSWORD",
+      "label": "Affine postgres password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/toeverything/affine",
+  "author": "https://github.com/toeverything"
+}

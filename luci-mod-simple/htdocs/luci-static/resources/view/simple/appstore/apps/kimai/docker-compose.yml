@@ -1,0 +1,51 @@
+# Adapted from https://github.com/tobybatch/kimai2/blob/799a534b8d93d18a2d10573457936a31052ce8e0/compose/docker-compose.fpm.prod.yml
+
+
+services:
+  nginx:
+    container_name: kimai-proxy
+    image: docker.io/tobybatch/nginx-fpm-reverse-proxy:latest
+    ports:
+      - 8003:80
+    volumes:
+      - {{CONFIG}}/kimai/public:/opt/kimai/public:ro
+    restart: unless-stopped
+    depends_on:
+      - kimai
+    healthcheck:
+      test: wget --spider http://kimai-proxy/health || exit 1
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3  kimai:
+    container_name: kimai
+    image: docker.io/kimai/kimai2:fpm-2.19.1-prod
+    environment:
+      - ADMINMAIL=${KIMAI_ADMINMAIL}
+      - ADMINPASS=${KIMAI_ADMINPASS}
+      - "DATABASE_URL=mysql://kimai:${KIMAI_DATABASE_PASSWORD}@kimai-sqldb/kimai?charset=utf8&serverVersion=5.7"
+      - TRUSTED_HOSTS=kimai-proxy,localhost,127.0.0.1
+    volumes:
+      - {{CONFIG}}/kimai/public:/opt/kimai/public
+      - {{CONFIG}}/kimai/var:/opt/kimai/var
+      # - ./ldap.conf:/etc/openldap/ldap.conf:z
+      # - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z
+    restart: unless-stopped
+  sqldb:
+    container_name: kimai-sqldb
+    image: mysql:5.7
+    environment:
+      - MYSQL_DATABASE=kimai
+      - MYSQL_USER=kimai
+      - MYSQL_PASSWORD=${KIMAI_DATABASE_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${KIMAI_DATABASE_ROOT_PASSWORD}
+    volumes:
+        - {{CONFIG}}/kimai/mysql:/var/lib/mysql
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3

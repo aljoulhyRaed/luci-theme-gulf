@@ -1,0 +1,50 @@
+services:
+  paperless-ngx:
+    container_name: paperless-ngx
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.8
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      - 8012:8000
+    volumes:
+      - {{CONFIG}}/paperless-ngx/paperless_data:/usr/src/paperless/data
+      - {{CONFIG}}/paperless-ngx/paperless_media:/usr/src/paperless/media
+      - {{CONFIG}}/paperless-ngx/paperless_export:/usr/src/paperless/export
+      - {{CONFIG}}/paperless-ngx/paperless_consume:/usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_ADMIN_USER: ${PAPERLESS_ADMIN_USERNAME}
+      PAPERLESS_ADMIN_PASSWORD: ${PAPERLESS_ADMIN_PASSWORD}
+      PAPERLESS_TIKA_ENABLED: ${PAPERLESS_TIKA_ENABLED}
+      PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000
+      PAPERLESS_TIKA_ENDPOINT: http://tika:9998
+      PAPERLESS_URL: http://localhost
+      COMPOSE_PROJECT_NAME: paperless-ngx
+      PAPERLESS_CSRF_TRUSTED_ORIGINS: https://paperless-ngx.localhost,https://localhost,http://${INTERNAL_IP}:8012
+  broker:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/paperless-ngx/redis:/data
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/paperless-ngx/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+  gotenberg:
+    image: docker.io/gotenberg/gotenberg:8.26
+    restart: unless-stopped
+    command:
+      - gotenberg
+      - '--chromium-disable-javascript=true'
+      - '--chromium-allow-list=file:///tmp/.*'
+  tika:
+    image: docker.io/apache/tika:latest
+    restart: unless-stopped

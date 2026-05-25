@@ -1,0 +1,36 @@
+{
+  "id": "logto",
+  "name": "Logto",
+  "short_desc": "Logto is a cost-effective open-source alternative to Auth0. ",
+  "description": "Logto is a cost-effective open-source alternative to Auth0.",
+  "categories": [
+    "Security"
+  ],
+  "category": "Security",
+  "port": 8203,
+  "url_suffix": "",
+  "image": "svhd/logto:1.36.0",
+  "version": "1.36.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "LOGTO_DB_PASSWORD",
+      "label": "Database Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "LOGTO_ADMIN_URL",
+      "label": "Logto Admin Console URL URL",
+      "type": "text",
+      "required": true,
+      "hint": "Example: admin.example.com"
+    }
+  ],
+  "source": "https://github.com/logto-io/logto",
+  "author": "Logto Team"
+}

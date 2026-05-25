@@ -1,0 +1,55 @@
+{
+  "id": "semaphore",
+  "name": "Semaphore",
+  "short_desc": "Modern UI for Ansible, Terraform, OpenTofu, Bash, Pulumi.",
+  "description": "Semaphore is a modern UI for Ansible, Terraform/OpenTofu, Bash and Pulumi. It lets you easily run Ansible playbooks, get notifications about fails, control access to deployment system.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8526,
+  "url_suffix": "",
+  "image": "semaphoreui/semaphore:v2.17.14",
+  "version": "v2.17.14",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SEMAPHORE_ADMIN_NAME",
+      "label": "Semaphore username",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "SEMAPHORE_ADMIN_EMAIL",
+      "label": "Semaphore email",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "SEMAPHORE_ADMIN_PASSWORD",
+      "label": "Semaphore password",
+      "type": "password",
+      "required": true,
+      "min": 8
+    },
+    {
+      "env_variable": "SEMAPHORE_DB_PASSWORD",
+      "label": "Semaphore database password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "SEMAPHORE_ACCESS_KEY_ENCRYPTION",
+      "label": "Semaphore access key encryption",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/semaphoreui/semaphore",
+  "author": "semaphoreui"
+}

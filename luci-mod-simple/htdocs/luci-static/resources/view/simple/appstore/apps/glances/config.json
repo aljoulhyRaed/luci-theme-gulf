@@ -1,0 +1,21 @@
+{
+  "id": "glances",
+  "name": "Glances",
+  "short_desc": "An eye on your system",
+  "description": "Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8420,
+  "url_suffix": "",
+  "image": "nicolargo/glances:4.5.0.5",
+  "version": "4.5.0.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/nicolargo/glances",
+  "author": "nicolargo"
+}

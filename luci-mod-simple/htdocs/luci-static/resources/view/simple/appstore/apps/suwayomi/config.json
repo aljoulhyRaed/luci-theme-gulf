@@ -1,0 +1,22 @@
+{
+  "id": "suwayomi",
+  "name": "Suwayomi",
+  "short_desc": "An open-source manga reader server with bundled Web UI",
+  "description": "A free and open-source manga reader server that runs extensions",
+  "categories": [
+    "Books",
+    "Media"
+  ],
+  "category": "Books",
+  "port": 4567,
+  "url_suffix": "",
+  "image": "ghcr.io/suwayomi/tachidesk:v2.1.2087",
+  "version": "v2.1.2087",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Suwayomi/docker-tachidesk",
+  "author": "Suwayomi"
+}

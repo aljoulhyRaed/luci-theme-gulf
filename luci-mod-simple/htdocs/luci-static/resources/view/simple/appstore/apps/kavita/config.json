@@ -1,0 +1,21 @@
+{
+  "id": "kavita",
+  "name": "Kavita",
+  "short_desc": "Kavita is a fast, feature rich, cross platform reading server",
+  "description": "Kavita is a fast, feature rich, cross platform reading server",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8175,
+  "url_suffix": "",
+  "image": "jvmilazz0/kavita:0.8.9",
+  "version": "0.8.9",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Kareadita/Kavita",
+  "author": "Kareadita"
+}

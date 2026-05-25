@@ -1,0 +1,21 @@
+{
+  "id": "planning-poker",
+  "name": "Planning Poker",
+  "short_desc": "Online planning poker for scrum master.",
+  "description": "",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8880,
+  "url_suffix": "",
+  "image": "axeleroy/self-host-planning-poker:1.2.1",
+  "version": "1.2.1",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/axeleroy/self-host-planning-poker",
+  "author": "axeleroy"
+}

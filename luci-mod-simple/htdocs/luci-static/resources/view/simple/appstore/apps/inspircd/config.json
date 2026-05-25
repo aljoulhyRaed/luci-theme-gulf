@@ -1,0 +1,21 @@
+{
+  "id": "inspircd",
+  "name": "Inspircd",
+  "short_desc": "A modular C++ IRC server.",
+  "description": "InspIRCd is a modular C++ Internet Relay Chat (IRC) server for UNIX-like and Windows systems.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 6697,
+  "url_suffix": "",
+  "image": "inspircd/inspircd-docker:4.9.0",
+  "version": "4.9.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/inspircd/inspircd",
+  "author": "inspircd"
+}

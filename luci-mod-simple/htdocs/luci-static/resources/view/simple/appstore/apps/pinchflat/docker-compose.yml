@@ -1,0 +1,14 @@
+services:
+  pinchflat:
+    image: docker.io/keglin/pinchflat:v2025.6.6
+    container_name: pinchflat
+    environment:
+      - BASIC_AUTH_USERNAME=${PINCHFLAT_BASIC_AUTH_USERNAME}
+      - BASIC_AUTH_PASSWORD=${PINCHFLAT_BASIC_AUTH_PASSWORD}
+    restart: unless-stopped
+    ports:
+      - 8945:8945
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/pinchflat/config:/config
+      - {{CONFIG}}/pinchflat/downloads:/downloads

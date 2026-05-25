@@ -1,0 +1,17 @@
+
+services:
+  homebridge:
+    container_name: homebridge
+    image: docker.io/homebridge/homebridge:2024-05-02
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    environment:
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/homebridge/homebridge:/homebridge
+    logging:
+      driver: json-file
+      options:
+        max-size: "10mb"
+        max-file: "1"

@@ -1,0 +1,38 @@
+{
+  "id": "silverbullet",
+  "name": "Silverbullet",
+  "short_desc": "SilverBullet is a creative space where you collect, create and expand your personal knowledge, while also letting you constantly evolve the tools you use to do so.",
+  "description": "SilverBullet aims to be your workshop for the mind",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8214,
+  "url_suffix": "",
+  "image": "zefhemel/silverbullet:2.4.1",
+  "version": "2.4.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SB_USER",
+      "label": "Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "SB_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/silverbulletmd/silverbullet",
+  "author": "zefhemel"
+}

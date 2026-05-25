@@ -1,0 +1,22 @@
+{
+  "id": "readarr",
+  "name": "Readarr",
+  "short_desc": "Book Manager and Automation (Sonarr for Ebooks)",
+  "description": "",
+  "categories": [
+    "Books",
+    "Media"
+  ],
+  "category": "Books",
+  "port": 8112,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/readarr:0.4.19",
+  "version": "0.4.19",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Readarr/Readarr",
+  "author": "readarr.com"
+}

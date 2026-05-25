@@ -1,0 +1,14 @@
+services:
+  ntfy:
+    container_name: ntfy
+    restart: unless-stopped
+    image: docker.io/binwiederhier/ntfy:v2.17.0
+    environment:
+      - NTFY_BASE_URL=http://localhost
+      - NTFY_UPSTREAM_BASE_URL=https://ntfy.sh
+    command: serve
+    volumes:
+      - {{CONFIG}}/ntfy/cache:/var/cache/ntfy
+      - {{CONFIG}}/ntfy/config:/etc/ntfy
+    ports:
+      - 8166:80

@@ -1,0 +1,21 @@
+{
+  "id": "metube",
+  "name": "MeTube",
+  "short_desc": "Self-hosted YouTube downloader.",
+  "description": "Web GUI for youtube-dl (using the yt-dlp fork) with playlist support. Allows you to download videos from YouTube and dozens of other sites.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8250,
+  "url_suffix": "",
+  "image": "ghcr.io/alexta69/metube:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/alexta69/metube",
+  "author": "alexta69"
+}

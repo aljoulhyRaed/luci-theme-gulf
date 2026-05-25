@@ -1,0 +1,47 @@
+services:
+  emqx:
+    image: docker.io/emqx/emqx:6.1.0
+    container_name: emqx
+    environment:
+      - TZ={{TZ}}
+      - EMQX_NODE_NAME=emqx@emqx
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - EMQX_CLUSTER__STATIC__SEEDS=[emqx@emqx,emqx@emqx-n2
+    ports:
+      - '1883:1883'
+      - '8083:8083'
+      - '8084:8084'
+      - '8883:8883'
+      - '18083:18083'
+    healthcheck:
+      test:
+        - CMD
+        - /opt/emqx/bin/emqx
+        - ctl
+        - status
+      interval: 5s
+      timeout: 25s
+      retries: 5
+    volumes:
+      - {{CONFIG}}/emqx/n1:/opt/emqx/data
+    restart: unless-stopped
+  emqx-n2:
+    image: docker.io/emqx/emqx:6.1.0
+    container_name: emqx-n2
+    environment:
+      - TZ={{TZ}}
+      - EMQX_NODE_NAME=emqx@emqx-n2
+      - EMQX_CLUSTER__DISCOVERY_STRATEGY=static
+      - EMQX_CLUSTER__STATIC__SEEDS=[emqx@emqx,emqx@emqx-n2
+    healthcheck:
+      test:
+        - CMD
+        - /opt/emqx/bin/emqx
+        - ctl
+        - status
+      interval: 5s
+      timeout: 25s
+      retries: 5
+    volumes:
+      - {{CONFIG}}/emqx/n2:/opt/emqx/data
+    restart: unless-stopped

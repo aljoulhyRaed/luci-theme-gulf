@@ -1,0 +1,13 @@
+services:
+  komga:
+    image: ghcr.io/gotson/komga:1.24.1
+    container_name: komga
+    volumes:
+      - {{CONFIG}}/komga/config:/config
+      - {{CONFIG}}/komga/data:/data
+      - {{MEDIA}}:/media
+    environment:
+      - TZ={{TZ}}
+    ports:
+      - 2560:25600
+    restart: unless-stopped

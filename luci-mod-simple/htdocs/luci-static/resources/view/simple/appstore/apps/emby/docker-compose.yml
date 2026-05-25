@@ -1,0 +1,14 @@
+services:
+  emby:
+    image: lscr.io/linuxserver/emby:4.9.3
+    container_name: emby
+    volumes:
+      - {{CONFIG}}/emby/config:/config
+      - {{MEDIA}}/data:/media/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+    restart: unless-stopped
+    ports:
+      - 8325:8096

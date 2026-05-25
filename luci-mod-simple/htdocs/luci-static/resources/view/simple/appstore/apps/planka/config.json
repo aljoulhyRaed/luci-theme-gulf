@@ -1,0 +1,60 @@
+{
+  "id": "planka",
+  "name": "Planka",
+  "short_desc": "Free open source kanban board for workgroups.",
+  "description": "The realtime kanban board for workgroups built with React and Redux.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8016,
+  "url_suffix": "",
+  "image": "ghcr.io/plankanban/planka:1.26.3",
+  "version": "1.26.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "PLANKA_ADMIN_EMAIL",
+      "label": "Admin email",
+      "type": "email",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "PLANKA_ADMIN_NAME",
+      "label": "Admin name",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "PLANKA_ADMIN_USERNAME",
+      "label": "Admin username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "PLANKA_ADMIN_PASSWORD",
+      "label": "Admin password",
+      "type": "password",
+      "required": true,
+      "max": 50
+    },
+    {
+      "env_variable": "PLANKA_SECRET_KEY",
+      "label": "Planka Secret Key",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/plankanban/planka",
+  "author": "Planka"
+}

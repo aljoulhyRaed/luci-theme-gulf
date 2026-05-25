@@ -1,0 +1,14 @@
+services:
+  zerotier:
+    container_name: zerotier
+    image: docker.io/zerotier/zerotier:1.14.2
+    restart: on-failure
+    command: "${NETWORK_ID}"
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    devices:
+      - /dev/net/tun
+    healthcheck:
+      test: ['CMD','true']
+    network_mode: host

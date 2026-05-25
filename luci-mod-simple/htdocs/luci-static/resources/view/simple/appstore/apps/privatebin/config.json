@@ -1,0 +1,21 @@
+{
+  "id": "privatebin",
+  "name": "PrivateBin",
+  "short_desc": "A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.",
+  "description": "PrivateBin is a minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted and decrypted in the browser using 256bit AES in Galois Counter mode.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8122,
+  "url_suffix": "",
+  "image": "privatebin/nginx-fpm-alpine:2.0.3",
+  "version": "2.0.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/PrivateBin/PrivateBin",
+  "author": "PrivateBin"
+}

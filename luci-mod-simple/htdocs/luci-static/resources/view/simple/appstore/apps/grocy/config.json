@@ -1,0 +1,22 @@
+{
+  "id": "grocy",
+  "name": "Grocy",
+  "short_desc": "ERP beyond your fridge",
+  "description": "grocy is a web-based self-hosted groceries & household management solution for your home",
+  "categories": [
+    "Automation",
+    "Finance"
+  ],
+  "category": "Automation",
+  "port": 8136,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/grocy:v4.0.3-ls215",
+  "version": "4.0.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/grocy/grocy",
+  "author": "berrnd"
+}

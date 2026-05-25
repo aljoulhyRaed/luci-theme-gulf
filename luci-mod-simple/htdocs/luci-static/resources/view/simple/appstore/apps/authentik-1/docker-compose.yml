@@ -1,0 +1,57 @@
+services:
+  authentik-1:
+    image: ghcr.io/goauthentik/server:2025.12.4
+    restart: unless-stopped
+    command: server
+    container_name: authentik-1
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: authentik-db
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_DB_PASSWORD}
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
+    volumes:
+      - {{CONFIG}}/authentik-1/authentik-media:/media
+      - {{CONFIG}}/authentik-1/authentik-custom-templates:/templates
+    ports:
+      - 9000:9443
+    depends_on:
+      - authentik-db
+  authentik-worker:
+    image: ghcr.io/goauthentik/server:2025.12.4
+    restart: unless-stopped
+    command: worker
+    container_name: authentik-worker
+    environment:
+      AUTHENTIK_POSTGRESQL__HOST: authentik-db
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_DB_PASSWORD}
+      AUTHENTIK_SECRET_KEY: ${AUTHENTIK_SECRET_KEY}
+    user: root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - {{CONFIG}}/authentik-1/authentik-media:/media
+      - {{CONFIG}}/authentik-1/authentik-certs:/certs
+      - {{CONFIG}}/authentik-1/authentik-custom-templates:/templates
+    depends_on:
+      - authentik-db
+      - authentik-redis
+  authentik-db:
+    container_name: authentik-db
+    image: postgres:18-alpine
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 5s
+    volumes:
+      - {{CONFIG}}/authentik-1/postgres:/var/lib/postgresql
+    environment:
+      POSTGRES_PASSWORD: ${AUTHENTIK_DB_PASSWORD}
+      POSTGRES_USER: authentik
+      POSTGRES_DB: authentik

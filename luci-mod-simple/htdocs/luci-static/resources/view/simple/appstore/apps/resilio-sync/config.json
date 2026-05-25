@@ -1,0 +1,22 @@
+{
+  "id": "resilio-sync",
+  "name": "Resilio",
+  "short_desc": "Fast, reliable, and simple file sync and share solution.",
+  "description": "Resilio Sync is a fast, reliable, and simple file sync and share solution, powered by P2P technology",
+  "categories": [
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Cloud & Data",
+  "port": 8113,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/resilio-sync:3.1.2",
+  "version": "3.1.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/bt-sync",
+  "author": "Resilio, Inc."
+}

@@ -1,0 +1,15 @@
+services:
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: docker.io/koenkk/zigbee2mqtt:2.8.0
+    environment:
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/zigbee2mqtt/:/app/data
+    devices:
+      - ${Z2M_DEVICE}:/dev/ttyACM0
+    ports:
+      - 8290:8080
+    expose:
+      - 8080
+    restart: unless-stopped

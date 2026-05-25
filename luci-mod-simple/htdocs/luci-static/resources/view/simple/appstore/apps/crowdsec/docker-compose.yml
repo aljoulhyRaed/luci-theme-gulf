@@ -1,0 +1,40 @@
+services:
+  crowdsec:
+    container_name: crowdsec
+    image: docker.io/crowdsecurity/crowdsec:v1.7.6
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - {{CONFIG}}/crowdsec/crowdsec/acquis.yaml:/etc/crowdsec/acquis.yaml
+      - {{CONFIG}}/crowdsec/crowdsec:/etc/crowdsec
+      - {{CONFIG}}/crowdsec/crowdsec/db:/var/lib/crowdsec/data
+      - /var/log/auth.log:/var/log/auth.log:ro
+      - /var/log/traefik:/var/log/traefik:ro
+      - /var/log/crowdsec:/var/log/crowdsec:ro
+    environment:
+      - COLLECTIONS= crowdsecurity/linux crowdsecurity/traefik crowdsecurity/http-cve crowdsecurity/whitelist-good-actors crowdsecurity/sshd
+      - GID=${GID-1000}
+  crowdsec-bouncer-traefik:
+    container_name: crowdsec-bouncer-traefik
+    image: docker.io/fbonalair/traefik-crowdsec-bouncer:v1.6.8
+    restart: unless-stopped
+    depends_on:
+      - crowdsec
+    environment:
+      - CROWDSEC_BOUNCER_API_KEY=${CROWDSEC_BOUNCER_API_KEY}
+      - CROWDSEC_AGENT_HOST=crowdsec:8080
+  crowdsec-dashboard:
+    container_name: crowdsec-dashboard
+    image: docker.io/metabase/metabase
+    restart: unless-stopped
+    ports:
+      - 8679:3000
+    environment:
+      - MB_DB_FILE=/data/metabase.db
+      - MGID=${GID-1000}
+    depends_on:
+      - crowdsec
+    volumes:
+      - {{CONFIG}}/crowdsec/crowdsec-dashboard/data:/data
+      - {{CONFIG}}/crowdsec/crowdsec/db:/metabase-data

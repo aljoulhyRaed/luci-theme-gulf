@@ -1,0 +1,20 @@
+services:
+  slskd:
+    image: docker.io/slskd/slskd:0.24.4
+    container_name: slskd
+    volumes:
+      - {{CONFIG}}/slskd:/app
+      - {{MEDIA}}/downloads/complete:/downloads
+      - {{MEDIA}}/downloads/incomplete:/incomplete
+      - {{MEDIA}}/:/shared
+    environment:
+      - SLSKD_WEB_USER=${SLSKD_WEB_USER}
+      - SLSKD_WEB_PASSWORD=${SLSKD_WEB_PASSWORD}
+      - SLSKD_USER=${SLSKD_USER}
+      - SLSKD_PASSWORD=${SLSKD_PASSWORD}
+      - SLSKD_REMOTE_CONFIGURATION=${SLSKD_REMOTE_CONFIGURATION}
+      - SLSKD_CONFIG=/app/data/slskd.yml
+      - SLSKD_SHARED_DIR=/shared
+    restart: unless-stopped
+    ports:
+      - 5030:5030

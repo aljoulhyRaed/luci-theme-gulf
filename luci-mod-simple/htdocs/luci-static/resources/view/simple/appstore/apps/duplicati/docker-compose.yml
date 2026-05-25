@@ -1,0 +1,16 @@
+services:
+  duplicati:
+    container_name: duplicati
+    restart: unless-stopped
+    image: lscr.io/linuxserver/duplicati:2.2.0
+    ports:
+      - 8159:8200
+    volumes:
+      - {{CONFIG}}/duplicati/duplicati-config:/config
+      - {{CONFIG}}:/backups/runtipi-folder
+      - /home:/source
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ={{TZ}}
+      - SETTINGS_ENCRYPTION_KEY=${DUPLICATI_ENCRYPTION_KEY}

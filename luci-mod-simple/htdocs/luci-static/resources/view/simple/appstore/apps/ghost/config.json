@@ -1,0 +1,65 @@
+{
+  "id": "ghost",
+  "name": "Ghost Production",
+  "short_desc": "Ghost - Turn your audience into a business.",
+  "description": "Ghost is a powerful app for new-media creators to publish, share, and grow a business around their content. It comes with modern tools to build a website, publish content, send newsletters & offer paid subscriptions to members.",
+  "categories": [
+    "Social",
+    "Media"
+  ],
+  "category": "Social",
+  "port": 8117,
+  "url_suffix": "",
+  "image": "ghost:5.130.6",
+  "version": "5.130.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "GHOST_DATABASE_PASSWORD",
+      "label": "Ghost Database password",
+      "type": "random",
+      "required": true,
+      "min": 20
+    },
+    {
+      "env_variable": "GHOST_MAIL_SERVICE",
+      "label": "Mail Service name",
+      "type": "text",
+      "required": false,
+      "hint": "The name of your mail service (ie. Google)"
+    },
+    {
+      "env_variable": "GHOST_MAIL_HOST",
+      "label": "SMTP Host",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Server"
+    },
+    {
+      "env_variable": "GHOST_MAIL_PORT",
+      "label": "SMTP Port",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Port"
+    },
+    {
+      "env_variable": "GHOST_MAIL_USER",
+      "label": "SMTP Username",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Server User/Username"
+    },
+    {
+      "env_variable": "GHOST_MAIL_PASSWORD",
+      "label": "SMTP Password",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Server Password"
+    }
+  ],
+  "source": "https://github.com/TryGhost/Ghost",
+  "author": "TryGhost"
+}

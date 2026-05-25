@@ -1,0 +1,14 @@
+services:
+  kavita:
+    container_name: kavita
+    image: docker.io/jvmilazz0/kavita:0.8.9
+    ports:
+      - 8175:5000
+    volumes:
+      - {{CONFIG}}/kavita/kavita-config:/kavita/config
+      - {{MEDIA}}/data/books:/books
+      - {{MEDIA}}/data/comics:/comics
+      - {{MEDIA}}/data/manga:/manga
+    environment:
+      - TZ={{TZ}}
+    restart: unless-stopped

@@ -1,0 +1,31 @@
+{
+  "id": "moneroblock",
+  "name": "Moneroblock",
+  "short_desc": "Decentralized and trustless Monero block explorer",
+  "description": "MoneroBlock is a trustless block explorer for the Monero payment network.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 31312,
+  "url_suffix": "",
+  "image": "sethsimmons/moneroblock:v0.1.2",
+  "version": "0.1.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DAEMON_ADDRESS",
+      "label": "Monero Daemon",
+      "type": "text",
+      "required": false,
+      "min": 10,
+      "max": 100,
+      "hint": "Address in format node.host.name:port, i.e. node.sethforprivacy.com:18089"
+    }
+  ],
+  "source": "https://github.com/duggavo/MoneroBlock",
+  "author": "duggavo"
+}

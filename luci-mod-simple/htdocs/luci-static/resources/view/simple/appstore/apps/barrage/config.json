@@ -1,0 +1,50 @@
+{
+  "id": "barrage",
+  "name": "Barrage",
+  "short_desc": "Minimal Deluge WebUI with full mobile support",
+  "description": "Minimal Deluge WebUI with full mobile support",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8145,
+  "url_suffix": "",
+  "image": "maulik9898/barrage:0.3.0",
+  "version": "0.3.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NEXTAUTH_SECRET",
+      "label": "NEXTAUTH_SECRET",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "DELUGE_URL",
+      "label": "Deluge URL",
+      "type": "text",
+      "required": true,
+      "hint": "URL of your deluge client"
+    },
+    {
+      "env_variable": "DELUGE_PASSWORD",
+      "label": "Deluge password",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "BARRAGE_PASSWORD",
+      "label": "Barrage password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/maulik9898/barrage",
+  "author": "https://github.com/maulik9898"
+}

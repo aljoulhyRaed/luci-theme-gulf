@@ -1,0 +1,45 @@
+{
+  "id": "owncloud",
+  "name": "Owncloud",
+  "short_desc": "A personal cloud which runs on your own server. ",
+  "description": "ownCloud gives you freedom and control over your own data. A personal cloud which runs on your own server.  ",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8151,
+  "url_suffix": "",
+  "image": "owncloud/server:10.16.1",
+  "version": "10.16.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "OWNCLOUD_DB_PASSWORD",
+      "label": "OWNCLOUD_DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OWNCLOUD_USERNAME",
+      "label": "Owncloud username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "OWNCLOUD_PASSWORD",
+      "label": "Owncloud password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/owncloud/core",
+  "author": "https://github.com/owncloud"
+}

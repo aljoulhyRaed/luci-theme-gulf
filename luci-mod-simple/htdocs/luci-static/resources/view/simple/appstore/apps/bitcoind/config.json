@@ -1,0 +1,85 @@
+{
+  "id": "bitcoind",
+  "name": "Bitcoin",
+  "short_desc": "Bitcoin core node",
+  "description": "Bitcoin core node",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 8333,
+  "url_suffix": "",
+  "image": "lncm/bitcoind:v28.0",
+  "version": "28.0",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "BITCOIND_PRUNING",
+      "label": "Reduce storage requirements by enabling pruning (deleting) of old blocks",
+      "type": "number",
+      "required": false,
+      "hint": "default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, >=550 = automatically prune block files to stay under the specified target size in MiB"
+    },
+    {
+      "env_variable": "BITCOIND_DB_CACHE",
+      "label": "DB Cache Size (In mb)",
+      "type": "number",
+      "required": false,
+      "hint": "Set database cache size in megabytes; machines sync faster with a larger cache. Recommend setting as high as possible based upon machine's available RAM. Default 450 Mb."
+    },
+    {
+      "env_variable": "BITCOIND_MAX_MEMPOOL",
+      "label": "Max Mempool Size (In mb)",
+      "type": "number",
+      "required": false,
+      "hint": "Keep the transaction memory pool below <n> megabytes. Default 300 Mb."
+    },
+    {
+      "env_variable": "BITCOIND_LISTEN",
+      "label": "Listen for Incoming Connections",
+      "type": "text",
+      "required": false,
+      "hint": "Accept incoming connections from peers."
+    },
+    {
+      "env_variable": "BITCOIND_SERVER",
+      "label": "Accept JSON-RPC requests",
+      "type": "text",
+      "required": false,
+      "hint": "Allows you to use bitcoin-cli to communicate with the node"
+    },
+    {
+      "env_variable": "BITCOIND_MAXPEERS",
+      "label": "Max Peer Connections",
+      "type": "number",
+      "required": false,
+      "hint": "Maintain at most N connections to peers. Leave empty for default 125."
+    },
+    {
+      "env_variable": "BITCOIND_TXINDEX",
+      "label": "Enable txindex",
+      "type": "text",
+      "required": false,
+      "hint": "Enabled by default"
+    },
+    {
+      "env_variable": "BITCOIND_BLOOM_FILTERS",
+      "label": "Enable peer bloom filters",
+      "type": "text",
+      "required": false,
+      "hint": "Enabled by default"
+    },
+    {
+      "env_variable": "BITCOIND_BLOCK_FILTER",
+      "label": "Enable block filter index",
+      "type": "text",
+      "required": false,
+      "hint": "Enabled by default"
+    }
+  ],
+  "source": "https://github.com/lncm/docker-bitcoind",
+  "author": "Bitcoin developers"
+}

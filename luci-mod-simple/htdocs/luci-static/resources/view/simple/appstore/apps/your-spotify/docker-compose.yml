@@ -1,0 +1,34 @@
+services:
+  your-spotify:
+    container_name: your-spotify
+    image: docker.io/yooooomi/your_spotify_client:1.17.0
+    depends_on:
+      - your-spotify-server
+    restart: unless-stopped
+    ports:
+      - 8103:3000
+    environment:
+      - API_ENDPOINT=http://${INTERNAL_IP}:32500
+  your-spotify-server:
+    container_name: your-spotify-server
+    image: docker.io/yooooomi/your_spotify_server
+    restart: unless-stopped
+    ports:
+      - '32500:8080'
+    links:
+      - your-spotify-db
+    depends_on:
+      - your-spotify-db
+    environment:
+      - API_ENDPOINT=http://${INTERNAL_IP}:32500
+      - CLIENT_ENDPOINT=http://${INTERNAL_IP}:8103
+      - SPOTIFY_PUBLIC=${SPOTIFY_PUBLIC}
+      - SPOTIFY_SECRET=${SPOTIFY_SECRET}
+      - MONGO_ENDPOINT=mongodb://your-spotify-db:27017/your_spotify
+      - CORS=all
+  your-spotify-db:
+    container_name: your-spotify-db
+    image: mongo:4.4.30
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/your-spotify/db:/data/db

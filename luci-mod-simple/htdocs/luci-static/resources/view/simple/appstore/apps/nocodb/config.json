@@ -1,0 +1,50 @@
+{
+  "id": "nocodb",
+  "name": "NocoDB",
+  "short_desc": "Open Source Airtable Alternative",
+  "description": "The Open Source Airtable Alternative. Turns any MySQL, PostgreSQL, SQL Server, SQLite & MariaDB into a smart-spreadsheet.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8146,
+  "url_suffix": "",
+  "image": "nocodb/nocodb:0.301.2",
+  "version": "0.301.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NOCODB_DB_PASSWORD",
+      "label": "NOCODB_DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "NOCODB_JWT_SECRET",
+      "label": "NOCODB_JWT_SECRET",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "NOCODB_REDIS_PASSWORD",
+      "label": "REDIS_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "NOCODB_TABLE_ROWS",
+      "label": "Choos the number of rows to display in a table.",
+      "type": "number",
+      "required": false,
+      "hint": "Leave empty for default 25"
+    }
+  ],
+  "source": "https://github.com/nocodb/nocodb",
+  "author": "https://github.com/nocodb"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "kiwix-serve",
+  "name": "Kiwix Server",
+  "short_desc": "Kiwix Server is a web server for hosting .zim files",
+  "description": "Kiwix Server is a web server for hosting .zim files",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8169,
+  "url_suffix": "",
+  "image": "ghcr.io/kiwix/kiwix-serve:3.7.0-2",
+  "version": "3.7.0-2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/kiwix/kiwix-tools/",
+  "author": "Kiwix"
+}

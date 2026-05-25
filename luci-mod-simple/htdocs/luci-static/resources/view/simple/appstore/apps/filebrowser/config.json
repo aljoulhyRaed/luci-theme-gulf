@@ -1,0 +1,21 @@
+{
+  "id": "filebrowser",
+  "name": "File Browser",
+  "short_desc": "Access your homeserver files from your browser",
+  "description": "Reliable and Performant File Management Desktop Sync and File Sharing\n Default credentials: admin / admin",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8096,
+  "url_suffix": "",
+  "image": "filebrowser/filebrowser:s6",
+  "version": "s6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/filebrowser/filebrowser",
+  "author": "filebrowser.org"
+}

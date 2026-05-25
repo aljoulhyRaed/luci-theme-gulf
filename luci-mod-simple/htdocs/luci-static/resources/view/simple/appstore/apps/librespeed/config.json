@@ -1,0 +1,31 @@
+{
+  "id": "librespeed",
+  "name": "LibreSpeed",
+  "short_desc": "No Flash, No Java, No Websocket, No Garbage",
+  "description": "This is a very lightweight speed test implemented in Javascript, using XMLHttpRequest and Web Workers.",
+  "categories": [
+    "Network",
+    "Utilities"
+  ],
+  "category": "Network",
+  "port": 8084,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/librespeed:5.5.1",
+  "version": "5.5.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "APP_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/librespeed/speedtest",
+  "author": "LibreSpeed"
+}

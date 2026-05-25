@@ -1,0 +1,9 @@
+services:
+  moodist:
+    image: ghcr.io/remvze/moodist:v2.4.0
+    container_name: moodist
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8221:8080

@@ -1,0 +1,31 @@
+{
+  "id": "siyuan",
+  "name": "SiYuan",
+  "short_desc": "SiYuan is a privacy-first personal knowledge management system.",
+  "description": "SiYuan is a privacy-first personal knowledge management system, support fine-grained block-level reference and Markdown WYSIWYG.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 6806,
+  "url_suffix": "",
+  "image": "b3log/siyuan:v3.5.8",
+  "version": "v3.5.8",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SIYUAN_ACCESS_AUTH_CODE",
+      "label": "Access Auth Code",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50,
+      "hint": "Please be sure to modify, otherwise anyone can read and write your data."
+    }
+  ],
+  "source": "https://github.com/siyuan-note/siyuan",
+  "author": "siyuan-note"
+}

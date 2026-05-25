@@ -1,0 +1,14 @@
+services:
+  cheshire-cat-ai:
+    image: ghcr.io/cheshire-cat-ai/core:1.9.2
+    container_name: cheshire-cat-ai
+    restart: unless-stopped
+    ports:
+      - 1865:80
+    environment:
+      - PYTHONUNBUFFERED=1
+      - WATCHFILES_FORCE_POLLING=true
+    volumes:
+      - {{CONFIG}}/cheshire-cat-ai/static:/app/cat/static
+      - {{CONFIG}}/cheshire-cat-ai/plugins:/app/cat/plugins
+      - {{CONFIG}}/cheshire-cat-ai/data:/app/cat/data

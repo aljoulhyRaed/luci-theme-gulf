@@ -1,0 +1,7 @@
+services:
+  nginx:
+    image: nginx:1.29.5
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - 8754:80

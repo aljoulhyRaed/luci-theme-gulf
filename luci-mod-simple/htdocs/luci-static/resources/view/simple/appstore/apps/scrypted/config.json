@@ -1,0 +1,29 @@
+{
+  "id": "scrypted",
+  "name": "Scrypted",
+  "short_desc": "High performance home video integration and automation platform",
+  "description": "Scrypted is a high performance home video integration and automation platform",
+  "categories": [
+    "Security"
+  ],
+  "category": "Security",
+  "port": 10443,
+  "url_suffix": "",
+  "image": "koush/scrypted:20",
+  "version": "20",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SCRYPTED_BEARER_TOKEN",
+      "label": "Scrypted Bearer Token",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/koush/scrypted",
+  "author": "Koush"
+}

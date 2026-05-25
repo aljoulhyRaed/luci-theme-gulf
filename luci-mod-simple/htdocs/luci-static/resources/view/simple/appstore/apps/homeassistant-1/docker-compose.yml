@@ -1,0 +1,12 @@
+services:
+  homeassistant-1:
+    image: ghcr.io/home-assistant/home-assistant:2026.2.3
+    container_name: homeassistant-1
+    environment:
+      - TZ={{TZ}}
+    restart: unless-stopped
+    ports:
+      - 8209:8123
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/homeassistant-1/config:/config

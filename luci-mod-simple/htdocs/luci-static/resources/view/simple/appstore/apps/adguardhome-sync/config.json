@@ -1,0 +1,44 @@
+{
+  "id": "adguardhome-sync",
+  "name": "Adguard Home Sync",
+  "short_desc": "Synchronize AdGuard Home config to replicas",
+  "description": "Synchronize AdGuardHome config to replica instances",
+  "categories": [
+    "Network",
+    "Utilities"
+  ],
+  "category": "Network",
+  "port": 8436,
+  "url_suffix": "",
+  "image": "ghcr.io/bakito/adguardhome-sync:v0.8.2",
+  "version": "v0.8.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ADGUARDHOME_SYNC_CRON",
+      "label": "Cron Schedule",
+      "type": "text",
+      "required": true,
+      "hint": "Cron schedule to run the sync"
+    },
+    {
+      "env_variable": "ADGUARDHOME_SYNC_ORIGIN_URL",
+      "label": "AdGuard Home Origin URL",
+      "type": "url",
+      "required": true,
+      "hint": "URL of the Origin AdGuard Home instance"
+    },
+    {
+      "env_variable": "ADGUARDHOME_SYNC_REPLICA_URL",
+      "label": "AdGuard Home Replica URL",
+      "type": "url",
+      "required": true,
+      "hint": "URL of the Replica AdGuard Home instance"
+    }
+  ],
+  "source": "https://github.com/bakito/adguardhome-sync",
+  "author": "bakito"
+}

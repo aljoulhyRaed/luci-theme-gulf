@@ -1,0 +1,21 @@
+{
+  "id": "cyberchef",
+  "name": "CyberChef",
+  "short_desc": "The Cyber Swiss Army Knife",
+  "description": "CyberChef is a web app for encryption, encoding, compression, and data analysis.",
+  "categories": [
+    "Utilities",
+    "Security"
+  ],
+  "category": "Utilities",
+  "port": 9080,
+  "url_suffix": "",
+  "image": "ghcr.io/gchq/cyberchef:10.22.1",
+  "version": "10.22.1",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/gchq/CyberChef",
+  "author": "GCHQ"
+}

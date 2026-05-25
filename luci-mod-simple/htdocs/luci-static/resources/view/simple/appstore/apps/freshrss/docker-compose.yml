@@ -1,0 +1,13 @@
+services:
+  freshrss:
+    image: lscr.io/linuxserver/freshrss:1.28.1
+    container_name: freshrss
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/freshrss/freshrss:/config
+    ports:
+      - 8086:80
+    restart: unless-stopped

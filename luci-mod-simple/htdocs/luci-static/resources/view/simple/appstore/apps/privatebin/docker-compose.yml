@@ -1,0 +1,9 @@
+services:
+  privatebin:
+    image: docker.io/privatebin/nginx-fpm-alpine:2.0.3
+    container_name: privatebin
+    ports:
+      - 8122:8080
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/privatebin:/srv/data

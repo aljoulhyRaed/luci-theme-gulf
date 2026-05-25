@@ -1,0 +1,64 @@
+services:
+  penpot:
+    image: docker.io/penpotapp/frontend:latest
+    container_name: penpot
+    restart: unless-stopped
+    ports:
+      - 8645:80
+    volumes:
+      - {{CONFIG}}/penpot/assets:/opt/data/assets
+    depends_on:
+      - penpot-backend
+      - penpot-exporter        80
+        # Web
+        penpot-web-redirect
+        # Websecure
+        myresolver
+        # Local domain
+        penpot-web-redirect
+        # Local domain secure
+    environment:
+      - PENPOT_FLAGS=enable-registration enable-login-with-password
+
+  penpot-backend:
+    image: docker.io/penpotapp/backend:latest
+    container_name: penpot-backend
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/penpot/assets:/opt/data/assets
+    depends_on:
+      - penpot-postgres
+      - penpot-redis
+    environment:
+      - PENPOT_FLAGS=enable-registration enable-login-with-password disable-email-verification
+      - PENPOT_PUBLIC_URI=http://localhost:8645
+      - PENPOT_DATABASE_URI=postgresql://penpot-postgres/penpot
+      - PENPOT_DATABASE_USERNAME=tipi
+      - PENPOT_DATABASE_PASSWORD=${PENPOT_POSTGRES_PASSWORD}
+      - PENPOT_REDIS_URI=redis://penpot-redis/0
+      - PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
+      - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
+      - PENPOT_TELEMETRY_ENABLED=false
+  penpot-exporter:
+    image: docker.io/penpotapp/exporter:latest
+    container_name: penpot-exporter
+    restart: unless-stopped
+    environment:
+      - PENPOT_PUBLIC_URI=http://penpot
+      - PENPOT_REDIS_URI=redis://penpot-redis/0
+  penpot-postgres:
+    image: postgres:14
+    restart: unless-stopped
+    container_name: penpot-postgres
+    stop_signal: SIGINT
+    volumes:
+      - {{CONFIG}}/penpot/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_INITDB_ARGS=--data-checksums
+      - POSTGRES_DB=penpot
+      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=${PENPOT_POSTGRES_PASSWORD}
+  penpot-redis:
+    image: redis:7
+    container_name: penpot-redis
+    restart: unless-stopped

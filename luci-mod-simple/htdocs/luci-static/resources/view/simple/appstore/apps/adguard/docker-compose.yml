@@ -1,0 +1,14 @@
+services:
+  adguard:
+    image: docker.io/adguard/adguardhome:v0.107.72
+    container_name: adguard
+    volumes:
+      - {{CONFIG}}/adguard/work:/opt/adguardhome/work
+      - {{CONFIG}}/adguard/conf:/opt/adguardhome/conf
+    restart: unless-stopped
+    ports:
+      - ${NETWORK_INTERFACE:-0.0.0.0}:5353:53/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:5353:53/udp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:853:853/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:853:853/udp
+      - 8104:80

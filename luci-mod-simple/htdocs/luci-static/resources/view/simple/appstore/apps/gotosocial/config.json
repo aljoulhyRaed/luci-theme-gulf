@@ -1,0 +1,70 @@
+{
+  "id": "gotosocial",
+  "name": "GoToSocial",
+  "short_desc": "Fast, fun, ActivityPub server, powered by Go.",
+  "description": "Fast, fun, ActivityPub server, powered by Go.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8188,
+  "url_suffix": "",
+  "image": "superseriousbusiness/gotosocial:0.20.3",
+  "version": "0.20.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "GTS_DB_PASSWORD",
+      "label": "GoToSocial DB Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "GTS_ACCOUNTS_REGISTRATION_OPEN",
+      "label": "Sign Ups",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "GTS_SMTP_HOST",
+      "label": "SMTP Host",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Server"
+    },
+    {
+      "env_variable": "GTS_SMTP_PORT",
+      "label": "SMTP Port",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Port"
+    },
+    {
+      "env_variable": "GTS_SMTP_USERNAME",
+      "label": "SMTP Username",
+      "type": "text",
+      "required": false,
+      "hint": "Your SMTP Server User/Username"
+    },
+    {
+      "env_variable": "GTS_SMTP_PASSWORD",
+      "label": "SMTP Password",
+      "type": "password",
+      "required": false,
+      "hint": "Your SMTP Server Password"
+    },
+    {
+      "env_variable": "GTS_SMTP_FROM",
+      "label": "SMTP From Address",
+      "type": "text",
+      "required": false,
+      "hint": "Make sure the Format is like noreply@example.com"
+    }
+  ],
+  "source": "https://github.com/superseriousbusiness/gotosocial",
+  "author": "superseriousbusiness"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "watchyourlan",
+  "name": "WatchYourLAN",
+  "short_desc": "Lightweight network IP scanner",
+  "description": "Lightweight network IP scanner, can be used to notify about new hosts and monitor host online/offline history",
+  "categories": [
+    "Network",
+    "Utilities"
+  ],
+  "category": "Network",
+  "port": 8840,
+  "url_suffix": "",
+  "image": "aceberg/watchyourlan:2.1.4",
+  "version": "2.1.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "WATCHYOURLAN_IFACES",
+      "label": "Network interfaces",
+      "type": "text",
+      "required": true,
+      "hint": "Space separated list of network interfaces to scan"
+    }
+  ],
+  "source": "https://github.com/aceberg/WatchYourLAN",
+  "author": "aceberg"
+}

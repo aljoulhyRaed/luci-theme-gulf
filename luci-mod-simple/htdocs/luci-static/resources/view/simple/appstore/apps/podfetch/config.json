@@ -1,0 +1,52 @@
+{
+  "id": "podfetch",
+  "name": "PodFetch",
+  "short_desc": "A sleek and efficient podcast downloader.",
+  "description": "A sleek and efficient podcast downloader.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8177,
+  "url_suffix": "",
+  "image": "samuel19982/podfetch:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "PODFETCH_USERNAME",
+      "label": "PodFetch Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "PODFETCH_PASSWORD",
+      "label": "PodFetch Password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    },
+    {
+      "env_variable": "PODFETCH_PODINDEX_API_KEY",
+      "label": "Podcast Index API Key",
+      "type": "text",
+      "required": false,
+      "hint": "The API key sent to you via mail"
+    },
+    {
+      "env_variable": "PODFETCH_PODINDEX_API_SECRET",
+      "label": "Podcast Index API Secret",
+      "type": "text",
+      "required": false,
+      "hint": "The API secret sent to you via mail"
+    }
+  ],
+  "source": "https://github.com/SamTV12345/PodFetch",
+  "author": "SamTV12345"
+}

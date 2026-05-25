@@ -1,0 +1,13 @@
+services:
+  cross-seed:
+    container_name: cross-seed
+    image: ghcr.io/cross-seed/cross-seed:6.13.6
+    user: '1000:1000'
+    restart: unless-stopped
+    command: daemon
+    environment:
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/cross-seed/config:/config
+      - {{DOWNLOADS}}/transmission-vpn/data/config/transmission-home/torrents:/torrents:ro
+      - {{MEDIA}}/torrents/watch:/cross-seeds

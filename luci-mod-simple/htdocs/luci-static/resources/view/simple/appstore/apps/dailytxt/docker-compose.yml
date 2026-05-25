@@ -1,0 +1,15 @@
+services:
+  dailytxt:
+    image: docker.io/phitux/dailytxt:2.4.2
+    container_name: dailytxt
+    restart: unless-stopped
+    environment:
+      - SECRET_KEY=${DAILYTXT_SECRET_KEY}
+      - ALLOW_REGISTRATION=${DAILYTXT_ALLOW_REGISTRATION}
+      - ADMIN_PASSWORD=${DAILYTXT_ADMIN_PASSWORD}
+      - DATA_INDENT=2
+      - LOGOUT_AFTER_DAYS=60
+    ports:
+      - 8156:80
+    volumes:
+      - {{CONFIG}}/dailytxt/dailytxt:/data/

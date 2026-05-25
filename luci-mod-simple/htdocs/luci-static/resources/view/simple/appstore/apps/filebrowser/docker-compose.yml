@@ -1,0 +1,15 @@
+services:
+  filebrowser:
+    container_name: filebrowser
+    restart: unless-stopped
+    image: docker.io/filebrowser/filebrowser:s6
+    ports:
+      - 8096:80
+    volumes:
+      - {{DOWNLOADS}}:/srv/app-data
+      - {{MEDIA}}:/srv/media
+      - {{CONFIG}}/filebrowser/general:/srv/general
+      - {{CONFIG}}/filebrowser/db:/database
+    environment:
+      - PUID=0
+      - PGID=0

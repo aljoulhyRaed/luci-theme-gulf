@@ -1,0 +1,12 @@
+
+services:
+  spacedrive:
+    container_name: spacedrive
+    image: ghcr.io/spacedriveapp/spacedrive/server:0.4.2
+    restart: unless-stopped
+    environment:
+      - SD_AUTH=${SD_AUTH_USER}:${SD_AUTH_PASSWORD}
+    ports:
+      - 9300:8080
+    volumes:
+      - {{CONFIG}}/spacedrive/spacedrive:/var/spacedrive

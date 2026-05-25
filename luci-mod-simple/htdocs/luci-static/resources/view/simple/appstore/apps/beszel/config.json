@@ -1,0 +1,21 @@
+{
+  "id": "beszel",
+  "name": "Beszel",
+  "short_desc": "Lightweight server monitoring.",
+  "description": "A lightweight server monitoring hub with historical data, docker stats, and alerts.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8999,
+  "url_suffix": "",
+  "image": "henrygd/beszel:0.18.4",
+  "version": "0.18.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/henrygd/beszel",
+  "author": "henrygd"
+}

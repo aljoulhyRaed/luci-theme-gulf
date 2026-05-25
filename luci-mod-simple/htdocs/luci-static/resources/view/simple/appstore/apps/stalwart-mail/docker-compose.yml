@@ -1,0 +1,15 @@
+services:
+  stalwart-mail:
+    image: ghcr.io/stalwartlabs/stalwart:v0.15.5
+    container_name: stalwart-mail
+    volumes:
+      - {{CONFIG}}/stalwart-mail:/opt/stalwart-mail
+    restart: unless-stopped
+    ports:
+      - ${NETWORK_INTERFACE:-0.0.0.0}:25:25/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:143:143/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:465:465/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:587:587/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:993:993/tcp
+      - ${NETWORK_INTERFACE:-0.0.0.0}:4190:4190/tcp
+      - 8677:8080

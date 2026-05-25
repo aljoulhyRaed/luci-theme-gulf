@@ -1,0 +1,45 @@
+{
+  "id": "fireshare",
+  "name": "Fireshare",
+  "short_desc": "Self host your media and share with unique links",
+  "description": "Self host your media and share with unique links. Share your game clips, videos, or other media via unique links.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8140,
+  "url_suffix": "",
+  "image": "shaneisrael/fireshare:1.4.2",
+  "version": "1.4.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "FIRESHARE_SECRET_KEY",
+      "label": "FIRESHARE_SECRET_KEY",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "FIRESHARE_USERNAME",
+      "label": "Fireshare username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "FIRESHARE_PASSWORD",
+      "label": "Fireshare password",
+      "type": "password",
+      "required": true,
+      "min": 8,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/ShaneIsrael/fireshare",
+  "author": "https://github.com/ShaneIsrael"
+}

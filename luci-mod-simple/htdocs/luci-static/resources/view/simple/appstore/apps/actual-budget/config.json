@@ -1,0 +1,21 @@
+{
+  "id": "actual-budget",
+  "name": "Actual Budget",
+  "short_desc": "Local-first OpenSource Budget tool",
+  "description": "Actual is a local-first personal finance tool. It is 100% free and open-source, written in NodeJS, it has a synchronization element so that all your changes can move between devices without any heavy lifting.",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 8011,
+  "url_suffix": "",
+  "image": "actualbudget/actual-server:26.2.1",
+  "version": "26.2.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/actualbudget/actual",
+  "author": "Shift Reset LLC"
+}

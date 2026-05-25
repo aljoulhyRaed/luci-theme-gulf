@@ -1,0 +1,38 @@
+{
+  "id": "pinchflat",
+  "name": "Pinchflat",
+  "short_desc": "Your next YouTube media manager",
+  "description": "Your next YouTube media manager",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8945,
+  "url_suffix": "",
+  "image": "keglin/pinchflat:v2025.6.6",
+  "version": "v2025.6.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "PINCHFLAT_BASIC_AUTH_USERNAME",
+      "label": "Basic Auth Username",
+      "type": "text",
+      "required": false,
+      "min": 3,
+      "max": 50,
+      "hint": "if not set, no basic auth is used"
+    },
+    {
+      "env_variable": "PINCHFLAT_BASIC_AUTH_PASSWORD",
+      "label": "Basic Auth Password",
+      "type": "password",
+      "required": false,
+      "hint": "if not set, no basic auth is used"
+    }
+  ],
+  "source": "https://github.com/kieraneglin/pinchflat",
+  "author": "Kieran Eglin"
+}

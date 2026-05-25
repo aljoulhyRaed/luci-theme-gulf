@@ -1,0 +1,38 @@
+{
+  "id": "transmission",
+  "name": "Transmission",
+  "short_desc": "Fast, easy, and free BitTorrent client",
+  "description": "Transmission is a fast, easy, and free BitTorrent client.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8089,
+  "url_suffix": "/transmission/web/",
+  "image": "lscr.io/linuxserver/transmission:4.1.0",
+  "version": "4.1.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "TRANSMISSION_USERNAME",
+      "label": "Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "TRANSMISSION_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/transmission/transmission",
+  "author": "Transmission Project"
+}

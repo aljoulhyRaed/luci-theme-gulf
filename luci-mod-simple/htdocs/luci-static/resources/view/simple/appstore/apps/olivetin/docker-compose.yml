@@ -1,0 +1,9 @@
+services:
+  olivetin:
+    container_name: olivetin
+    image: docker.io/jamesread/olivetin:latest
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/olivetin:/config
+    ports:
+      - 1337:1337

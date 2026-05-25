@@ -1,0 +1,34 @@
+{
+  "id": "vikunja",
+  "name": "Vikunja",
+  "short_desc": "The Todo-app to organize your life.",
+  "description": "The Todo-app to organize your life.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8135,
+  "url_suffix": "",
+  "image": "vikunja/vikunja:1.1.0",
+  "version": "1.1.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "VIKUNJA_DB_PASSWORD",
+      "label": "Vikunja database password",
+      "type": "random",
+      "required": true
+    },
+    {
+      "env_variable": "VIKUNJA_SERVICE_SECRET",
+      "label": "Vikunja secret",
+      "type": "random",
+      "required": true
+    }
+  ],
+  "source": "https://kolaente.dev/vikunja",
+  "author": "kolaente"
+}

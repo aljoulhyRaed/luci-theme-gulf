@@ -1,0 +1,14 @@
+services:
+  librespeed:
+    image: lscr.io/linuxserver/librespeed:5.5.1
+    container_name: librespeed
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - PASSWORD=${APP_PASSWORD}
+    volumes:
+      - {{CONFIG}}/librespeed:/config
+    ports:
+      - 8084:80
+    restart: unless-stopped

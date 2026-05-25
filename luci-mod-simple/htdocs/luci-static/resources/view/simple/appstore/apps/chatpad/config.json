@@ -1,0 +1,21 @@
+{
+  "id": "chatpad",
+  "name": "Chatpad AI",
+  "short_desc": "Not just another ChatGPT user-interface!",
+  "description": "Not just another ChatGPT user-interface!",
+  "categories": [
+    "AI"
+  ],
+  "category": "AI",
+  "port": 8179,
+  "url_suffix": "",
+  "image": "ghcr.io/deiucanta/chatpad:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/deiucanta/chatpad",
+  "author": "Andrei Canta"
+}

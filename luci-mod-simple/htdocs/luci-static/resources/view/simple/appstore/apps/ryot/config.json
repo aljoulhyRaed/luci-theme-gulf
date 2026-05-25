@@ -1,0 +1,50 @@
+{
+  "id": "ryot",
+  "name": "Ryot",
+  "short_desc": "Roll your own tracker!",
+  "description": "Roll your own tracker!",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8206,
+  "url_suffix": "",
+  "image": "ghcr.io/ignisda/ryot:v2.24.2",
+  "version": "2.24.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "RYOT_DB_PASSWORD",
+      "label": "RYOT_DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "RYOT_ALLOW_REGISTRATION",
+      "label": "Allow Registration",
+      "type": "boolean",
+      "required": false,
+      "hint": "First user will be admin, Needed for at least one user."
+    },
+    {
+      "env_variable": "RYOT_VIDEO_GAMES_TWITCH_CLIENT_ID",
+      "label": "Twitch Client ID",
+      "type": "text",
+      "required": false,
+      "hint": "For Video Game Tracking, Read Below for more Info!"
+    },
+    {
+      "env_variable": "RYOT_VIDEO_GAMES_TWITCH_CLIENT_SECRET",
+      "label": "Twitch Client Secret",
+      "type": "text",
+      "required": false,
+      "hint": "For Video Game Tracking, Read Below for more Info!"
+    }
+  ],
+  "source": "https://github.com/IgnisDa/ryot",
+  "author": "IgnisDa"
+}

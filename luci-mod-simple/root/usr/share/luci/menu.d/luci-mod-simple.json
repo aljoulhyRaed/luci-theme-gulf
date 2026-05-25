@@ -1,0 +1,337 @@
+{
+	"admin/gulf-dashboard": {
+		"title": "Dashboard",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/dashboard"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-wifi": {
+		"title": "Wi-Fi",
+		"order": 10,
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-wifi/networks": {
+		"title": "Networks",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/wifi"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-wifi/mesh": {
+		"title": "Mesh",
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "simple/mesh"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-wifi/guest": {
+		"title": "Guest",
+		"order": 3,
+		"action": {
+			"type": "view",
+			"path": "simple/guest"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-internet": {
+		"title": "Internet",
+		"order": 20,
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-internet/connection": {
+		"title": "Connection",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/internet"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-internet/firewall": {
+		"title": "Firewall",
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "simple/firewall"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-internet/adblock": {
+		"title": "Adblock",
+		"order": 3,
+		"action": {
+			"type": "view",
+			"path": "simple/adblock"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-internet/ipban": {
+		"title": "IP Ban",
+		"order": 5,
+		"action": {
+			"type": "view",
+			"path": "simple/ipban"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "banip": true }
+		}
+	},
+	"admin/simple-internet/ids": {
+		"title": "IDS",
+		"order": 4,
+		"action": {
+			"type": "view",
+			"path": "simple/ids"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "snort": true }
+		}
+	},
+	"admin/simple-vpn": {
+		"title": "VPN",
+		"order": 30,
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-vpn/status": {
+		"title": "Tunnel Status",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/vpn"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-vpn/torguard": {
+		"title": "TorGuard WireGuard",
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "simple/torguard"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-vpn/custom": {
+		"title": "Custom WireGuard",
+		"order": 3,
+		"action": {
+			"type": "view",
+			"path": "simple/wgcustom"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-vpn/openvpn": {
+		"title": "TorGuard OpenVPN",
+		"order": 4,
+		"action": {
+			"type": "view",
+			"path": "simple/openvpn"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-vpn/v2ray": {
+		"title": "TorGuard V2Ray",
+		"order": 5,
+		"action": {
+			"type": "view",
+			"path": "simple/v2ray"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-devices": {
+		"title": "Devices",
+		"order": 40,
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-devices/clients": {
+		"title": "Clients",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/devices"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-devices/storage": {
+		"title": "Storage",
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "simple/storage"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-docker": {
+		"title": "Docker",
+		"order": 45,
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "dockerd": true }
+		}
+	},
+	"admin/simple-docker/myapps": {
+		"title": "My Apps",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/docker-myapps"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "dockerd": true }
+		}
+	},
+	"admin/simple-docker/containers": {
+		"title": "Containers",
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "simple/docker"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "dockerd": true }
+		}
+	},
+	"admin/simple-docker/apps": {
+		"title": "App Store",
+		"order": 3,
+		"action": {
+			"type": "view",
+			"path": "simple/docker-apps"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "dockerd": true }
+		}
+	},
+	"admin/simple-docker/settings": {
+		"title": "Settings",
+		"order": 4,
+		"action": {
+			"type": "view",
+			"path": "simple/docker-settings"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ],
+			"uci": { "dockerd": true }
+		}
+	},
+	"admin/simple-system": {
+		"title": "System",
+		"order": 50,
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-system/info": {
+		"title": "System Info",
+		"order": 1,
+		"action": {
+			"type": "view",
+			"path": "simple/system"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-system/password": {
+		"title": "Admin Password",
+		"order": 2,
+		"action": {
+			"type": "view",
+			"path": "simple/password"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-system/dns": {
+		"title": "Custom DNS",
+		"order": 3,
+		"action": {
+			"type": "view",
+			"path": "simple/dns"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-system/software": {
+		"title": "Software",
+		"order": 4,
+		"action": {
+			"type": "view",
+			"path": "simple/software"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-system/backup": {
+		"title": "Backup",
+		"order": 5,
+		"action": {
+			"type": "view",
+			"path": "simple/backup"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	},
+	"admin/simple-system/update": {
+		"title": "Update",
+		"order": 6,
+		"action": {
+			"type": "view",
+			"path": "simple/update"
+		},
+		"depends": {
+			"acl": [ "luci-mod-simple" ]
+		}
+	}
+}

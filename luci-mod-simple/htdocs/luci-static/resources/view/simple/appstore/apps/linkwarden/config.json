@@ -1,0 +1,43 @@
+{
+  "id": "linkwarden",
+  "name": "Linkwarden",
+  "short_desc": "A self-hosted, open-source collaborative bookmark manager",
+  "description": "A self-hosted, open-source collaborative bookmark manager to collect, organize and archive webpages.",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8199,
+  "url_suffix": "",
+  "image": "ghcr.io/linkwarden/linkwarden:v2.13.5",
+  "version": "v2.13.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "LINKWARDEN_DB_PASSWORD",
+      "label": "Linkwarden DB Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "LINKWARDEN_NEXTAUTH_SECRET",
+      "label": "Linkwarden Nextauth Secret",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "LINKWARDEN_NEXT_PUBLIC_DISABLE_REGISTRATION",
+      "label": "Disable Registration",
+      "type": "boolean",
+      "required": false,
+      "hint": "Needed for at least one user. If on registration will be disabled."
+    }
+  ],
+  "source": "https://github.com/linkwarden/linkwarden",
+  "author": "Linkwarden"
+}

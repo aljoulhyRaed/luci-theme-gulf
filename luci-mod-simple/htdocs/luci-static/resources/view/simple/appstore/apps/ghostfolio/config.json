@@ -1,0 +1,54 @@
+{
+  "id": "ghostfolio",
+  "name": "Ghostfolio",
+  "short_desc": "Open Source Wealth Management Software.",
+  "description": "Ghostfolio is a privacy-first, open source dashboard for your personal finances.",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 3333,
+  "url_suffix": "",
+  "image": "ghostfolio/ghostfolio:2.242.0",
+  "version": "2.242.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "GHOSTFOLIO_ACCESS_TOKEN_SALT",
+      "label": "Access token salt",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "GHOSTFOLIO_JWT_SECRET_KEY",
+      "label": "JSON Web Tokens secret key",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "GHOSTFOLIO_DB_PASSWORD",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "GHOSTFOLIO_REDIS_PASSWORD",
+      "label": "Redis password",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    }
+  ],
+  "source": "https://github.com/ghostfolio/ghostfolio",
+  "author": "dtslvr"
+}

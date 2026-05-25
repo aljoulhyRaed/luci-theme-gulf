@@ -1,0 +1,15 @@
+services:
+  esphome:
+    image: ghcr.io/esphome/esphome:2026.2.1
+    container_name: esphome
+    environment:
+      - TZ={{TZ}}
+      - USERNAME=${ESPHOME_USERNAME:-''}
+      - PASSWORD=${ESPHOME_PASSWORD:-''}
+      - ESPHOME_DASHBOARD_USE_PING=${ESPHOME_PING:-'false'}
+    restart: unless-stopped
+    ports:
+      - 6052:6052
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/esphome/config:/config

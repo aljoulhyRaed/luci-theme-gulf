@@ -1,0 +1,15 @@
+services:
+  readarr:
+    image: lscr.io/linuxserver/readarr:0.4.19
+    container_name: readarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/readarr:/config
+      - {{MEDIA}}:/media
+    ports:
+      - 8112:8787
+    restart: unless-stopped

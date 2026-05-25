@@ -1,0 +1,21 @@
+{
+  "id": "gladys",
+  "name": "Gladys Assistant",
+  "short_desc": "A privacy-first, open-source home assistant",
+  "description": "A privacy-first, open-source home assistant",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 8270,
+  "url_suffix": "",
+  "image": "gladysassistant/gladys:v4.67.0",
+  "version": "v4.67.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/gladysassistant/gladys",
+  "author": "Gladys Assistant"
+}

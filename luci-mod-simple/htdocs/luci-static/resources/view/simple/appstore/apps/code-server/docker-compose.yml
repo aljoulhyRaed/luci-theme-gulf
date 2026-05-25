@@ -1,0 +1,18 @@
+services:
+  code-server:
+    image: lscr.io/linuxserver/code-server:4.109.2
+    container_name: code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - PASSWORD=${CODESERVER_PASSWORD}
+      - SUDO_PASSWORD=${CODESERVER_SUDO_PASSWORD}
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - {{CONFIG}}/code-server/config:/config
+      - {{CONFIG}}/code-server/projects:/projects
+      - {{CONFIG}}:/runtipi
+    ports:
+      - 8138:8443
+    restart: unless-stopped

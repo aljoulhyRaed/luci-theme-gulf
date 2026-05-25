@@ -1,0 +1,21 @@
+{
+  "id": "anse",
+  "name": "Anse",
+  "short_desc": "Fully optimized UI for AI Chats.",
+  "description": "Anse is a fully optimized UI for AI Chats. Supercharged experience for multiple models such as ChatGPT, DALL-E and Stable Diffusion.",
+  "categories": [
+    "AI"
+  ],
+  "category": "AI",
+  "port": 8014,
+  "url_suffix": "",
+  "image": "ddiu8081/anse:v1.1.11",
+  "version": "1.1.11",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/anse-app/anse",
+  "author": "anse"
+}

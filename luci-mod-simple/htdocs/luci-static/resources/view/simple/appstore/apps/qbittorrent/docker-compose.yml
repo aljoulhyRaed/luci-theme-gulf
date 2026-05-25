@@ -1,0 +1,17 @@
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:5.1.4
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - WEBUI_PORT=8133
+    volumes:
+      - {{CONFIG}}/qbittorrent/config:/config
+      - {{MEDIA}}/torrents:/media/torrents
+    ports:
+      - 8133:8133
+      - '6881:6881'
+      - 6881:6881/udp
+    restart: unless-stopped

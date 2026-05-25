@@ -1,0 +1,171 @@
+{
+  "id": "lubelogger",
+  "name": "LubeLogger",
+  "short_desc": "Vehicle Maintenance and Fuel Mileage Tracker.",
+  "description": "Self-hosted, open-source, collaborative Vehicle Maintenance and Fuel Mileage Tracker.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8054,
+  "url_suffix": "",
+  "image": "ghcr.io/hargata/lubelogger:v1.6.0",
+  "version": "v1.6.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "LUBELOGGER_LOCALE",
+      "label": "Locale and Language Settings",
+      "type": "text",
+      "required": false,
+      "hint": "Affect how numbers, currencies, and dates are formatted."
+    },
+    {
+      "env_variable": "LUBELOGGER_ALLOWED_FILE_EXTENSIONS",
+      "label": "Allowed File Extensions",
+      "type": "text",
+      "required": false,
+      "hint": "Allowed file extensions for document uploads, use '*' to allow all file types."
+    },
+    {
+      "env_variable": "LUBELOGGER_CUSTOM_LOGO_URL",
+      "label": "Custom Logo URL",
+      "type": "text",
+      "required": false,
+      "hint": "Custom Logo URL."
+    },
+    {
+      "env_variable": "LUBELOGGER_MOTD",
+      "label": "Message of the Day",
+      "type": "text",
+      "required": false,
+      "hint": "Message of The Day displayed in Login page if configured."
+    },
+    {
+      "env_variable": "LUBELOGGER_WEBHOOK_URL",
+      "label": "WebHook URL",
+      "type": "text",
+      "required": false,
+      "hint": "WebHook URL"
+    },
+    {
+      "env_variable": "LUBELOGGER_EMAIL_SERVER",
+      "label": "Email > Server",
+      "type": "text",
+      "required": false,
+      "hint": "Email SMTP settings used only for configuring multiple users(to send their registration token and forgot password tokens)."
+    },
+    {
+      "env_variable": "LUBELOGGER_EMAIL_FROM",
+      "label": "Email > From",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "LUBELOGGER_EMAIL_USE_SSL",
+      "label": "Email > Use SSL ?",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "env_variable": "LUBELOGGER_EMAIL_PORT",
+      "label": "Email > Port",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "LUBELOGGER_EMAIL_USERNAME",
+      "label": "Email > Username",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "LUBELOGGER_EMAIL_PASSWORD",
+      "label": "Email > Password",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "LUBELOGGER_ENABLE_AUTH",
+      "label": "Auth > Enable ?",
+      "type": "boolean",
+      "required": false,
+      "hint": "Allows users to configure whether if authentication is enabled via environment variable."
+    },
+    {
+      "env_variable": "LUBELOGGER_USERNAME_HASH",
+      "label": "Auth > Username Hash",
+      "type": "text",
+      "required": false,
+      "hint": "SHA256 Hash of the root username."
+    },
+    {
+      "env_variable": "LUBELOGGER_PASSWORD_HASH",
+      "label": "Auth > Password Hash",
+      "type": "text",
+      "required": false,
+      "hint": "SHA256 Hash of the root password."
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_NAME",
+      "label": "Auth > OpenID > Name",
+      "type": "text",
+      "required": false,
+      "hint": "Name of the OpenID Connect Provider"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_CLIENT_ID",
+      "label": "Auth > OpenID > Client ID",
+      "type": "text",
+      "required": false,
+      "hint": "Client Id to Authenticate with the Provider"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_CLIENT_SECRET",
+      "label": "Auth > OpenID > Client Secret",
+      "type": "text",
+      "required": false,
+      "hint": "Client Secret to Authenticate with the Provider"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_AUTH_URL",
+      "label": "Auth > OpenID > Authorization URL",
+      "type": "text",
+      "required": false,
+      "hint": "Authorization URL to the Provider's Login Page"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_TOKEN_URL",
+      "label": "Auth > OpenID > Token URL",
+      "type": "text",
+      "required": false,
+      "hint": "URL to retrieve user JWT from the Provider"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_REDIRECT_URL",
+      "label": "Auth > OpenID > Redirect URL",
+      "type": "text",
+      "required": false,
+      "hint": "https://<yourlubeloggerdomain.com>/Login/RemoteAuth(must be HTTPS)"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_SCOPE",
+      "label": "Auth > OpenID > Scope",
+      "type": "text",
+      "required": false,
+      "hint": "The scope for retrieving the user's email claim(usually it's just 'email')"
+    },
+    {
+      "env_variable": "LUBELOGGER_OPENID_VALIDATE_STATE",
+      "label": "Auth > OpenID > Validate State",
+      "type": "boolean",
+      "required": false,
+      "hint": "true/false(default: false) - whether LubeLogger should validate state."
+    }
+  ],
+  "source": "https://github.com/hargata/lubelog",
+  "author": "hargata"
+}

@@ -1,0 +1,16 @@
+services:
+  booksonic:
+    image: lscr.io/linuxserver/booksonic-air:2201.1.0
+    container_name: booksonic
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - CONTEXT_PATH=http://localhost
+    volumes:
+      - {{CONFIG}}/booksonic/config:/config
+      - {{MEDIA}}/data/books/spoken:/audiobooks
+      - {{MEDIA}}/data/podcasts:/podcasts
+    ports:
+      - 8040:4040
+    restart: unless-stopped

@@ -1,0 +1,22 @@
+{
+  "id": "flightlog",
+  "name": "Flightlog",
+  "short_desc": "Flightlog, a web application that keeps track of your personal flight history",
+  "description": "Easily keep track of your flight history",
+  "categories": [
+    "Utilities",
+    "Cloud & Data"
+  ],
+  "category": "Utilities",
+  "port": 8934,
+  "url_suffix": "",
+  "image": "perdian/flightlog:v2.1.11",
+  "version": "v2.1.11",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/perdian/flightlog/",
+  "author": "perdian"
+}

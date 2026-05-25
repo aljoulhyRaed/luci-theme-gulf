@@ -1,0 +1,13 @@
+services:
+  simplex-smp:
+    image: docker.io/simplexchat/smp-server:v6.4.5
+    container_name: simplex-smp
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/simplex-smp/simplex/logs:/var/opt/simplex:z
+      - {{CONFIG}}/simplex-smp/simplex/config:/etc/opt/simplex:z
+    ports:
+      - 5223:5223
+    environment:
+      - PASS=${SIMPLEX_SMP_PASSWORD}
+      - ADDR=localhost

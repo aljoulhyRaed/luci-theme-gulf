@@ -1,0 +1,29 @@
+{
+  "id": "penpot",
+  "name": "Penpot",
+  "short_desc": "Open-Source design & prototyping platform.",
+  "description": "Penpot - The Open-Source design & prototyping platform.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8645,
+  "url_suffix": "",
+  "image": "penpotapp/frontend:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "PENPOT_POSTGRES_PASSWORD",
+      "label": "Penpot postgres password.",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/penpot/penpot",
+  "author": "penpot"
+}

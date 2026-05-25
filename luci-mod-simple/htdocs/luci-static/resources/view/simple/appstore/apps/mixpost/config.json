@@ -1,0 +1,44 @@
+{
+  "id": "mixpost",
+  "name": "Mixpost",
+  "short_desc": "Self-hosted social media management. Schedule and organize your social content. ",
+  "description": "Mixpost it's the coolest Self-hosted social media management software.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8167,
+  "url_suffix": "",
+  "image": "inovector/mixpost:v2.4.0",
+  "version": "v2.4.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "MIXPOST_MYSQL_PASSWORD",
+      "label": "Mixpost SQL Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "MIXPOST_REDIS_PASSWORD",
+      "label": "Mixpost Redis Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "MIXPOST_APP_KEY",
+      "label": "Application key",
+      "type": "random",
+      "required": false,
+      "min": 32,
+      "max": 32
+    }
+  ],
+  "source": "https://github.com/inovector/mixpost",
+  "author": "Inovector"
+}

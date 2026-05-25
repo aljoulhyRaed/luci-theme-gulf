@@ -1,0 +1,9 @@
+services:
+  nodered:
+    container_name: nodered
+    image: docker.io/nodered/node-red:4.1.5
+    restart: unless-stopped
+    ports:
+      - 8111:1880
+    volumes:
+      - {{CONFIG}}/nodered:/data

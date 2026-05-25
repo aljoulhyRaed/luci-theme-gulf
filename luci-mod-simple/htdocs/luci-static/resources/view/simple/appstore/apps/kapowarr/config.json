@@ -1,0 +1,22 @@
+{
+  "id": "kapowarr",
+  "name": "Kapowarr",
+  "short_desc": "Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite of software.",
+  "description": "Kapowarr is a software to build and manage a comic book library, fitting in the *arr suite of software.",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 8194,
+  "url_suffix": "",
+  "image": "mrcas/kapowarr:v1.2.0",
+  "version": "1.2.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Casvt/Kapowarr",
+  "author": "Casvt"
+}

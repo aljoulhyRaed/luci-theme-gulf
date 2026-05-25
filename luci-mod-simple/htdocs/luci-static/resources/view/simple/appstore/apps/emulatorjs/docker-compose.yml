@@ -1,0 +1,14 @@
+
+services:
+  emulatorjs:
+    container_name: emulatorjs
+    image: lscr.io/linuxserver/emulatorjs:1.9.2
+    ports:
+      - 8164:80
+      - 8165:3000
+    volumes:
+      - {{CONFIG}}/emulatorjs/emulatorjs-config:/config
+      - {{CONFIG}}/emulatorjs/emulatorjs:/data
+    environment:
+      - TZ={{TZ}}
+    restart: unless-stopped

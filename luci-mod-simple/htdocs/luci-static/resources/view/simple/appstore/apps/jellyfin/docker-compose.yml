@@ -1,0 +1,15 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:10.11.6
+    container_name: jellyfin
+    volumes:
+      - {{CONFIG}}/jellyfin/config:/config
+      - {{MEDIA}}/data:/media/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - JELLYFIN_PublishedServerUrl=http://localhost/
+    restart: unless-stopped
+    ports:
+      - 8091:8096

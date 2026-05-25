@@ -1,0 +1,68 @@
+{
+  "id": "romm",
+  "name": "RomM",
+  "short_desc": "Your beautiful, powerful, self-hosted rom manager.",
+  "description": "RomM (ROM Manager) allows you to scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes, and custom tags, RomM is a must-have for anyone who plays on emulators.",
+  "categories": [
+    "Gaming"
+  ],
+  "category": "Gaming",
+  "port": 8178,
+  "url_suffix": "",
+  "image": "ghcr.io/rommapp/romm:4.6.1",
+  "version": "4.6.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ROMM_MYSQL_PASSWORD",
+      "label": "RomM MySQL Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "ROMM_MYSQL_ROOT_PASSWORD",
+      "label": "RomM MySQL Root Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "ROMM_AUTH_SECRET_KEY",
+      "label": "RomM Auth Secret Key",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "ROMM_IGDB_CLIENT_ID",
+      "label": "IGDB Client ID",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "ROMM_IGDB_CLIENT_SECRET",
+      "label": "IGDB Client Secret",
+      "type": "password",
+      "required": false
+    },
+    {
+      "env_variable": "ROMM_MOBYGAMES_API_KEY",
+      "label": "MobyGames API Key",
+      "type": "password",
+      "required": false
+    },
+    {
+      "env_variable": "ROMM_STEAMGRIDDB_API_KEY",
+      "label": "SteamGrid Database API Key",
+      "type": "password",
+      "required": false,
+      "hint": "SteamGrid Database API Key"
+    }
+  ],
+  "source": "https://github.com/rommapp/romm",
+  "author": "rommapp"
+}

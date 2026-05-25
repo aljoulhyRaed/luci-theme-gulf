@@ -1,0 +1,9 @@
+services:
+  budibase:
+    image: docker.io/budibase/budibase:3.30.6
+    restart: unless-stopped
+    container_name: budibase
+    ports:
+      - 8268:80
+    volumes:
+      - {{CONFIG}}/budibase:/data

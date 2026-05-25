@@ -1,0 +1,21 @@
+{
+  "id": "glance",
+  "name": "Glance",
+  "short_desc": "Super configurable dashboard",
+  "description": "A self-hosted dashboard that puts all your feeds in one place",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8568,
+  "url_suffix": "",
+  "image": "glanceapp/glance:v0.8.4",
+  "version": "v0.8.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/glanceapp/glance",
+  "author": "glanceapp"
+}

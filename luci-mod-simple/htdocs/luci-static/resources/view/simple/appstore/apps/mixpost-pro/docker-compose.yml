@@ -1,0 +1,48 @@
+
+services:
+  mixpost-pro:
+    image: docker.io/inovector/mixpost-pro-team:latest
+    container_name: mixpost-pro
+    environment:
+      - APP_NAME=Mixpost
+      - LICENSE_KEY=${MIXPOST_LICENSE_KEY}
+      - APP_KEY=${MIXPOST_APP_KEY}
+      - APP_URL=http://localhost
+      - DB_HOST=mixpost-pro-mysql
+      - DB_DATABASE=mixpost
+      - DB_USERNAME=tipi
+      - DB_PASSWORD=${MIXPOST_MYSQL_PASSWORD}
+      - REDIS_HOST=mixpost-pro-redis
+      - REDIS_PASSWORD=${MIXPOST_REDIS_PASSWORD}
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/mixpost-pro/mixpost-pro:/var/www/html/storage/app
+    ports:
+      - 8191:80
+    depends_on:
+      - mixpost-pro-mysql
+      - mixpost-pro-redis  mixpost-pro-mysql:
+    image: docker.io/mysql/mysql-server:8.0
+    container_name: mixpost_mysql
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MIXPOST_MYSQL_PASSWORD}
+      - MYSQL_USER=tipi
+      - MYSQL_PASSWORD=${MIXPOST_MYSQL_PASSWORD}
+      - MYSQL_DATABASE=mixpost
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-p ${MIXPOST_MYSQL_PASSWORD}"]
+      retries: 3
+      timeout: 5s
+    volumes:
+      - {{CONFIG}}/mixpost-pro/mysql:/var/lib/mysql
+  mixpost-pro-redis:
+    image: "redis:latest"
+    container_name: mixpost-pro-redis
+    command: redis-server --appendonly yes --replica-read-only no --requirepass "${MIXPOST_REDIS_PASSWORD}"
+    volumes:
+      - "{{CONFIG}}/mixpost-pro/redis:/data"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      retries: 3
+      timeout: 5s

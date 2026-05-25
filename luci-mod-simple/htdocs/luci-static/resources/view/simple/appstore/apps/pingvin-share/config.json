@@ -1,0 +1,22 @@
+{
+  "id": "pingvin-share",
+  "name": "Pingvin Share",
+  "short_desc": "Self-hosted file sharing platform",
+  "description": "A self-hosted file sharing platform that combines lightness and beauty, perfect for seamless and efficient file sharing",
+  "categories": [
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Cloud & Data",
+  "port": 8654,
+  "url_suffix": "",
+  "image": "stonith404/pingvin-share:v1.13.0",
+  "version": "1.13.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/stonith404/pingvin-share",
+  "author": "stonith404"
+}

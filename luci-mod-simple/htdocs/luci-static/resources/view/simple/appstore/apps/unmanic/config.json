@@ -1,0 +1,23 @@
+{
+  "id": "unmanic",
+  "name": "Unmanic",
+  "short_desc": "Unmanic - Library Optimiser.",
+  "description": "Unmanic gives you the power to automate the management of any file library.",
+  "categories": [
+    "Utilities",
+    "Cloud & Data",
+    "Media"
+  ],
+  "category": "Utilities",
+  "port": 8256,
+  "url_suffix": "",
+  "image": "josh5/unmanic:staging",
+  "version": "staging",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Unmanic/unmanic",
+  "author": "Unmanic"
+}

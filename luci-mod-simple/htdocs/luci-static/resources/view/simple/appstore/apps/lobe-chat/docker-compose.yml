@@ -1,0 +1,12 @@
+services:
+  lobe-chat:
+    container_name: lobe-chat
+    image: docker.io/lobehub/lobe-chat:1.143.3
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_PROXY_URL=${OPEANAI_PROXY_URL}
+      - CUSTOM_MODELS=${CUSTOM_MODELS}
+      - ACCESS_CODE=${ACCESS_CODE}
+    ports:
+      - 3210:3210
+    restart: unless-stopped

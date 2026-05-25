@@ -1,0 +1,14 @@
+services:
+  ollama-amd:
+    image: docker.io/ollama/ollama:0.16.3
+    restart: unless-stopped
+    container_name: ollama-amd
+    environment:
+      - PORT=11434
+    ports:
+      - 11434:11434
+    volumes:
+      - {{CONFIG}}/ollama-amd/.ollama:/root/.ollama
+    devices:
+      - /dev/kfd
+      - /dev/dri

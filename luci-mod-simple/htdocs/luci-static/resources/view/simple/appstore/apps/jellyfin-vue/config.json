@@ -1,0 +1,21 @@
+{
+  "id": "jellyfin-vue",
+  "name": "Jellyfin Vue (Beta)",
+  "short_desc": "A modern web client for Jellyfin based on Vue",
+  "description": "A modern web client for Jellyfin based on Vue",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8202,
+  "url_suffix": "",
+  "image": "ghcr.io/jellyfin/jellyfin-vue:unstable.2024-10-14.a47a7d5",
+  "version": "unstable.2024-10-14.a47a7d5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/jellyfin/jellyfin-vue",
+  "author": "Jellyfin"
+}

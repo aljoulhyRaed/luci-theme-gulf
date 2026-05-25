@@ -1,0 +1,22 @@
+{
+  "id": "seerr",
+  "name": "Seerr",
+  "short_desc": "Managing requests for your media library",
+  "description": "Seerr is a free and open source software application for managing requests for your media library.",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 5055,
+  "url_suffix": "",
+  "image": "ghcr.io/seerr-team/seerr:v3.0.1",
+  "version": "3.0.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/seerr-team/seerr",
+  "author": "Seerr-team"
+}

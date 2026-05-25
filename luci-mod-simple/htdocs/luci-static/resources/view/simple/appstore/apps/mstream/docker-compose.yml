@@ -1,0 +1,15 @@
+
+services:
+  mstream:
+    container_name: mstream
+    image: lscr.io/linuxserver/mstream:v5.12.2-ls190
+    restart: unless-stopped
+    ports:
+      - 8162:3000
+    volumes:
+      - {{CONFIG}}/mstream/mstream-config:/data
+      - {{MEDIA}}/data/music:/music
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}

@@ -1,0 +1,36 @@
+{
+  "id": "electrs",
+  "name": "Electrs",
+  "short_desc": "Electrum server",
+  "description": "Electrum server",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 3006,
+  "url_suffix": "",
+  "image": "ghcr.io/montejojorge/electrs-ui:v0.10.9",
+  "version": "v0.11.0",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "BITCOIND_DIR",
+      "label": "Bitcoin data folder location (for .cookie file)",
+      "type": "text",
+      "required": false,
+      "hint": "Default, tipi bitcoin folder"
+    },
+    {
+      "env_variable": "BITCOIND_HOST",
+      "label": "Bitcoin node host address",
+      "type": "text",
+      "required": false,
+      "hint": "Default, tipi bitcoin host"
+    }
+  ],
+  "source": "https://github.com/romanz/electrs",
+  "author": "romanz"
+}

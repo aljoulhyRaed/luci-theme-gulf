@@ -1,0 +1,39 @@
+{
+  "id": "eclipse-mosquitto",
+  "name": "Eclipse Mosquitto",
+  "short_desc": "The MQTT protocol provides a lightweight method of carrying out messaging using a publish/subscribe model.",
+  "description": "Eclipse Mosquitto is an open source message broker that implements the MQTT protocol.",
+  "categories": [
+    "Utilities",
+    "Automation"
+  ],
+  "category": "Utilities",
+  "port": 8288,
+  "url_suffix": "",
+  "image": "eclipse-mosquitto:2.0.22",
+  "version": "2.0.22",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "MQTT_ADMIN_PASSWORD",
+      "label": "MQTT Broker Admin Password",
+      "type": "password",
+      "required": true,
+      "min": 6,
+      "max": 50
+    },
+    {
+      "env_variable": "CEDALO_MC_PASSWORD",
+      "label": "Cedalo Management Center Password",
+      "type": "password",
+      "required": true,
+      "min": 6,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/eclipse/mosquitto/",
+  "author": "Eclipse Foundation"
+}

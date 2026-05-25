@@ -1,0 +1,9 @@
+services:
+  actual-budget:
+    container_name: actual-budget
+    image: docker.io/actualbudget/actual-server:26.2.1
+    restart: unless-stopped
+    ports:
+      - 8011:5006
+    volumes:
+      - {{CONFIG}}/actual-budget:/data

@@ -1,0 +1,30 @@
+{
+  "id": "2fauth",
+  "name": "2FAuth",
+  "short_desc": "Manage your Two-Factor Authentication codes.",
+  "description": "A Web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes.",
+  "categories": [
+    "Security"
+  ],
+  "category": "Security",
+  "port": 8235,
+  "url_suffix": "",
+  "image": "2fauth/2fauth:6.0.0",
+  "version": "6.0.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "TWOFAUTH_APP_KEY",
+      "label": "TWOFAUTH_APP_KEY",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    }
+  ],
+  "source": "https://github.com/Bubka/2FAuth",
+  "author": "Bubka"
+}

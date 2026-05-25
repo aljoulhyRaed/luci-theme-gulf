@@ -1,0 +1,21 @@
+{
+  "id": "plex",
+  "name": "Plex",
+  "short_desc": "Stream Movies & TV Shows",
+  "description": "",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 32400,
+  "url_suffix": "/web",
+  "image": "lscr.io/linuxserver/plex:1.43.0",
+  "version": "1.43.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/plexinc/pms-docker",
+  "author": "plexinc"
+}

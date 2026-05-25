@@ -1,0 +1,22 @@
+{
+  "id": "cross-seed",
+  "name": "Cross-Seed",
+  "short_desc": "Fully-automatic cross-seeding with Torznab.",
+  "description": "An app designed to help you download torrents that you can cross seed based on your existing torrents. It is designed to match conservatively to minimize manual intervention.",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 0,
+  "url_suffix": "",
+  "image": "ghcr.io/cross-seed/cross-seed:6.13.6",
+  "version": "6.13.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/cross-seed/cross-seed",
+  "author": "Cross-Seed Team"
+}

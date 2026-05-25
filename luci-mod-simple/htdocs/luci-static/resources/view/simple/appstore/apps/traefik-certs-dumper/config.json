@@ -1,0 +1,22 @@
+{
+  "id": "traefik-certs-dumper",
+  "name": "Traefik Certs Dumper",
+  "short_desc": "Dumps Let's Encrypt certificates of a specified domain which Traefik stores in acme.json.",
+  "description": "Dumps Let's Encrypt certificates of a specified domain which Traefik stores in acme.json.",
+  "categories": [
+    "Utilities",
+    "Security"
+  ],
+  "category": "Utilities",
+  "port": 9999,
+  "url_suffix": "",
+  "image": "humenius/traefik-certs-dumper:1.6.1-alpine",
+  "version": "1.6.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/kereis/traefik-certs-dumper",
+  "author": "kereis"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "homebridge",
+  "name": "Home Bridge",
+  "short_desc": "HomeKit support for the impatient.  ",
+  "description": "HomeKit support for the impatient.",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 8581,
+  "url_suffix": "",
+  "image": "homebridge/homebridge:2024-05-02",
+  "version": "2024-05-02",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/homebridge/homebridge",
+  "author": "ArneNaessens"
+}

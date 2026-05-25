@@ -1,0 +1,13 @@
+services:
+  wallos:
+    image: docker.io/bellamy/wallos:4.6.1
+    container_name: wallos
+    environment:
+      - TZ={{TZ}}
+    restart: unless-stopped
+    ports:
+      - 8222:80
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/wallos/db:/var/www/html/db
+      - {{CONFIG}}/wallos/logos:/var/www/html/images/uploads/logos

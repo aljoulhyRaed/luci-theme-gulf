@@ -1,0 +1,22 @@
+{
+  "id": "email-oauth2-proxy",
+  "name": "Email OAuth2 Proxy",
+  "short_desc": "OAuth Proxy for IMAP/POP/SMTP.",
+  "description": "Transparently add OAuth 2.0 support to IMAP/POP/SMTP client applications, scripts or any other email use-cases that don't support this authentication method.",
+  "categories": [
+    "Utilities",
+    "Security"
+  ],
+  "category": "Utilities",
+  "port": 1999,
+  "url_suffix": "",
+  "image": "ghcr.io/blacktirion/email-oauth2-proxy-docker:2026.01.06",
+  "version": "2026.01.06",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/simonrob/email-oauth2-proxy",
+  "author": "simonrob"
+}

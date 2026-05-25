@@ -1,0 +1,30 @@
+{
+  "id": "zigbee2mqtt",
+  "name": "Zigbee2MQTT",
+  "short_desc": "Zigbee to MQTT bridge",
+  "description": "Zigbee to MQTT bridge, get rid of your proprietary Zigbee bridges",
+  "categories": [
+    "Utilities",
+    "Automation"
+  ],
+  "category": "Utilities",
+  "port": 8290,
+  "url_suffix": "",
+  "image": "koenkk/zigbee2mqtt:2.8.0",
+  "version": "2.8.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "Z2M_DEVICE",
+      "label": "zigbee device path",
+      "type": "text",
+      "required": true,
+      "hint": "/dev/ttyUSB0"
+    }
+  ],
+  "source": "https://github.com/Koenkk/zigbee2mqtt",
+  "author": "@Koenkk"
+}

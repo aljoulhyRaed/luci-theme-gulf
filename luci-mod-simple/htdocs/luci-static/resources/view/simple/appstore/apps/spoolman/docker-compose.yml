@@ -1,0 +1,13 @@
+services:
+  spoolman:
+    container_name: spoolman
+    image: ghcr.io/donkie/spoolman:0.23.1
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/spoolman:/home/app/.local/share/spoolman
+    ports:
+      - 7912:8000
+    environment:
+      - TZ={{TZ}}
+      - PUID=0
+      - PGID=0

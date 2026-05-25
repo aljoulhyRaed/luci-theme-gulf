@@ -1,0 +1,47 @@
+{
+  "id": "esphome",
+  "name": "ESP Home",
+  "short_desc": "Control your ESP8266/ESP32.",
+  "description": "ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 6052,
+  "url_suffix": "",
+  "image": "ghcr.io/esphome/esphome:2026.2.1",
+  "version": "2026.2.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ESPHOME_USERNAME",
+      "label": "Username",
+      "type": "text",
+      "required": false,
+      "min": 14,
+      "max": 25,
+      "hint": "Username of your ESP Home account"
+    },
+    {
+      "env_variable": "ESPHOME_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": false,
+      "min": 14,
+      "max": 25,
+      "hint": "Password of your ESP Home account"
+    },
+    {
+      "env_variable": "ESPHOME_PING",
+      "label": "Use ping for devices availability ? (default to mDNS)",
+      "type": "boolean",
+      "required": true,
+      "hint": "mDNS doesn't work across VLANs, use static IP for devices when disabling mDNS"
+    }
+  ],
+  "source": "https://github.com/esphome/esphome",
+  "author": "ESP Home"
+}

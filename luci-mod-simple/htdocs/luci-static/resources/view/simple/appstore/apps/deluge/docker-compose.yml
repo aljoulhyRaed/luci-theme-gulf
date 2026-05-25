@@ -1,0 +1,17 @@
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:18.04.1
+    container_name: deluge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+      - DELUGE_LOGLEVEL=error #optional
+    volumes:
+      - {{CONFIG}}/deluge/deluge/config:/config
+      - {{MEDIA}}/torrents:/media/torrents
+    ports:
+      - 8144:8112
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped

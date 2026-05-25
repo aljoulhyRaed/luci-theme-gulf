@@ -1,0 +1,19 @@
+services:
+  grampsweb:
+    image: ghcr.io/gramps-project/grampsweb:26.2.0
+    container_name: grampsweb
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    environment:
+      GRAMPSWEB_TREE: ${GRAMPSWEB_TREE}
+      GUNICORN_NUM_WORKERS: 1
+    volumes:
+      - {{CONFIG}}/grampsweb/users:/app/users
+      - {{CONFIG}}/grampsweb/index:/app/indexdir
+      - {{CONFIG}}/grampsweb/thumb_cache:/app/thumbnail_cache
+      - {{CONFIG}}/grampsweb/cache:/app/cache
+      - {{CONFIG}}/grampsweb/secret:/app/secret
+      - {{CONFIG}}/grampsweb/db:/root/.gramps/grampsdb
+      - {{CONFIG}}/grampsweb/media:/app/media
+      - {{CONFIG}}/grampsweb/tmp:/tmp

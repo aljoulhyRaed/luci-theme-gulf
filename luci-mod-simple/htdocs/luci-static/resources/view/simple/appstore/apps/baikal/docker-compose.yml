@@ -1,0 +1,10 @@
+services:
+  baikal:
+    container_name: baikal
+    image: ghcr.io/aalmenar/baikal:0.11.1
+    restart: unless-stopped
+    ports:
+      - 6556:80
+    volumes:
+      - {{CONFIG}}/baikal/config:/var/www/baikal/config
+      - {{CONFIG}}/baikal/specific:/var/www/baikal/Specific

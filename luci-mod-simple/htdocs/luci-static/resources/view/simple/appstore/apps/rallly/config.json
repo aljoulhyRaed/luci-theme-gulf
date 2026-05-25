@@ -1,0 +1,106 @@
+{
+  "id": "rallly",
+  "name": "Rallly",
+  "short_desc": "Scheduling and collaboration tool",
+  "description": "Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8208,
+  "url_suffix": "",
+  "image": "lukevella/rallly:4.7.4",
+  "version": "4.7.4",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "RALLLY_DB_PASSWORD",
+      "label": "Database Password",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "RALLLY_SECRET_KEY",
+      "label": "Secret key for User session",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "RALLLY_NOREPLY_EMAIL",
+      "label": "NoReply Email",
+      "type": "email",
+      "required": false,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "RALLLY_SUPPORT_EMAIL",
+      "label": "Support Email",
+      "type": "email",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "RALLLY_ALLOWED_EMAILS",
+      "label": "Allowed Emails",
+      "type": "text",
+      "required": false,
+      "min": 3,
+      "max": 250,
+      "hint": "Comma separated list of email addresses that are allowed to register and login. You can use wildcard syntax to match a range of email addresses."
+    },
+    {
+      "env_variable": "RALLLY_SMTP_HOST",
+      "label": "SMTP Host",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "RALLLY_SMTP_PORT",
+      "label": "SMTP Port",
+      "type": "number",
+      "required": true,
+      "min": 3,
+      "max": 6
+    },
+    {
+      "env_variable": "RALLLY_SMTP_SECURE",
+      "label": "SMTP Secure",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "env_variable": "RALLLY_SMTP_TLS_ENABLED",
+      "label": "SMTP Enable TLS",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "env_variable": "RALLLY_SMTP_USER",
+      "label": "SMTP User",
+      "type": "text",
+      "required": false,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "RALLLY_SMTP_PWD",
+      "label": "SMTP Password",
+      "type": "password",
+      "required": false,
+      "min": 3,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/lukevella/rallly",
+  "author": "lukevella"
+}

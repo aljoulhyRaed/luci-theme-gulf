@@ -1,0 +1,22 @@
+{
+  "id": "metabase",
+  "name": "Metabase",
+  "short_desc": "The simplest, fastest way to get business intelligence and analytics to everyone in your company",
+  "description": "Metabase is the easy, open-source way for everyone in your company to ask questions and learn from data.",
+  "categories": [
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Cloud & Data",
+  "port": 8680,
+  "url_suffix": "",
+  "image": "metabase/metabase:v0.58.7",
+  "version": "v0.58.7",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/metabase/metabase",
+  "author": "metabase"
+}

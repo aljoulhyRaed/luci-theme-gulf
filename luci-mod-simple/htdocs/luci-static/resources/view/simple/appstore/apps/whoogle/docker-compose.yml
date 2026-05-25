@@ -1,0 +1,9 @@
+services:
+  whoogle:
+    container_name: whoogle
+    image: docker.io/benbusby/whoogle-search:1.2.2
+    restart: unless-stopped
+    ports:
+      - 8255:8255
+    environment:
+      EXPOSE_PORT: 8255

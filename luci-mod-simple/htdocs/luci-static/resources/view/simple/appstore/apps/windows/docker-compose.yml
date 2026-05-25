@@ -1,0 +1,23 @@
+services:
+  windows:
+    container_name: windows
+    image: docker.io/dockurr/windows:5.14
+    restart: unless-stopped
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    stop_grace_period: 2m
+    environment:
+      - RAM_SIZE=${WINDOWS_RAM_GB}G
+      - CPU_CORE=${WINDOWS_CPU_CORES}
+      - DISK_SIZE=${WINDOWS_DISK_SIZE_GB}G
+      - VERSION=${WINDOWS_VERSION}
+    volumes:
+      - {{CONFIG}}/windows/storage:/storage
+    sysctls:
+      - net.ipv4.ip_forward=1

@@ -1,0 +1,29 @@
+{
+  "id": "homarr-1",
+  "name": "Homarr",
+  "short_desc": "Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.",
+  "description": "A homepage for your server.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8102,
+  "url_suffix": "",
+  "image": "ghcr.io/homarr-labs/homarr:v1.53.2",
+  "version": "v1.53.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "HOMARR_SECRET_ENCRYPTION_KEY",
+      "label": "HOMARR_SECRET_ENCRYPTION_KEY",
+      "type": "random",
+      "required": true,
+      "min": 64
+    }
+  ],
+  "source": "https://github.com/homarr-labs/homarr",
+  "author": "homarr-labs"
+}

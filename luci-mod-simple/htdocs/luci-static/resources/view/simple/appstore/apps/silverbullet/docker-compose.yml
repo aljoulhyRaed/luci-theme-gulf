@@ -1,0 +1,12 @@
+services:
+  silverbullet:
+    image: docker.io/zefhemel/silverbullet:2.4.1
+    container_name: silverbullet
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/silverbullet/space:/space
+    environment:
+      - SB_USER=${SB_USER}:${SB_PASSWORD}
+    ports:
+      - 8214:3000

@@ -1,0 +1,30 @@
+{
+  "id": "joplin",
+  "name": "Joplin Server",
+  "short_desc": "Note taking and to-do application with synchronisation",
+  "description": "Default credentials: admin@localhost / admin",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8099,
+  "url_suffix": "",
+  "image": "joplin/server:3.5.2",
+  "version": "3.5.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "JOPLIN_DB_PASSWORD",
+      "label": "Joplin DB password",
+      "type": "random",
+      "required": true,
+      "min": 8,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/laurent22/joplin",
+  "author": "https://github.com/laurent22"
+}

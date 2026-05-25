@@ -1,0 +1,21 @@
+{
+  "id": "kasm-workspaces",
+  "name": "Kasm Workspaces",
+  "short_desc": "Container streaming platform.",
+  "description": "Kasm Workspaces is a docker container streaming platform for delivering browser-based access to desktops, applications, and web services.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8744,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/kasm:1.120.20221218",
+  "version": "1.120.20221218",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/kasmtech",
+  "author": "Kasm"
+}

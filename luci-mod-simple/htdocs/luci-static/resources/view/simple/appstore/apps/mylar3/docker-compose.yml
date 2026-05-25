@@ -1,0 +1,16 @@
+
+services:
+  mylar3:
+    container_name: mylar3
+    image: lscr.io/linuxserver/mylar3:v0.7.1-ls84
+    ports:
+      - 8174:8090
+    volumes:
+      - {{CONFIG}}/mylar3/mylar3-config:/config
+      - {{MEDIA}}/data/comics:/comics
+      - {{MEDIA}}/downloads/mylar3:/downloads
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{TZ}}
+    restart: unless-stopped

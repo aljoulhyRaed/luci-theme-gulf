@@ -1,0 +1,21 @@
+{
+  "id": "hammond",
+  "name": "Hammond",
+  "short_desc": "Self hosted vehicle and expense management system. Like Clarkson, but better",
+  "description": "Self hosted vehicle and expense management system. Like Clarkson, but better",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8185,
+  "url_suffix": "",
+  "image": "alfhou/hammond:v0.0.24",
+  "version": "0.0.24",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/alfhou/hammond",
+  "author": "Akhilrex, alfhou"
+}

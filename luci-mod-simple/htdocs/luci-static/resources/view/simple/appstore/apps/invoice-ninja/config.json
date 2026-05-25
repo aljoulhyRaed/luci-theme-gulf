@@ -1,0 +1,49 @@
+{
+  "id": "invoice-ninja",
+  "name": "Invoice Ninja",
+  "short_desc": "Invoices, Expenses and Tasks built with Laravel, Flutter and React.",
+  "description": "Invoice Ninja is an invoicing application which makes sending invoices and receiving payments simple and easy. Our latest version is a clean slate rewrite of our popular invoicing application which builds on the existing feature set and adds a wide range of features and enhancements the community has asked for.",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 8881,
+  "url_suffix": "",
+  "image": "invoiceninja/invoiceninja:5.12",
+  "version": "5.12",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "INVOICE_NINJA_USER_MAIL",
+      "label": "Invoice Ninja User Mail",
+      "type": "email",
+      "required": true
+    },
+    {
+      "env_variable": "INVOICE_NINJA_USER_PASSWORD",
+      "label": "Invoice Ninja User Password",
+      "type": "password",
+      "required": true
+    },
+    {
+      "env_variable": "INVOICE_NINJA_BDD_PASSWORD",
+      "label": "MySQL Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "INVOICE_NINJA_APP_KEY",
+      "label": "Encryption key - used for encryption / decryption of some datapoints within the application. Backup this key in a secure location. (cf. Installation Notice in Readme)",
+      "type": "password",
+      "required": true,
+      "min": 51,
+      "max": 51
+    }
+  ],
+  "source": "https://github.com/invoiceninja/invoiceninja",
+  "author": "https://www.invoiceninja.org/"
+}

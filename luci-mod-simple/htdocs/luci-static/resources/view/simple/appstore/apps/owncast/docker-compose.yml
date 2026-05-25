@@ -1,0 +1,10 @@
+services:
+  owncast:
+    container_name: owncast
+    image: docker.io/owncast/owncast:0.2.4
+    volumes:
+      - {{CONFIG}}/owncast:/app/data
+    ports:
+      - 8198:8080
+      - '1935:1935'
+    restart: unless-stopped

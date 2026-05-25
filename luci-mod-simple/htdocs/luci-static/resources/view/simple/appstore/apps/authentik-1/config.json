@@ -1,0 +1,36 @@
+{
+  "id": "authentik-1",
+  "name": "Authentik",
+  "short_desc": "The authentication glue you need.",
+  "description": "The authentication glue you need.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 9000,
+  "url_suffix": "",
+  "image": "ghcr.io/goauthentik/server:2025.12.4",
+  "version": "2025.12.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "AUTHENTIK_DB_PASSWORD",
+      "label": "AUTHENTIK_DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 40
+    },
+    {
+      "env_variable": "AUTHENTIK_SECRET_KEY",
+      "label": "AUTHENTIK_SECRET_KEY",
+      "type": "random",
+      "required": true,
+      "min": 50
+    }
+  ],
+  "source": "https://github.com/goauthentik/authentik",
+  "author": "goauthentik"
+}

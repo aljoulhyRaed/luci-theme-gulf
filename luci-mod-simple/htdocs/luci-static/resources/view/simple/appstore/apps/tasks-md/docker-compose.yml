@@ -1,0 +1,13 @@
+services:
+  tasks-md:
+    container_name: tasks-md
+    image: docker.io/baldissaramatheus/tasks.md:3.2.2
+    ports:
+      - 8157:8080
+    volumes:
+      - {{CONFIG}}/tasks-md/files:/tasks/
+      - {{CONFIG}}/tasks-md/config:/config/
+      - {{CONFIG}}/tasks-md/stylesheets:/usr/share/nginx/html/stylesheets/
+    environment:
+      - TITLE="${TASKS_MD_TITLE}"
+    restart: unless-stopped

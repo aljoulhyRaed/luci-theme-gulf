@@ -1,0 +1,20 @@
+{
+  "id": "hello-world",
+  "name": "Hello World",
+  "short_desc": "Hello World web server in under 2 MB",
+  "description": "Hello World web server in under 2 MB",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8000,
+  "url_suffix": "",
+  "image": "crccheck/hello-world:latest",
+  "version": "latest",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/crccheck/docker-hello-world",
+  "author": "crccheck"
+}

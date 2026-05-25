@@ -1,0 +1,28 @@
+{
+  "id": "notemark",
+  "name": "Notemark",
+  "short_desc": "Lighting fast web-based Markdown notes app.",
+  "description": "Note Mark is a lighting fast and minimal web-based Markdown notes app.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8567,
+  "url_suffix": "",
+  "image": "ghcr.io/enchant97/note-mark-frontend:0.19.0",
+  "version": "0.19.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "NOTEMARK_SERVICE_SECRET",
+      "label": "Notemark secret",
+      "type": "random",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/enchant97/note-mark/",
+  "author": "enchant97"
+}

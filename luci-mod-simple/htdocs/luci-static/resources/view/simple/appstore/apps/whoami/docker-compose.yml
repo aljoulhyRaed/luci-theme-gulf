@@ -1,0 +1,7 @@
+services:
+  whoami:
+    image: docker.io/traefik/whoami:v1.11.0
+    container_name: whoami
+    restart: unless-stopped
+    ports:
+      - 8382:80

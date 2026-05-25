@@ -1,0 +1,7 @@
+services:
+  chatpad:
+    image: ghcr.io/deiucanta/chatpad:latest
+    container_name: chatpad
+    ports:
+      - 8179:80
+    restart: unless-stopped

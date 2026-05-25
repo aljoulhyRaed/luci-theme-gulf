@@ -1,0 +1,21 @@
+{
+  "id": "smallweb",
+  "name": "Smallweb",
+  "short_desc": "Your internet folder",
+  "description": "A self-hostable personal cloud inspired by serverless platforms and cgi-bin",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 7777,
+  "url_suffix": "",
+  "image": "ghcr.io/pomdtr/smallweb:0.28.4",
+  "version": "0.28.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/pomdtr/smallweb",
+  "author": "pomdtr"
+}

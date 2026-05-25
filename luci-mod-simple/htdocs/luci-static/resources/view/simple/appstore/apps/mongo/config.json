@@ -1,0 +1,39 @@
+{
+  "id": "mongo",
+  "name": "MongoDB",
+  "short_desc": "MongoDB is an open-source NoSQL database",
+  "description": "MongoDB is an open-source document-oriented database that is designed to store a large scale of data and also allows you to work with that data very efficiently. It is categorized under the NoSQL (Not only SQL) database because the storage and retrieval of data in the MongoDB are not in the form of tables.",
+  "categories": [
+    "Development",
+    "Cloud & Data"
+  ],
+  "category": "Development",
+  "port": 27017,
+  "url_suffix": "",
+  "image": "mongo:7.0.30",
+  "version": "7.0.30",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "MONGO_INITDB_ROOT_USERNAME",
+      "label": "Admin Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "MONGO_INITDB_ROOT_PASSWORD",
+      "label": "Admin Password",
+      "type": "password",
+      "required": true,
+      "min": 10,
+      "max": 50
+    }
+  ],
+  "source": "https://github.com/mongodb/mongo",
+  "author": "MongoDB"
+}

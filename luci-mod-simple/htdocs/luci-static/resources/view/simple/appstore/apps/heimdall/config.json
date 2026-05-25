@@ -1,0 +1,21 @@
+{
+  "id": "heimdall",
+  "name": "Heimdall",
+  "short_desc": "Application Dashboard",
+  "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8783,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/heimdall:2.7.6",
+  "version": "2.7.6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/linuxserver/Heimdall",
+  "author": "linuxserver"
+}

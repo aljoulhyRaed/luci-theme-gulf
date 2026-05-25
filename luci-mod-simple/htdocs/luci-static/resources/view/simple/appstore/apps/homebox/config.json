@@ -1,0 +1,29 @@
+{
+  "id": "homebox",
+  "name": "HomeBox",
+  "short_desc": "Inventory and organization system.",
+  "description": "Homebox is the inventory and organization system built for the Home User",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 7745,
+  "url_suffix": "",
+  "image": "ghcr.io/sysadminsmedia/homebox:0.23.1",
+  "version": "0.23.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "HBOX_OPTIONS_ALLOW_REGISTRATION",
+      "label": "Allow Users Registration",
+      "type": "text",
+      "required": true,
+      "hint": "true or false if you want to allow self registration."
+    }
+  ],
+  "source": "https://github.com/sysadminsmedia/homebox",
+  "author": "sysadminsmedia & hay-kot"
+}

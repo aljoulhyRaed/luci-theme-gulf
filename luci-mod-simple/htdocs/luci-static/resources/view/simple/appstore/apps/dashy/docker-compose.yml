@@ -1,0 +1,9 @@
+services:
+  dashy:
+    container_name: dashy
+    image: ghcr.io/lissy93/dashy:3.1.0
+    ports:
+      - 8205:8080
+    volumes:
+      - {{CONFIG}}/dashy/dashy:/app/user-data
+    restart: unless-stopped

@@ -1,0 +1,22 @@
+{
+  "id": "baikal",
+  "name": "Baïkal",
+  "short_desc": "Calendar + Contacts server",
+  "description": "Baïkal is a Calendar + Contacts server",
+  "categories": [
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Cloud & Data",
+  "port": 6556,
+  "url_suffix": "",
+  "image": "ghcr.io/aalmenar/baikal:0.11.1",
+  "version": "0.11.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/aalmenar/baikal-docker",
+  "author": "aalmenar"
+}

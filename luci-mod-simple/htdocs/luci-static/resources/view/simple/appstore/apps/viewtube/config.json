@@ -1,0 +1,21 @@
+{
+  "id": "viewtube",
+  "name": "ViewTube",
+  "short_desc": "The open source, privacy-conscious way to enjoy your favorite YouTube content.",
+  "description": "The open source, privacy-conscious way to enjoy your favorite YouTube content.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8180,
+  "url_suffix": "",
+  "image": "mauriceo/viewtube:0.17.0",
+  "version": "0.17.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/ViewTube/viewtube",
+  "author": "ViewTube"
+}

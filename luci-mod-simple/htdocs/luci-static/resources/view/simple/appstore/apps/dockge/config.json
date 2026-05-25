@@ -1,0 +1,21 @@
+{
+  "id": "dockge",
+  "name": "Dockge",
+  "short_desc": "Docker compose.yaml stack-oriented manager.",
+  "description": "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8768,
+  "url_suffix": "",
+  "image": "louislam/dockge:1.5.0",
+  "version": "1.5.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/louislam/dockge",
+  "author": "Louis Lam"
+}

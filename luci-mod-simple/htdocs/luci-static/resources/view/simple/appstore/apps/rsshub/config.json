@@ -1,0 +1,31 @@
+{
+  "id": "rsshub",
+  "name": "RSSHub",
+  "short_desc": "Everything is RSSible with RSSHub",
+  "description": "RSSHub is an open source, easy to use, and extensible RSS feed generator. It's capable of generating RSS feeds from pretty much everything.",
+  "categories": [
+    "Utilities",
+    "Media"
+  ],
+  "category": "Utilities",
+  "port": 8223,
+  "url_suffix": "",
+  "image": "diygod/rsshub:2025-04-17",
+  "version": "2025-04-17",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ACCESS_KEY",
+      "label": "Access Key",
+      "type": "password",
+      "required": false,
+      "min": 4,
+      "max": 256
+    }
+  ],
+  "source": "https://github.com/DIYgod/RSSHub",
+  "author": "https://github.com/DIYgod"
+}

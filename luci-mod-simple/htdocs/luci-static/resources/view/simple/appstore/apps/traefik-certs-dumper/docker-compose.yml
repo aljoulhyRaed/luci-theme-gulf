@@ -1,0 +1,17 @@
+
+services:
+  traefik-certs-dumper:
+    container_name: traefik-certs-dumper
+    # user: root
+    image: docker.io/humenius/traefik-certs-dumper:1.6.1-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/usr/bin/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - {{CONFIG}}/traefik/shared/acme.json:/traefik/acme.json:ro
+      - {{CONFIG}}/traefik-certs-dumper/certs:/output:rw
+    environment:
+      - ACME_FILE_PATH=/traefik/acme.json

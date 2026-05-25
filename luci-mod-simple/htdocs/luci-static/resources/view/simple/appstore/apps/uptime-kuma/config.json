@@ -1,0 +1,21 @@
+{
+  "id": "uptime-kuma",
+  "name": "Uptime Kuma",
+  "short_desc": "A fancy self-hosted monitoring tool.",
+  "description": "It is a self-hosted monitoring tool like Uptime Robot.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8125,
+  "url_suffix": "",
+  "image": "louislam/uptime-kuma:2",
+  "version": "2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/louislam/uptime-kuma",
+  "author": "louislam"
+}

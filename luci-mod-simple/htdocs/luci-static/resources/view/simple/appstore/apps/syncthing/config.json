@@ -1,0 +1,30 @@
+{
+  "id": "syncthing",
+  "name": "Syncthing",
+  "short_desc": "Peer-to-peer file synchronization between your devices",
+  "description": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers. We strive to fulfill the goals below. The goals are listed in order of importance, the most important one being the first. This is the summary version of the goal list - for more commentary, see the full Goals document.",
+  "categories": [
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Cloud & Data",
+  "port": 8090,
+  "url_suffix": "",
+  "image": "syncthing/syncthing:2.0.14",
+  "version": "2.0.14",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SYNCTHING_HOSTNAME",
+      "label": "Hostname",
+      "type": "text",
+      "required": false,
+      "hint": "Set a hostname for the Syncthing instance"
+    }
+  ],
+  "source": "https://github.com/syncthing",
+  "author": "The Syncthing Foundation"
+}

@@ -1,0 +1,10 @@
+services:
+  adguardhome-sync:
+    container_name: adguardhome-sync
+    image: ghcr.io/bakito/adguardhome-sync:v0.8.2
+    restart: unless-stopped
+    command: run --config /config/adguardhome-sync.yaml
+    volumes:
+      - {{CONFIG}}/adguardhome-sync/adguardhome-sync.yaml:/config/adguardhome-sync.yaml
+    ports:
+      - 8436:8080

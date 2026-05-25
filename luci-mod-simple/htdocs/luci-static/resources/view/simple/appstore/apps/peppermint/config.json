@@ -1,0 +1,36 @@
+{
+  "id": "peppermint",
+  "name": "Peppermint",
+  "short_desc": "An open source ticket management & help desk solution.",
+  "description": "An open source ticket management & help desk solution.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8216,
+  "url_suffix": "",
+  "image": "pepperlabs/peppermint:latest",
+  "version": "latest",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "PEPPERMINT_DB_PASSWORD",
+      "label": "Peppermint DB Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "PEPPERMINT_DOMAIN_API",
+      "label": "API URL",
+      "type": "text",
+      "required": true,
+      "hint": "Can be an exposable domiain like peppermintapi.example.com or peppermintapi.tipi.local"
+    }
+  ],
+  "source": "https://github.com/Peppermint-Lab/peppermint",
+  "author": "Peppermint-Lab"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "nextgba",
+  "name": "NextGBA",
+  "short_desc": "Gameboy in your browser",
+  "description": "All of your favorite gameboy games in your browser",
+  "categories": [
+    "Gaming"
+  ],
+  "category": "Gaming",
+  "port": 8435,
+  "url_suffix": "",
+  "image": "ghcr.io/nicotsx/nextgba:v0.1.0",
+  "version": "0.1.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/nicotsx/nextgba",
+  "author": "meienberger"
+}

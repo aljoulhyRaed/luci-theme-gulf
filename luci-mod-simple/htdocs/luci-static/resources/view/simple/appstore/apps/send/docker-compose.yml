@@ -1,0 +1,31 @@
+services:
+  send:
+    image: registry.gitlab.com/timvisee/send:latest
+    container_name: send
+    restart: unless-stopped
+    ports:
+      - 8126:1443
+    volumes:
+      - {{CONFIG}}/send/uploads:/uploads
+    environment:
+      - NODE_ENV=production
+      # Networking
+      - BASE_URL=http://localhost
+      # Redis
+      - REDIS_HOST=send-redis
+      # Storage Limit
+      - MAX_FILE_SIZE=2147483648
+      # Storage path
+      - FILE_DIR=/uploads
+    depends_on:
+      - send-redis  send-redis:
+    image: redis:alpine
+    container_name: send-redis
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/send/redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 30

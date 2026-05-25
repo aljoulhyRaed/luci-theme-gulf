@@ -1,0 +1,22 @@
+{
+  "id": "audiobookshelf",
+  "name": "Audiobookshelf",
+  "short_desc": "Audiobookshelf is a self-hosted audiobook and podcast server.",
+  "description": "Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks. Audiobookshelf has a clean, accessible design that's loaded with features but not overly complicated.",
+  "categories": [
+    "Books",
+    "Media"
+  ],
+  "category": "Books",
+  "port": 13378,
+  "url_suffix": "",
+  "image": "ghcr.io/advplyr/audiobookshelf:2.32.1",
+  "version": "2.32.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/advplyr/audiobookshelf",
+  "author": "advplyr"
+}

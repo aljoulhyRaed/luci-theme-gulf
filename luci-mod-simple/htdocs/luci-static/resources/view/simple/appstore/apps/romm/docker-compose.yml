@@ -1,0 +1,36 @@
+services:
+  romm:
+    image: ghcr.io/rommapp/romm:4.6.1
+    container_name: romm
+    environment:
+      - DB_HOST=romm-db
+      - DB_NAME=romm
+      - DB_USER=tipi
+      - DB_PASSWD=${ROMM_MYSQL_PASSWORD}
+      - ROMM_AUTH_SECRET_KEY=${ROMM_AUTH_SECRET_KEY}
+      - IGDB_CLIENT_ID=${ROMM_IGDB_CLIENT_ID}
+      - IGDB_CLIENT_SECRET=${ROMM_IGDB_CLIENT_SECRET}
+      - MOBYGAMES_API_KEY=${ROMM_MOBYGAMES_API_KEY}
+      - STEAMGRIDDB_API_KEY=${ROMM_STEAMGRIDDB_API_KEY}
+    restart: unless-stopped
+    volumes:
+      - {{MEDIA}}/data/roms:/romm/library
+      - {{CONFIG}}/romm/redis:/redis-data
+      - {{CONFIG}}/romm/romm-resources:/romm/resources
+      - {{CONFIG}}/romm/config:/romm/config
+      - {{CONFIG}}/romm/assets:/romm/assets
+    ports:
+      - 8178:8080
+    depends_on:
+      - romm-db
+  romm-db:
+    image: lscr.io/linuxserver/mariadb:11.4.5
+    container_name: romm-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=${ROMM_MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=romm
+      - MYSQL_USER=tipi
+      - MYSQL_PASSWORD=${ROMM_MYSQL_PASSWORD}
+    volumes:
+      - {{CONFIG}}/romm/mysql/config:/config
+    restart: unless-stopped

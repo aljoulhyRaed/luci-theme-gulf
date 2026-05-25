@@ -1,0 +1,70 @@
+{
+  "id": "postfix-relay",
+  "name": "Postfix Mail Relay",
+  "short_desc": "Simple SMTP relay for environments where you may have private servers with no Internet connection.",
+  "description": "Simple SMTP relay for environments where you may have private servers with no Internet connection.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 2525,
+  "url_suffix": "",
+  "image": "simenduev/postfix-relay:1.4.0",
+  "version": "1.4.0",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "RELAY_ACCEPTED_NETWORKS",
+      "label": "Accepted Networks",
+      "type": "text",
+      "required": true,
+      "hint": "Space delimited list of networks to accept mail from."
+    },
+    {
+      "env_variable": "RELAY_SMTP_HOST",
+      "label": "SMTP Host",
+      "type": "text",
+      "required": true,
+      "hint": "External relay DNS name."
+    },
+    {
+      "env_variable": "RELAY_SMTP_LOGIN",
+      "label": "SMTP Login",
+      "type": "text",
+      "required": true,
+      "hint": "Login to connect to the external relay."
+    },
+    {
+      "env_variable": "RELAY_SMTP_PASSWORD",
+      "label": "SMTP Password",
+      "type": "password",
+      "required": true,
+      "hint": "Password to connect to the external relay."
+    },
+    {
+      "env_variable": "RELAY_SMTP_PORT",
+      "label": "SMTP Port",
+      "type": "number",
+      "required": false,
+      "hint": "External relay TCP port."
+    },
+    {
+      "env_variable": "RELAY_TLS_VERIFY",
+      "label": "TLS Verify",
+      "type": "text",
+      "required": true,
+      "hint": "Trust level for checking remote side cert: http://www.postfix.org/postconf.5.html#smtp_tls_security_level"
+    },
+    {
+      "env_variable": "RELAY_USE_TLS",
+      "label": "Use TLS",
+      "type": "text",
+      "required": true,
+      "hint": "Remote require tls."
+    }
+  ],
+  "source": "https://github.com/shamil/docker-postfix-relay",
+  "author": "shamil"
+}

@@ -1,0 +1,12 @@
+services:
+  vaultwarden:
+    image: docker.io/vaultwarden/server:1.35.3
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - 8107:80
+    environment:
+      - WEBSOCKET_ENABLED=true
+      - ADMIN_TOKEN=${VAULTWARDEN_ADMIN_PASSWORD}
+    volumes:
+      - {{CONFIG}}/vaultwarden:/data

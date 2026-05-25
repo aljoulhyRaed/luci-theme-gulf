@@ -1,0 +1,11 @@
+services:
+  dokuwiki:
+    container_name: dokuwiki
+    restart: unless-stopped
+    image: lscr.io/linuxserver/dokuwiki:2024-02-06b-ls250
+    ports:
+      - 8149:80
+    volumes:
+      - {{CONFIG}}/dokuwiki/config:/config
+    environment:
+      - TZ={{TZ}}

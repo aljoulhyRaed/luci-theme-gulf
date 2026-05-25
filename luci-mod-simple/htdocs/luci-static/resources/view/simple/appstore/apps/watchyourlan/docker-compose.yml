@@ -1,0 +1,11 @@
+services:
+  watchyourlan:
+    image: docker.io/aceberg/watchyourlan:2.1.4
+    container_name: watchyourlan
+    restart: unless-stopped
+    network-mode: host
+    volumes:
+      - {{CONFIG}}/watchyourlan:/data/WatchYourLAN
+    environment:
+      - TZ={{TZ}}
+      - IFACES=${WATCHYOURLAN_IFACES}

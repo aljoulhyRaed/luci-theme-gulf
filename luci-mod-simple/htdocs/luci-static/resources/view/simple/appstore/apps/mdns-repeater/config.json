@@ -1,0 +1,35 @@
+{
+  "id": "mdns-repeater",
+  "name": "MDNS Repeater",
+  "short_desc": "Re-broadcast mDNS packets.",
+  "description": "This program re-broadcast mDNS packets from one interface to other interfaces.",
+  "categories": [
+    "Utilities",
+    "Automation"
+  ],
+  "category": "Utilities",
+  "port": 9998,
+  "url_suffix": "",
+  "image": "angelnu/mdns_repeater:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "MDNS_HOST_NIC",
+      "label": "MDNS > hostNIC (FROM network)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "env_variable": "MDNS_DOCKER_NIC",
+      "label": "MDNS > dockerNIC (TO network)",
+      "type": "text",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/angelnu/docker-mdns_repeater",
+  "author": "angelnu"
+}

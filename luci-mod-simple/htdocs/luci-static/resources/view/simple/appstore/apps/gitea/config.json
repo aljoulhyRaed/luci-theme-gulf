@@ -1,0 +1,21 @@
+{
+  "id": "gitea",
+  "name": "Gitea",
+  "short_desc": "Gitea - Git with a cup of tea · A painless self-hosted Git service. · Cross-platform · Easy to install · Lightweight · Open Source.",
+  "description": "Gitea is a painless self-hosted Git service. It is similar to GitHub, Bitbucket, and GitLab. Gitea is a fork of Gogs. See the Gitea Announcement blog post to read about the justification for a fork.",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8108,
+  "url_suffix": "",
+  "image": "gitea/gitea:1.25.4",
+  "version": "1.25.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/go-gitea/gitea",
+  "author": "go-gitea"
+}

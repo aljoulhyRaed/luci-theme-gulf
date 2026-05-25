@@ -1,0 +1,36 @@
+{
+  "id": "halo",
+  "name": "Halo",
+  "short_desc": "Halo - Open source website building tool.",
+  "description": "Halo is a powerful and easy-to-use open source website building tool.",
+  "categories": [
+    "Social",
+    "Media"
+  ],
+  "category": "Social",
+  "port": 8092,
+  "url_suffix": "",
+  "image": "halohub/halo:2.22.14",
+  "version": "2.22.14",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "HALO_DATABASE_PASSWORD",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 20
+    },
+    {
+      "env_variable": "HALO_EXTERNAL_URL",
+      "label": "External url",
+      "type": "url",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/halo-dev/halo",
+  "author": "halo-dev"
+}

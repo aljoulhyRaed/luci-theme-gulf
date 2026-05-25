@@ -1,0 +1,21 @@
+{
+  "id": "mylar3",
+  "name": "Mylar3",
+  "short_desc": "Mylar3 is an automated Comic Book downloader (cbr/cbz) for use with NZB and torrents written in python.",
+  "description": "Mylar3 is an automated Comic Book downloader (cbr/cbz) for use with NZB and torrents written in python.",
+  "categories": [
+    "Media"
+  ],
+  "category": "Media",
+  "port": 8174,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/mylar3:v0.7.1-ls84",
+  "version": "v0.7.1-ls84",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/mylar3/mylar3",
+  "author": "Mylar3"
+}

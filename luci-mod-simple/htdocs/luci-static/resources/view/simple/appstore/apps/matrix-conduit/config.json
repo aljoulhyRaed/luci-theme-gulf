@@ -1,0 +1,69 @@
+{
+  "id": "matrix-conduit",
+  "name": "Conduit",
+  "short_desc": "Conduit is a simple, fast and reliable chat server written in Rust",
+  "description": "Conduit is a fast Matrix homeserver that’s easy to set up and just works. You can install it on a mini-computer like the Raspberry Pi to host Matrix for your family, friends or company.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 6167,
+  "url_suffix": "",
+  "image": "matrixconduit/matrix-conduit:v0.10.3",
+  "version": "0.10.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "ALLOW_REGISTRATION",
+      "label": "Allow Registration",
+      "type": "boolean",
+      "required": false,
+      "hint": "WARNING! First user will be admin"
+    },
+    {
+      "env_variable": "ALLOW_FEDERATION",
+      "label": "Allow Federation",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "env_variable": "TRUSTED_SERVERS",
+      "label": "Trusted Servers",
+      "type": "text",
+      "required": false,
+      "hint": "List of domain names"
+    },
+    {
+      "env_variable": "MAX_REQUEST_SIZE",
+      "label": "Max request size",
+      "type": "number",
+      "required": false,
+      "hint": "In bytes, for example 20000000"
+    },
+    {
+      "env_variable": "LOG",
+      "label": "Loggin Level",
+      "type": "text",
+      "required": false,
+      "hint": "Available levels: error, warn, info, debug, trace"
+    },
+    {
+      "env_variable": "TURN_URIS",
+      "label": "TURN URIs",
+      "type": "text",
+      "required": false,
+      "hint": "List of TURN server URIs turn:/turns:"
+    },
+    {
+      "env_variable": "TURN_SECRET",
+      "label": "TURN Secret",
+      "type": "password",
+      "required": false
+    }
+  ],
+  "source": "https://gitlab.com/famedly/conduit",
+  "author": "Timo Kösters"
+}

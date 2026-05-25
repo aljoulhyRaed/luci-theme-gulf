@@ -1,0 +1,22 @@
+{
+  "id": "recyclarr",
+  "name": "Recyclarr",
+  "short_desc": "Sync TRaSH Guides.",
+  "description": "Automatically sync TRaSH Guides to your Sonarr and Radarr instances",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 1111,
+  "url_suffix": "",
+  "image": "ghcr.io/recyclarr/recyclarr:8.2.1",
+  "version": "8.2.1",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/recyclarr/recyclarr",
+  "author": "rcdailey"
+}

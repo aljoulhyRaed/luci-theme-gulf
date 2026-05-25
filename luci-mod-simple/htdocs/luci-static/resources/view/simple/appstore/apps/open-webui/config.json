@@ -1,0 +1,34 @@
+{
+  "id": "open-webui",
+  "name": "Open WebUI",
+  "short_desc": "User-friendly WebUI for LLMs",
+  "description": "Open WebUI is an extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline.",
+  "categories": [
+    "AI"
+  ],
+  "category": "AI",
+  "port": 8536,
+  "url_suffix": "",
+  "image": "ghcr.io/open-webui/open-webui:v0.8.5",
+  "version": "v0.8.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "OPENWEBUI_OLLAMA_URL",
+      "label": "Ollama Api Url",
+      "type": "text",
+      "required": false
+    },
+    {
+      "env_variable": "OPENWEBUI_OPENAI_KEY",
+      "label": "Openai Api Key",
+      "type": "password",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/open-webui/open-webui",
+  "author": "open-webui"
+}

@@ -1,0 +1,11 @@
+services:
+  netbootxyz:
+    image: docker.io/netbootxyz/netbootxyz:0.7.6
+    container_name: netbootxyz
+    volumes:
+      - {{CONFIG}}/netbootxyz/config:/config
+      - {{CONFIG}}/netbootxyz/assets:/assets
+    ports:
+      - 8675:3000
+      - 69:69/udp
+    restart: unless-stopped

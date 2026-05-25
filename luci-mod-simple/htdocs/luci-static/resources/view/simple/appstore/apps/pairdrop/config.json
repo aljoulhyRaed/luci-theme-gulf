@@ -1,0 +1,23 @@
+{
+  "id": "pairdrop",
+  "name": "PairDrop",
+  "short_desc": "Local file sharing in your browser. Inspired by Apple's AirDrop",
+  "description": "Local file sharing in your browser. Inspired by Apple's AirDrop",
+  "categories": [
+    "Media",
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 8182,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/pairdrop:1.11.2",
+  "version": "1.11.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/schlagmichdoch/PairDrop",
+  "author": "schlagmichdoch"
+}

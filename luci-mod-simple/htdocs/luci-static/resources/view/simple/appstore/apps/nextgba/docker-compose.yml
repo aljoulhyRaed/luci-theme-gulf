@@ -1,0 +1,12 @@
+
+services:
+  nextgba:
+    container_name: nextgba
+    image: ghcr.io/nicotsx/nextgba:v0.1.0
+    restart: unless-stopped
+    ports:
+      - 8435:3000
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - {{CONFIG}}/nextgba/games:/data/games

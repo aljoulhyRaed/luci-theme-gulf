@@ -1,0 +1,23 @@
+
+services:
+  codex-docs:
+    container_name: codex-docs
+    image: ghcr.io/codex-team/codex.docs:v2.2
+    ports:
+      - 8101:3000
+    restart: unless-stopped
+    environment:
+      - APP_CONFIG_auth_password=${CODEX_AUTH_PASSWORD}
+      - APP_CONFIG_auth_secret=${CODEX_AUTH_SECRET}
+      - APP_CONFIG_database_driver=mongodb
+      - APP_CONFIG_database_mongodb_uri=mongodb://tipi:${CODEX_DB_PASSWORD}@codex-db:27017
+    volumes:
+      - {{CONFIG}}/codex-docs/uploads:/usr/src/app/uploads
+      - {{CONFIG}}/codex-docs/db:/usr/src/app/db
+      - {{CONFIG}}/codex-docs/docs-config.yaml:/usr/src/app/docs-config.yaml  codex-db:
+    container_name: codex-db
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: tipi
+      MONGO_INITDB_ROOT_PASSWORD: ${CODEX_DB_PASSWORD}

@@ -1,0 +1,36 @@
+{
+  "id": "tandoor",
+  "name": "Tandoor",
+  "short_desc": "Recipe collection manager.",
+  "description": "Drop your collection of links and notes. Get Tandoor and never look back onto a time without recipe management, storage, sharing and collaborative cooking!",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8341,
+  "url_suffix": "",
+  "image": "ghcr.io/tandoorrecipes/recipes:2.5.3",
+  "version": "2.5.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "TANDOOR_SECRET_KEY",
+      "label": "Tandoor Secret Key",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "TANDOOR_POSTGRESS_PASSWORD",
+      "label": "Postgress Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/TandoorRecipes/recipes",
+  "author": "Tandoor Recipes"
+}

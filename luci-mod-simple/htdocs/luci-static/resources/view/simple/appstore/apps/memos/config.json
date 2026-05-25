@@ -1,0 +1,21 @@
+{
+  "id": "memos",
+  "name": "Memos",
+  "short_desc": "Memo hub for knowledge management and collaboration.",
+  "description": "Memo hub for knowledge management and collaboration.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 5230,
+  "url_suffix": "",
+  "image": "neosmemo/memos:0.26.2",
+  "version": "0.26.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/usememos/memos",
+  "author": "boojack"
+}

@@ -1,0 +1,27 @@
+services:
+  rsshub:
+    image: docker.io/diygod/rsshub:2025-04-17
+    container_name: rsshub
+    restart: unless-stopped
+    ports:
+      - 8223:1200
+    environment:
+      TZ: {{TZ}}
+    env_file:
+      - {{CONFIG}}/rsshub/app.env
+    depends_on:
+      - redis
+      - browserless  browserless:
+    image: docker.io/browserless/chrome
+    container_name: rsshub_browserless
+    restart: unless-stopped
+    ulimits:
+      core:
+        hard: 0
+        soft: 0
+  redis:
+    image: redis:alpine
+    container_name: rsshub_redis
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/rsshub/redis:/data

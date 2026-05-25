@@ -1,0 +1,11 @@
+services:
+  maintainerr:
+    image: ghcr.io/jorenn92/maintainerr:2.19.0
+    container_name: maintainerr
+    volumes:
+      - {{CONFIG}}/maintainerr/config:/opt/data
+    environment:
+      - TZ={{TZ}}
+    ports:
+      - 8030:6246
+    restart: unless-stopped

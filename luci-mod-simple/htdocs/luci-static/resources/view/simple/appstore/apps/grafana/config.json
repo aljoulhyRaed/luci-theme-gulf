@@ -1,0 +1,21 @@
+{
+  "id": "grafana",
+  "name": "Grafana",
+  "short_desc": "The open and composable observability and data visualization platform.",
+  "description": "Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored. Create, explore, and share dashboards with your team and foster a data-driven culture.",
+  "categories": [
+    "Cloud & Data"
+  ],
+  "category": "Cloud & Data",
+  "port": 8160,
+  "url_suffix": "",
+  "image": "grafana/grafana-oss:12.3.3",
+  "version": "12.3.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/grafana/grafana",
+  "author": "grafana"
+}

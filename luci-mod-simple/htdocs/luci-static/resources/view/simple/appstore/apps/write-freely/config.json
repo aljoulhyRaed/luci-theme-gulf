@@ -1,0 +1,21 @@
+{
+  "id": "write-freely",
+  "name": "Write-Freely",
+  "short_desc": "Markdown-based publishing platform.",
+  "description": "A clean, Markdown-based publishing platform made for writers. Write together and build a community.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8574,
+  "url_suffix": "",
+  "image": "nephatrine/write-freely:0.16",
+  "version": "0.16",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [],
+  "source": "https://hub.docker.com/r/nephatrine/write-freely",
+  "author": "nephatrine"
+}

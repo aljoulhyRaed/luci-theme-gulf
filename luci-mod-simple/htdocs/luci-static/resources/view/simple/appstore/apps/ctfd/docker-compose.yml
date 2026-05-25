@@ -1,0 +1,45 @@
+services:
+  ctfd:
+    image: docker.io/ctfd/ctfd:3.8.2
+    container_name: ctfd
+    restart: unless-stopped
+    ports:
+      - 8546:8000
+    environment:
+      - UPLOAD_FOLDER=/var/uploads
+      - DATABASE_URL=mysql+pymysql://tipi:${CTFD_MYSQL_DB_PASSWORD}@ctfd-db/ctfd
+      - REDIS_URL=redis://ctfd-redis:6379
+      - WORKERS=1
+      - LOG_FOLDER=/var/log/CTFd
+      - ACCESS_LOG=-
+      - ERROR_LOG=-
+      - REVERSE_PROXY=true
+      - SECRET_KEY=${CTFD_SECRET_KEY}
+    volumes:
+      - {{CONFIG}}/ctfd/uploads:/var/log/CTFd
+      - {{CONFIG}}/ctfd/uploads:/var/uploads
+    depends_on:
+      - ctfd-db
+  ctfd-db:
+    image: mariadb:10.4.12
+    restart: unless-stopped
+    container_name: ctfd-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=${CTFD_MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=tipi
+      - MYSQL_PASSWORD=${CTFD_MYSQL_DB_PASSWORD}
+      - MYSQL_DATABASE=ctfd
+    volumes:
+      - {{CONFIG}}/ctfd/db:/var/lib/mysql
+    command:
+      - mysqld
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
+      - '--wait_timeout=28800'
+      - '--log-warnings=0'
+  ctfd-redis:
+    image: redis:4
+    container_name: ctfd-redis
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/ctfd/redis:/data

@@ -1,0 +1,15 @@
+services:
+  resilio-sync:
+    image: lscr.io/linuxserver/resilio-sync:3.1.2
+    container_name: resilio-sync
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - {{CONFIG}}/resilio-sync/config:/config
+      - {{CONFIG}}/resilio-sync/downloads:/downloads
+      - {{CONFIG}}/resilio-sync/sync:/sync
+    ports:
+      - 8113:8888
+      - '55555:55555'
+    restart: unless-stopped

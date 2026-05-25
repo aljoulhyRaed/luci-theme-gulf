@@ -1,0 +1,29 @@
+{
+  "id": "stirling-pdf",
+  "name": "Stirling-PDF",
+  "short_desc": "Powerful locally hosted web based PDF manipulation tool.",
+  "description": "Locally hosted web application that allows you to perform various operations on PDF files.",
+  "categories": [
+    "Cloud & Data",
+    "Utilities"
+  ],
+  "category": "Cloud & Data",
+  "port": 8234,
+  "url_suffix": "",
+  "image": "stirlingtools/stirling-pdf:2.5.3",
+  "version": "2.5.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "STIRLING_PDF_DOCKER_ENABLE_SECURITY",
+      "label": "Docker > Enable Security",
+      "type": "boolean",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/Frooodle/Stirling-PDF/",
+  "author": "Frooodle"
+}

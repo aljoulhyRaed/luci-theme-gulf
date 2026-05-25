@@ -1,0 +1,60 @@
+{
+  "id": "slskd",
+  "name": "SLSKD",
+  "short_desc": "P2P downloads",
+  "description": "A modern client-server application for the Soulseek file-sharing network.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 5030,
+  "url_suffix": "",
+  "image": "slskd/slskd:0.24.4",
+  "version": "0.24.4",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "SLSKD_WEB_USER",
+      "label": "WebUI username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "SLSKD_WEB_PASSWORD",
+      "label": "WebUI password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "SLSKD_USER",
+      "label": "Soulseek username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "SLSKD_PASSWORD",
+      "label": "Soulseek password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "SLSKD_REMOTE_CONFIGURATION",
+      "label": "Allow remote configuration",
+      "type": "boolean",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/slskd/slskd",
+  "author": "jpdillingham"
+}

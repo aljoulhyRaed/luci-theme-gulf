@@ -1,0 +1,37 @@
+{
+  "id": "pihole",
+  "name": "Pi-hole",
+  "short_desc": "A black hole for Internet advertisements",
+  "description": "The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content without installing any client-side software.",
+  "categories": [
+    "Network",
+    "Security"
+  ],
+  "category": "Network",
+  "port": 8081,
+  "url_suffix": "/admin",
+  "image": "pihole/pihole:2026.02.0",
+  "version": "2026.02.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "APP_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "NETWORK_INTERFACE",
+      "label": "Network Interface (default: 0.0.0.0)",
+      "type": "ip",
+      "required": false
+    }
+  ],
+  "source": "https://github.com/pi-hole/pi-hole",
+  "author": "pi-hole.net"
+}

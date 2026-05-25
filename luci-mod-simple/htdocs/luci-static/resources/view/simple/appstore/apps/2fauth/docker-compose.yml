@@ -1,0 +1,14 @@
+services:
+  2fauth:
+    image: docker.io/2fauth/2fauth:6.0.0
+    container_name: 2fauth
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/2fauth:/2fauth
+    ports:
+      - 8235:8000
+    environment:
+      - ASSET_URL=http://localhost
+      - APP_URL=http://localhost
+      - APP_KEY=${TWOFAUTH_APP_KEY}
+      - APP_PREVIOUS_KEYS=SomeRandomStringOf32CharsExactly

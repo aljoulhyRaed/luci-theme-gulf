@@ -1,0 +1,21 @@
+{
+  "id": "ntfy",
+  "name": "Ntfy",
+  "short_desc": "Ntfy, a simple server for sending and receiving notification messages.",
+  "description": "Send push notifications to any devices using a simple HTTP PUT or POST request.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8166,
+  "url_suffix": "",
+  "image": "binwiederhier/ntfy:v2.17.0",
+  "version": "v2.17.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/binwiederhier/ntfy",
+  "author": "https://github.com/binwiederhier"
+}

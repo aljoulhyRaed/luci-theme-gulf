@@ -1,0 +1,13 @@
+services:
+  seedsync:
+    container_name: seedsync
+    image: docker.io/ipsingh06/seedsync:0.8.6
+    user: '${SEEDSYNC_PUID:-1000}:${SEEDSYNC_PGID:-1000}'
+    environment:
+      - TZ={{TZ}}
+    volumes:
+      - {{CONFIG}}/seedsync/config:/config
+      - {{MEDIA}}/torrents/complete:/downloads
+    ports:
+      - 8800:8800
+    restart: unless-stopped

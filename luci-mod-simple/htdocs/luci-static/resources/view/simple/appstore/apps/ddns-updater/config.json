@@ -1,0 +1,21 @@
+{
+  "id": "ddns-updater",
+  "name": "DDNS Updater",
+  "short_desc": "Program to keep DNS A and/or AAAA records updated for multiple DNS providers.",
+  "description": "Container to update DNS records periodically with WebUI for many DNS providers,",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8356,
+  "url_suffix": "",
+  "image": "qmcgaw/ddns-updater:v2.9.0",
+  "version": "2.9.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/qdm12/ddns-updater",
+  "author": "qdm12"
+}

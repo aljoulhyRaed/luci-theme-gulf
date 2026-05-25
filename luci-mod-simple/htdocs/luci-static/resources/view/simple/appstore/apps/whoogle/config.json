@@ -1,0 +1,21 @@
+{
+  "id": "whoogle",
+  "name": "Whoogle Search",
+  "short_desc": "A self-hosted, ad-free, privacy-respecting metasearch engine.",
+  "description": "Get Google search results, but without any ads, JavaScript, AMP links, cookies, or IP address tracking.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8255,
+  "url_suffix": "",
+  "image": "benbusby/whoogle-search:1.2.2",
+  "version": "1.2.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/benbusby/whoogle-search",
+  "author": "Ben Busby"
+}

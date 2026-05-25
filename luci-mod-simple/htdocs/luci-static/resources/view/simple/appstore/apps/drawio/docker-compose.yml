@@ -1,0 +1,9 @@
+services:
+  drawio:
+    image: docker.io/jgraph/drawio:29.5.2
+    ports:
+      - 8734:8080
+    container_name: drawio
+    restart: unless-stopped
+    tty: true
+    stdin_open: true

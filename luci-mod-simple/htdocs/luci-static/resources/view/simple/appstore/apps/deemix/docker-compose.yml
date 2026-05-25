@@ -1,0 +1,17 @@
+
+services:
+  deemix:
+    container_name: deemix
+    image: registry.gitlab.com/bockiii/deemix-docker:latest
+    ports:
+      - 6595:6595
+    volumes:
+      - {{CONFIG}}/deemix/deemix-config:/config
+      - {{MEDIA}}:/media
+      - {{MEDIA}}/data/torrents/deemix:/downloads
+      - {{MEDIA}}/data/music:/music
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - UMASK_SET=022
+    restart: unless-stopped

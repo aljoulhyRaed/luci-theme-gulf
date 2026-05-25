@@ -1,0 +1,33 @@
+services:
+  electrs-ui:
+    container_name: electrs-ui
+    image: ghcr.io/montejojorge/electrs-ui:v0.10.9
+    restart: unless-stopped
+    volumes:
+      - ${BITCOIND_DIR:-{{CONFIG}}/electrs/../bitcoind/data}:/data/.bitcoin:ro
+    environment:
+      BITCOIND_DIR: /data/.bitcoin
+      ELECTRUM_LOCAL_DOMAIN: runtipi.home
+      ELECTRUM_IP_ADDRESS: ${INTERNAL_IP}
+      ELECTRS_HOST: electrs
+      BITCOIND_HOST: ${BITCOIND_HOST:-bitcoind}
+    ports:
+      - 3006:3006
+  electrs:
+    container_name: electrs
+    image: docker.io/getumbrel/electrs:v0.11.0
+    restart: unless-stopped
+    stop_grace_period: 15m
+    user: '0:0'
+    volumes:
+      - ${BITCOIND_DIR:-{{CONFIG}}/electrs/../bitcoind/data}:/data/.bitcoin:ro
+      - {{CONFIG}}/electrs:/data
+    ports:
+      - '50001:50001'
+    environment:
+      - ELECTRS_COOKIE_FILE=/data/.bitcoin/.cookie
+      - ELECTRS_DB_DIR=/data/db
+      - ELECTRS_ELECTRUM_RPC_ADDR=0.0.0.0:50001
+      - ELECTRS_LOG_FILTERS=INFO
+      - ELECTRS_DAEMON_RPC_ADDR=${BITCOIND_HOST:-bitcoind}:8332
+      - ELECTRS_DAEMON_P2P_ADDR=${BITCOIND_HOST:-bitcoind}:8333

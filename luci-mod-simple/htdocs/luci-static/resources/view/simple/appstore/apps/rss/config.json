@@ -1,0 +1,22 @@
+{
+  "id": "rss",
+  "name": "RSS",
+  "short_desc": "A simple, opinionated, RSS feed aggregator.",
+  "description": "A simple twitter-feed-style RSS aggregator written in PHP, Laravel, Inertia.js, Tailwind and Vue.js",
+  "categories": [
+    "Utilities",
+    "Media"
+  ],
+  "category": "Utilities",
+  "port": 8141,
+  "url_suffix": "",
+  "image": "codeberg.org/danb/rss:v1.6.5",
+  "version": "v1.6.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/ssddanbrown/rss",
+  "author": "https://github.com/ssddanbrown"
+}

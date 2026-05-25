@@ -1,0 +1,22 @@
+{
+  "id": "sabnzbd",
+  "name": "SABnzbd",
+  "short_desc": "Sabnzbd makes Usenet as simple and streamlined as possible by automating everything we can",
+  "description": "Sabnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction.",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 8168,
+  "url_suffix": "",
+  "image": "lscr.io/linuxserver/sabnzbd:4.5.5",
+  "version": "4.5.5",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/sabnzbd/sabnzbd",
+  "author": "Sabnzbd"
+}

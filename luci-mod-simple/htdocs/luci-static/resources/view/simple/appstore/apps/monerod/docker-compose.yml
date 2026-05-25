@@ -1,0 +1,17 @@
+services:
+  monerod:
+    image: docker.io/sethsimmons/simple-monerod:v0.18.3.4
+    ports:
+      - 18080:18080
+    restart: unless-stopped
+    container_name: monerod
+    volumes:
+      - {{CONFIG}}/monerod:/home/monero/.bitmonero
+    command: >-
+      --rpc-restricted-bind-ip=0.0.0.0
+      --rpc-restricted-bind-port=18089
+      --public-node
+      --no-igd
+      --enable-dns-blocklist
+      --prune-blockchain
+      --zmq-pub=tcp://0.0.0.0:18083

@@ -1,0 +1,43 @@
+{
+  "id": "ctfd",
+  "name": "CTFd",
+  "short_desc": "Cyber Security Training made simple.",
+  "description": "CTFd is a Capture The Flag framework focusing on ease of use and customizability.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8546,
+  "url_suffix": "",
+  "image": "ctfd/ctfd:3.8.2",
+  "version": "3.8.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "CTFD_MYSQL_DB_PASSWORD",
+      "label": "CTFD_MYSQL_DB_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "CTFD_SECRET_KEY",
+      "label": "CTFD_SECRET_KEY",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "CTFD_MYSQL_ROOT_PASSWORD",
+      "label": "CTFD_MYSQL_ROOT_PASSWORD",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/CTFd/CTFd",
+  "author": "CTFd"
+}

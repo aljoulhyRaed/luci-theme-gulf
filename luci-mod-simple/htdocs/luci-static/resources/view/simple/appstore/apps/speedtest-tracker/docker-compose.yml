@@ -1,0 +1,37 @@
+services:
+  speedtest-tracker:
+    image: lscr.io/linuxserver/speedtest-tracker:1.13.10
+    container_name: speedtest-tracker
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DB_CONNECTION=pgsql
+      - DB_HOST=speedtest-tracker-db
+      - DB_PORT=5432
+      - DB_DATABASE=speedtest-tracker
+      - DB_USERNAME=tipi
+      - DB_PASSWORD=${SPEEDTEST_TRACKER_DB_PASSWORD}
+      - SPEEDTEST_SCHEDULE=${SPEEDTEST_SCHEDULE:-'30 * * * *'}
+      - SPEEDTEST_SERVERS=${SPEEDTEST_SERVERS:-''}
+      - TZ={{TZ}}
+      - APP_TIMEZONE={{TZ}}
+      - DISPLAY_TIMEZONE={{TZ}}
+      - APP_KEY=${SPEEDTEST_APP_KEY}
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/speedtest-tracker/speedtest-tracker/config:/config
+    ports:
+      - 8211:80
+      - '8212:443'
+    depends_on:
+      - speedtest-tracker-db
+  speedtest-tracker-db:
+    container_name: speedtest-tracker-db
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=tipi
+      - POSTGRES_PASSWORD=${SPEEDTEST_TRACKER_DB_PASSWORD}
+      - POSTGRES_DB=speedtest-tracker
+    volumes:
+      - {{CONFIG}}/speedtest-tracker/postgres:/var/lib/postgresql/data

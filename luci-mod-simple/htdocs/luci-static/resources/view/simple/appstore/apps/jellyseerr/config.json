@@ -1,0 +1,22 @@
+{
+  "id": "jellyseerr",
+  "name": "Jellyseerr",
+  "short_desc": "Fork of overseerr for Jellyfin support",
+  "description": "Jellyseerr is a free and open source software application for managing requests for your media library. It is a a fork of Overseerr built to bring support for Jellyfin & Emby media servers!",
+  "categories": [
+    "Media",
+    "Utilities"
+  ],
+  "category": "Media",
+  "port": 8163,
+  "url_suffix": "",
+  "image": "fallenbagel/jellyseerr:2.7.3",
+  "version": "2.7.3",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/Fallenbagel/jellyseerr",
+  "author": "Fallenbagel"
+}

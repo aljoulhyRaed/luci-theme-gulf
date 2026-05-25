@@ -1,0 +1,21 @@
+{
+  "id": "dashdot",
+  "name": "Dash.",
+  "short_desc": "A simple, modern server dashboard, primarily used by smaller private server",
+  "description": "dash. (or dashdot) is a modern server dashboard, running on the latest tech, designed with glassmorphism in mind. It is intended to be used for smaller VPS and private servers.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8173,
+  "url_suffix": "",
+  "image": "mauricenino/dashdot:6.2.4",
+  "version": "6.2.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/MauriceNino/dashdot",
+  "author": "MauriceNino"
+}

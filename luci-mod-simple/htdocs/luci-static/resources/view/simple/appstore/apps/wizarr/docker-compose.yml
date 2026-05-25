@@ -1,0 +1,9 @@
+services:
+  wizarr:
+    container_name: wizarr
+    restart: unless-stopped
+    image: ghcr.io/wizarrrr/wizarr:v2025.12.0
+    ports:
+      - 5690:5690
+    volumes:
+      - {{CONFIG}}/wizarr/database:/data/database

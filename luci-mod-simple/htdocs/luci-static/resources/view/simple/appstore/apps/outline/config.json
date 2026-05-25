@@ -1,0 +1,79 @@
+{
+  "id": "outline",
+  "name": "Outline",
+  "short_desc": "A home for all your docs",
+  "description": "Outline is a knowledge base designed for teams. It's goals are to be fast, intuitive and support many integrations.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8404,
+  "url_suffix": "",
+  "image": "outlinewiki/outline:1.5.0",
+  "version": "1.5.0",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "OUTLINE_SECRET_KEY",
+      "label": "Outline secret key",
+      "type": "random",
+      "required": true,
+      "min": 64
+    },
+    {
+      "env_variable": "OUTLINE_UTILS_SECRET",
+      "label": "Outline utils secret",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OUTLINE_OIDC_CLID",
+      "label": "OIDC client ID",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OUTLINE_OIDC_CLKEY",
+      "label": "OIDC client secret",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OUTLINE_PG_PASSWORD",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OUTLINE_OIDC_SECRET",
+      "label": "OIDC secret",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "OUTLINE_USER",
+      "label": "Username",
+      "type": "text",
+      "required": true,
+      "min": 3,
+      "max": 50
+    },
+    {
+      "env_variable": "OUTLINE_PASSWORD",
+      "label": "Password",
+      "type": "password",
+      "required": true,
+      "min": 12
+    }
+  ],
+  "source": "https://github.com/outline/outline",
+  "author": "outline"
+}

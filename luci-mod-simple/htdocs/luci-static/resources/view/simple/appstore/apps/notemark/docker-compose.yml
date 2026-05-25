@@ -1,0 +1,22 @@
+services:
+  notemark:
+    image: ghcr.io/enchant97/note-mark-frontend:0.19.0
+    container_name: notemark
+    restart: unless-stopped
+  notemark-backend:
+    image: ghcr.io/enchant97/note-mark-backend:0.19.0
+    container_name: notemark-backend
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/notemark:/data
+    environment:
+      JWT_SECRET: ${NOTEMARK_SERVICE_SECRET}
+      CORS_ORIGINS: '*'
+  notemark-proxy:
+    container_name: notemark-proxy
+    image: nginx:alpine
+    ports:
+      - 8567:80
+    volumes:
+      - {{CONFIG}}/notemark/proxy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped

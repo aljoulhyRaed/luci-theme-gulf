@@ -1,0 +1,15 @@
+services:
+  navidrome:
+    container_name: navidrome
+    image: docker.io/deluan/navidrome:0.60.3
+    ports:
+      - 4533:4533
+    restart: unless-stopped
+    environment:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: ''
+    volumes:
+      - {{CONFIG}}/navidrome/navidrome/data:/data
+      - {{MEDIA}}/data/music:/music:ro

@@ -1,0 +1,50 @@
+{
+  "id": "activepieces",
+  "name": "Activepieces",
+  "short_desc": "True zapier alternative.",
+  "description": "Your friendliest open source all-in-one automation tool.",
+  "categories": [
+    "Automation"
+  ],
+  "category": "Automation",
+  "port": 8605,
+  "url_suffix": "",
+  "image": "activepieces/activepieces:0.78.2",
+  "version": "0.78.2",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "AP_POSTGRES_PASSWORD",
+      "label": "Activepieces postgres password.",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "AP_API_KEY",
+      "label": "Activepieces api key.",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "AP_ENCRYPTION_KEY",
+      "label": "Activepieces encryption key.",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "AP_JWT_SECRET",
+      "label": "Activepieces jwt secret.",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/activepieces/activepieces",
+  "author": "Activepieces"
+}

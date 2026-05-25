@@ -1,0 +1,34 @@
+{
+  "id": "guacamole",
+  "name": "Guacamole",
+  "short_desc": "Clientless remote desktop gateway",
+  "description": "Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC, RDP, and SSH",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8854,
+  "url_suffix": "/guacamole",
+  "image": "guacamole/guacamole:1.6.0",
+  "version": "1.6.0",
+  "arch": [
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "GUACAMOLE_DB_PASSWORD",
+      "label": "Guacamole postgres password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "GUACAMOLE_TOTP_ENABLED",
+      "label": "Enable TOTP",
+      "type": "boolean",
+      "required": true
+    }
+  ],
+  "source": "https://github.com/apache/guacamole-server",
+  "author": "apache"
+}

@@ -1,0 +1,26 @@
+services:
+  wekan:
+    image: ghcr.io/wekan/wekan:v8.34
+    container_name: wekan
+    environment:
+      - MONGO_URL=mongodb://wekan-db:27017/wekan
+      - ROOT_URL=https://localhost
+      - MAIL_URL=smtp://${MAIL_ADDRESS}:${MAIL_PASSWORD}@smtp.gmail.com:587
+      - MAIL_FROM=Wekan Notifications <noreply.wekan@localhost>
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/wekan/wekan:/data
+    ports:
+      - 8678:8080
+    depends_on:
+      - wekan-db
+  wekan-db:
+    container_name: wekan-db
+    image: mongo:6
+    restart: unless-stopped
+    command: mongod --logpath /dev/null --oplogSize 128 --quiet
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - {{CONFIG}}/wekan/mongo:/data/db
+      - {{CONFIG}}/wekan/dump:/dump

@@ -1,0 +1,21 @@
+{
+  "id": "it-tools",
+  "name": "IT-Tools",
+  "short_desc": "Collection of handy online tools for developers, with great UX.",
+  "description": "Useful tools for developer and people working in IT. ",
+  "categories": [
+    "Development"
+  ],
+  "category": "Development",
+  "port": 8171,
+  "url_suffix": "",
+  "image": "corentinth/it-tools:latest",
+  "version": "latest",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [],
+  "source": "https://github.com/CorentinTh/it-tools",
+  "author": "CorentinTh"
+}

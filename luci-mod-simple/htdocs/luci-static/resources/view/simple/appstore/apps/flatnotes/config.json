@@ -1,0 +1,57 @@
+{
+  "id": "flatnotes",
+  "name": "flatnotes",
+  "short_desc": "A self-hosted, database-less note taking web app",
+  "description": "A self-hosted, database-less note taking web app that utilises a flat folder of markdown files for storage.",
+  "categories": [
+    "Utilities"
+  ],
+  "category": "Utilities",
+  "port": 8137,
+  "url_suffix": "",
+  "image": "dullage/flatnotes:v5.5.4",
+  "version": "v5.5.4",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "FLATNOTES_AUTH_TYPE",
+      "label": "Flatnotes Auth Type",
+      "type": "text",
+      "required": true,
+      "hint": "Either `password` or `totp` for 2FA"
+    },
+    {
+      "env_variable": "FLATNOTES_USERNAME",
+      "label": "Flatnotes Username",
+      "type": "text",
+      "required": true,
+      "min": 2
+    },
+    {
+      "env_variable": "FLATNOTES_PASSWORD",
+      "label": "Flatnotes Password",
+      "type": "text",
+      "required": true,
+      "min": 5
+    },
+    {
+      "env_variable": "FLATNOTES_SECRET_KEY",
+      "label": "FLATNOTES_SECRET_KEY",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "FLATNOTES_TOTP_KEY",
+      "label": "FLATNOTES_TOTP_KEY",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/Dullage/flatnotes",
+  "author": "Dullage"
+}

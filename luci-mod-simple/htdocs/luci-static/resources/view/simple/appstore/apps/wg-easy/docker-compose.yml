@@ -1,0 +1,21 @@
+services:
+  wg-easy:
+    container_name: wg-easy
+    image: ghcr.io/wg-easy/wg-easy:14
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/wg-easy:/etc/wireguard
+    ports:
+      - 51820:51820/udp
+      - 8082:51821/tcp
+    environment:
+      - WG_HOST=${WIREGUARD_HOST}
+      - PASSWORD_HASH=${WIREGUARD_PASSWORD_HASH}
+      - WG_DEFAULT_DNS=${WIREGUARD_DNS:-8.8.8.8}
+      - WG_ALLOWED_IPS=0.0.0.0/0, ::/0
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.ip_forward=1

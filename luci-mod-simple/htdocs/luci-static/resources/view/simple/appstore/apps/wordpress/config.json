@@ -1,0 +1,36 @@
+{
+  "id": "wordpress",
+  "name": "WordPress",
+  "short_desc": "Popular CMS for websites and blogs",
+  "description": "WordPress is a popular content management system for creating websites and blogs.",
+  "categories": [
+    "Social"
+  ],
+  "category": "Social",
+  "port": 8213,
+  "url_suffix": "",
+  "image": "wordpress:6.9.1",
+  "version": "6.9.1",
+  "arch": [
+    "amd64",
+    "arm64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "DB_PASSWORD",
+      "label": "Database Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    },
+    {
+      "env_variable": "DB_ROOT_PASSWORD",
+      "label": "Database Root Password",
+      "type": "random",
+      "required": true,
+      "min": 32
+    }
+  ],
+  "source": "https://github.com/WordPress/WordPress",
+  "author": "WordPress.org"
+}

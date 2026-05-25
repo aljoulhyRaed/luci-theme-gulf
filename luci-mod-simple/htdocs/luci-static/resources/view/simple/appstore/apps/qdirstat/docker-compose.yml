@@ -1,0 +1,12 @@
+version: "1.8.1-ls82"
+services:
+    qdirstat:
+        container_name: qdirstat
+        restart: unless-stopped
+        ports:
+            - 7125:3000
+        volumes:
+            - {{CONFIG}}/qdirstat/qdirstat/config
+            - {{CONFIG}}/qdirstat/qdirstat/app/data
+            - /:/host:ro
+        image: lscr.io/linuxserver/qdirstat:1.8.1-ls82

@@ -1,0 +1,42 @@
+{
+	"luci-mod-simple": {
+		"description": "Grant access to simplified LuCI views",
+		"read": {
+			"file": {
+				"/bin/sh": [ "exec" ],
+				"/usr/bin/iwinfo": [ "exec" ],
+				"/usr/sbin/iwinfo": [ "exec" ],
+				"/sys/class/net/*": [ "read" ]
+			},
+			"ubus": {
+				"system": [ "board", "info", "reboot" ],
+				"network.interface": [ "dump" ],
+				"network.device": [ "status" ],
+				"network.wireless": [ "status" ],
+				"iwinfo": [ "info", "scan", "assoclist" ],
+				"file": [ "list", "read", "exec", "stat" ],
+				"luci-rpc": [ "getDHCPLeases", "getHostHints" ],
+				"luci": [ "getRealtimeStats", "setPassword" ]
+			},
+			"uci": [ "wireless", "network", "dhcp", "system", "firewall", "openvpn", "tgwireguard2_cfg", "tgwireguard_cfg", "tgv2ray", "tgopenvpn_cfg", "easymesh", "dockerd" ]
+		},
+		"write": {
+			"file": {
+				"/bin/sh": [ "exec" ],
+				"/etc/config/*": [ "write" ],
+				"/sbin/ifup": [ "exec" ],
+				"/sbin/ifdown": [ "exec" ],
+				"/etc/init.d/*": [ "exec" ]
+			},
+			"ubus": {
+				"uci": [ "set", "delete", "commit", "apply", "add" ],
+				"system": [ "reboot" ],
+				"network": [ "restart" ],
+				"network.wireless": [ "restart" ],
+				"luci": [ "setPassword" ],
+				"file": [ "exec", "read", "write", "stat" ]
+			},
+			"uci": [ "wireless", "network", "dhcp", "system", "firewall", "openvpn", "tgwireguard2_cfg", "tgwireguard_cfg", "tgv2ray", "tgopenvpn_cfg", "easymesh", "dockerd" ]
+		}
+	}
+}

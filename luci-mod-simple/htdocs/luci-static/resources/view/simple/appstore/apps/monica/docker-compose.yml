@@ -1,0 +1,27 @@
+services:
+  monica:
+    image: monica:4.1.2
+    container_name: monica
+    depends_on:
+      - monica-db
+    ports:
+      - 3291:80
+    environment:
+      - APP_KEY=${MONICA_APP_KEY}
+      - DB_HOST=monica-db
+      - DB_USERNAME=usermonica
+      - DB_PASSWORD=${MONICA_DB_PASS}
+    volumes:
+      - {{CONFIG}}/monica:/var/www/html/storage
+    restart: unless-stopped  monica-db:
+    image: mariadb:10.6.11
+    container_name: monica-db
+    environment:
+      - TZ={{TZ}}
+      - MARIADB_RANDOM_ROOT_PASSWORD=true
+      - MARIADB_DATABASE=monica
+      - MARIADB_USER=usermonica
+      - MARIADB_PASSWORD=${MONICA_DB_PASS}
+    volumes:
+      - {{CONFIG}}/monica/mysql:/var/lib/mysql
+    restart: unless-stopped

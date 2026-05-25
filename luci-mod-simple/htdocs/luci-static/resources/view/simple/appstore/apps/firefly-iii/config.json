@@ -1,0 +1,52 @@
+{
+  "id": "firefly-iii",
+  "name": "Firefly III",
+  "short_desc": "Firefly III: a personal finances manager ",
+  "description": "",
+  "categories": [
+    "Finance"
+  ],
+  "category": "Finance",
+  "port": 8115,
+  "url_suffix": "",
+  "image": "fireflyiii/core:version-6",
+  "version": "version-6",
+  "arch": [
+    "arm64",
+    "amd64"
+  ],
+  "form_fields": [
+    {
+      "env_variable": "EMAIL",
+      "label": "Your email",
+      "type": "email",
+      "required": true
+    },
+    {
+      "env_variable": "APP_KEY",
+      "label": "Random key",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "MYSQL_PASSWORD",
+      "label": "Database password",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    },
+    {
+      "env_variable": "STATIC_CRON_TOKEN",
+      "label": "Random key",
+      "type": "random",
+      "required": true,
+      "min": 32,
+      "max": 32
+    }
+  ],
+  "source": "https://github.com/firefly-iii/firefly-iii",
+  "author": "JC5"
+}

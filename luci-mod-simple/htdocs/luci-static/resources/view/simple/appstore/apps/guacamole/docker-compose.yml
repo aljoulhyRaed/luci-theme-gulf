@@ -1,0 +1,30 @@
+services:
+  guacamole:
+    container_name: guacamole
+    image: docker.io/guacamole/guacamole:1.6.0
+    restart: unless-stopped
+    ports:
+      - 8854:8080
+    environment:
+      - TOTP_ENABLED=${GUACAMOLE_TOTP_ENABLED}
+      - POSTGRESQL_DATABASE=guacamole
+      - POSTGRESQL_USER=guacamole
+      - POSTGRESQL_PASSWORD=${GUACAMOLE_DB_PASSWORD}
+      - GUACD_HOSTNAME=guacamole-guacd
+      - POSTGRESQL_HOSTNAME=guacamole-db
+  guacamole-guacd:
+    container_name: guacamole-guacd
+    image: docker.io/guacamole/guacd:1.5.5
+    restart: unless-stopped
+  guacamole-db:
+    container_name: guacamole-db
+    image: postgres:14
+    restart: unless-stopped
+    volumes:
+      - {{CONFIG}}/guacamole/db:/var/lib/postgresql/data
+      - {{CONFIG}}/guacamole/init/sql:/config/sql
+      - {{CONFIG}}/guacamole/init/init-guacamole.sh:/docker-entrypoint-initdb.d/init-guacamole.sh
+    environment:
+      - POSTGRES_DB=guacamole
+      - POSTGRES_USER=guacamole
+      - POSTGRES_PASSWORD=${GUACAMOLE_DB_PASSWORD}
