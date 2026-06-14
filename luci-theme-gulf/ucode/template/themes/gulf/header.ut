@@ -18,7 +18,7 @@
 -%}
 
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-darkmode="{{ darkpref }}" data-ui-mode="simple">
+<html lang="ar" dir="rtl" data-darkmode="{{ darkpref }}" data-ui-mode="advanced">
 	<head>
 		<meta charset="utf-8">
 		<title>{{ striptags(`${boardinfo.hostname ?? '?'}${node ? ` - ${node.title}` : ''}`) }} - LuCI</title>
@@ -37,7 +37,7 @@
 		{% endif %}
 		<script>
 		(function(){
-			var m = localStorage.getItem('gulf-ui-mode') || 'simple';
+			var m = 'advanced';
 			document.documentElement.setAttribute('data-ui-mode', m);
 			if (m === 'simple') {
 				var p = window.location.pathname;
@@ -366,15 +366,7 @@
 			<a class="brand" href="/">{{ striptags(boardinfo.hostname ?? '?') }}</a>
 
 			<div class="header-controls">
-				<div class="mode-toggle-wrap" id="mode-toggle-wrap" title="{{ _('Toggle Simple / Advanced mode') }}">
-					<span class="mode-label mode-label-simple">Simple</span>
-					<button class="mode-toggle-btn" id="mode-toggle" aria-label="Toggle Simple / Advanced mode">
-						<span class="mode-toggle-track">
-							<span class="mode-toggle-thumb"></span>
-						</span>
-					</button>
-					<span class="mode-label mode-label-advanced">Advanced</span>
-				</div>
+				
 
 				
 
@@ -462,7 +454,7 @@
 
 			/* Simple/Advanced mode toggle */
 			var modeToggle = document.getElementById('mode-toggle');
-			var savedMode = localStorage.getItem('gulf-ui-mode') || 'simple';
+			var savedMode = 'advanced';
 			html.setAttribute('data-ui-mode', savedMode);
 
 			function setUiMode(mode) {
@@ -506,7 +498,7 @@
 				<div class="right"><a class="btn password-config-link" href="{{ dispatcher.build_url("admin/system/admin") }}">{{ _('Go to password configuration...') }}</a></div>
 				<script>
 				(function(){
-					var m = localStorage.getItem('gulf-ui-mode') || 'simple';
+					var m = 'advanced';
 					if (m === 'simple') {
 						var a = document.querySelector('.password-config-link');
 						if (a) a.href = '/cgi-bin/luci/admin/simple-system/password';

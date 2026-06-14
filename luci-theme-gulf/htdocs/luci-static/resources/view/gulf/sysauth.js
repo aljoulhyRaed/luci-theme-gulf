@@ -188,7 +188,7 @@ return view.extend({
 		/* Footer */
 		var footer = document.createElement('div');
 		footer.className = 'gulf-login-footer';
-		footer.textContent = 'Powered by OpenWrt';
+		footer.innerHTML = '<a href="#" id="alfacode-login-trigger" style="color:inherit;text-decoration:none;font-weight:bold;">طور بواسطة ألفاكود</a>';
 		card.appendChild(footer);
 
 		wrap.appendChild(card);

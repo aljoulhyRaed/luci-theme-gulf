@@ -1,17 +1,72 @@
 		{% if (!blank_page): %}
 		</div>
 		<footer>
-			<span>
-				Powered by
-				<a href="https://github.com/openwrt/luci" target="_blank" rel="noreferrer">
-					{{ version.luciname }} ({{ version.luciversion }})</a>
-				/
-				<a href="{{ entityencode(version.disturl ?? '#', true) }}" target="_blank" rel="noreferrer">
-					{{ version.distname }} {{ version.distversion }} ({{ version.distrevision }})</a>
-				{% if (lua_active): %}
-					/ {{ _('Lua compatibility mode active') }}
-				{% endif %}
-			</span>
+			
+		<div style="text-align: center; width: 100%;">
+			<a href="#" id="alfacode-trigger" style="color:var(--primary-color-high); font-weight:bold; text-decoration:none; font-size:14px;">طور بواسطة ألفاكود</a>
+		</div>
+		<div id="alfacode-modal" class="alfacode-modal">
+			<div class="alfacode-modal-content">
+				<span class="alfacode-close">&times;</span>
+				<div class="alfacode-logo-container">
+					<h2 class="alfacode-title">ألفاكود</h2>
+					<p class="alfacode-subtitle">للحلول التقنية والتحول الرقمي</p>
+				</div>
+				<div class="alfacode-details">
+					<div class="alfacode-detail-item">
+						<strong>للتواصل:</strong>
+						<p>م/ رائد الجولحي - <span dir="ltr">781228833</span></p>
+						<p>م/ أيمن القباطي - <span dir="ltr">774434244</span></p>
+					</div>
+					<div class="alfacode-detail-item">
+						<strong>العنوان:</strong>
+						<p>شارع القاهرة - جانب البنك التجاري اليمني - عمارة الخولاني</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<style>
+			.alfacode-modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+			.alfacode-modal.show { display: flex; align-items: center; justify-content: center; }
+			.alfacode-modal-content { background-color: var(--md-sys-color-surface); margin: auto; padding: 30px; border: 1px solid var(--border-color-high); width: 90%; max-width: 400px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; animation: alfaFadeIn 0.3s ease; }
+			.alfacode-close { color: var(--text-color-medium); position: absolute; left: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
+			.alfacode-close:hover { color: var(--error-color-high); }
+			.alfacode-title { color: var(--primary-color-high); font-size: 26px; margin: 0 0 5px 0; text-align: center; }
+			.alfacode-subtitle { color: var(--text-color-medium); font-size: 13px; text-align: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-color-low); padding-bottom: 15px; }
+			.alfacode-details { line-height: 1.6; color: var(--text-color-high); font-size: 14px; }
+			.alfacode-detail-item { margin-bottom: 15px; background: var(--background-color-low); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color-low); }
+			.alfacode-detail-item strong { display: block; margin-bottom: 8px; color: var(--primary-color-high); font-size: 15px; }
+			.alfacode-detail-item p { margin: 4px 0; }
+			@keyframes alfaFadeIn { from {opacity: 0; transform: translateY(-20px) scale(0.95);} to {opacity: 1; transform: translateY(0) scale(1);} }
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var modal = document.getElementById("alfacode-modal");
+				var span = document.getElementsByClassName("alfacode-close")[0];
+				
+				function openModal(e) {
+					e.preventDefault();
+					modal.classList.add('show');
+				}
+
+				var trigger = document.getElementById("alfacode-trigger");
+				if(trigger) trigger.onclick = openModal;
+
+				document.addEventListener('click', function(e) {
+					if(e.target && e.target.id === 'alfacode-login-trigger') {
+						openModal(e);
+					}
+				});
+
+				if(span) {
+					span.onclick = function() { modal.classList.remove('show'); }
+				}
+				window.onclick = function(event) {
+					if (event.target == modal) { modal.classList.remove('show'); }
+				}
+			});
+		</script>
+
 			<ul class="breadcrumb pull-right" id="modemenu" style="display:none"></ul>
 		</footer>
 		<script>L.require('menu-gulf')</script>
