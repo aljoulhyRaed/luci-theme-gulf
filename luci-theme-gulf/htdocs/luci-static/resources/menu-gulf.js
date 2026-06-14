@@ -63,6 +63,24 @@ return baseclass.extend({
 				}
 			}
 		});
+
+		// Hide sensitive flash features for root user
+		if (document.body.classList.contains('user-root') && window.location.pathname.indexOf('admin/system/flash') !== -1) {
+			var hideFlashFeatures = function() {
+				var buttons = document.querySelectorAll('[data-name="dl_backup"], [data-name="reset"], [data-name="restore"], [data-name="mtdselect"], [data-name="mtddownload"]');
+				buttons.forEach(function(btn) {
+					var section = btn.closest('.cbi-value');
+					if (section) section.style.display = 'none';
+					var parentSection = section ? section.parentElement.closest('.cbi-value') : null;
+					if (parentSection) parentSection.style.display = 'none';
+				});
+				var configSection = document.querySelector('.cbi-section[data-name="config"]');
+				if (configSection) configSection.style.display = 'none';
+			};
+			hideFlashFeatures();
+			var observer = new MutationObserver(hideFlashFeatures);
+			observer.observe(document.body, { childList: true, subtree: true });
+		}
 	},
 
 	getUiMode: function() {
