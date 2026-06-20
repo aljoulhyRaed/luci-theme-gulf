@@ -130,7 +130,7 @@ return view.extend({
 		newUser.className = 'gulf-login-input';
 		newUser.placeholder = 'root';
 		newUser.autocomplete = 'username';
-		newUser.value = savedUser || 'root';
+		newUser.value = 'root';
 		userInputWrap.appendChild(newUser);
 		userGroup.appendChild(userInputWrap);
 		styledForm.appendChild(userGroup);

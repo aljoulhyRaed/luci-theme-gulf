@@ -128,7 +128,9 @@ return view.extend({
 			if (!p1) { self.showToast('Password cannot be empty'); return; }
 			if (p1.length < 6) { self.showToast('Password must be at least 6 characters'); return; }
 			if (p1 !== p2) { self.showToast('Passwords do not match'); return; }
-			callSetPassword('root', p1).then(function() {
+			var match = document.body.className.match(/user-(\w+)/);
+			var u = match ? match[1] : 'root';
+			callSetPassword(u, p1).then(function() {
 				self.showToast('Password changed successfully!');
 				pw1.input.value = '';
 				pw2.input.value = '';

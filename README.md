@@ -111,6 +111,30 @@ Language selection is available from the header bar with country flag icons. Rig
 
 ---
 
+## Security Architecture & Dual-User Mode
+
+The Gulf Theme is designed to be shipped on commercial routers where end-users should not have god-mode access to extract firmware or theme files. To achieve this, the theme implements a robust **Dual-User Architecture**:
+
+- **`admin` (The God Account):** Unrestricted access to everything, including firmware flashing and system logs. Password is intentionally hidden from the customer.
+- **`root` (The Customer Account):** A sandboxed account. The user believes they are root, but they are stripped of critical permissions to prevent firmware/theme extraction.
+
+### Automated Protections
+When you build OpenWrt with this theme, the following protections are automatically baked into the image:
+1. **The First-Boot Initializer (`99-gulf-theme-init`)**: Upon the very first boot of the flashed firmware, this script creates the `admin` user, injects the initial password hashes (`root:root` and `admin:Alpha@code*882211`), and completely re-architects the `rpcd` security engine. It explicitly revokes `luci-mod-system-flash` (backup/flash API) and `luci-mod-status-logs` (to prevent exposing the `admin` login events) from the `root` user.
+2. **The Build-Time Patcher (`integrate_gulf_theme.sh`)**: Hooks into the OpenWrt feeds to patch OpenWrt's core UI (`luci-mod-system.json` and `password.js`), decoupling the Password page from SSH permissions so the `root` user can configure their own password dynamically without throwing a 403 authorization error.
+3. **The Gulf UI Sandbox**: The `sysauth.js` and `menu-gulf.js` scripts force the login field to default to `root`, and proactively hide all sensitive Advanced tabs (SSH, Repo Keys, Backup) and System Logs from the `root` user.
+
+### ⚠️ The SSH Dilemma (Important Notice)
+OpenWrt's default SSH server (Dropbear) maps all system users with `UID 0` to the exact same permissions. Since both `admin` and `root` MUST share `UID 0` to function properly within OpenWrt, you **cannot** natively disable password logins for `root` while allowing them for `admin`. 
+
+**The Threat:** If SSH password authentication is enabled, the customer can use their `root` password to log in via SSH and execute an `scp` command to download your entire theme and firmware.
+
+**The Solution:** You MUST resolve this before mass production by doing one of the following:
+* **Option A (SSH Keys):** Disable password authentication globally in Dropbear (`PasswordAuth off`). Generate an SSH Key pair for yourself, and place the public key in the router's `/etc/dropbear/authorized_keys`. This locks out the customer while letting you log in.
+* **Option B (Disable SSH):** If you don't need SSH access in production, simply disable the Dropbear service entirely (`/etc/init.d/dropbear disable`).
+
+---
+
 ## Installation
 
 ### Requirements

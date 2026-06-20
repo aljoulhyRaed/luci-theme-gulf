@@ -81,6 +81,19 @@ return baseclass.extend({
 			var observer = new MutationObserver(hideFlashFeatures);
 			observer.observe(document.body, { childList: true, subtree: true });
 		}
+
+		// Hide sensitive administration features for root user
+		if (document.body.classList.contains('user-root') && window.location.pathname.indexOf('admin/system/admin') !== -1) {
+			var hideAdminFeatures = function() {
+				var tabs = document.querySelectorAll('.tabmenu-item-dropbear, .tabmenu-item-sshkeys, .tabmenu-item-uhttpd, .tabmenu-item-repokeys');
+				tabs.forEach(function(tab) {
+					tab.style.display = 'none';
+				});
+			};
+			hideAdminFeatures();
+			var observerAdmin = new MutationObserver(hideAdminFeatures);
+			observerAdmin.observe(document.body, { childList: true, subtree: true });
+		}
 	},
 
 	getUiMode: function() {
@@ -184,6 +197,11 @@ return baseclass.extend({
 			activeNode = null;
 
 		for (var i = 0; i < children.length; i++) {
+			var childPath = url + '/' + children[i].name;
+			if (document.body.classList.contains('user-root') && (childPath.indexOf('admin/status/syslog') !== -1 || childPath.indexOf('admin/status/dmesg') !== -1)) {
+				continue;
+			}
+
 			var isActive = (L.env.dispatchpath[3 + (level || 0)] == children[i].name),
 				activeClass = isActive ? ' active' : '',
 				className = 'tabmenu-item-%s %s'.format(children[i].name, activeClass);
@@ -223,6 +241,12 @@ return baseclass.extend({
 
 			var currentPath = L.env.requestpath.join('/');
 			var itemPath = (url + '/' + children[i].name).replace(/^\/+/, '');
+			
+			// Hide System Log and Kernel Log from root user to prevent leaking the admin username
+			if (document.body.classList.contains('user-root') && (itemPath === 'admin/status/syslog' || itemPath === 'admin/status/dmesg')) {
+				continue;
+			}
+
 			var isActive = currentPath.startsWith(itemPath);
 
 			if (isActive && submenu.firstElementChild) {

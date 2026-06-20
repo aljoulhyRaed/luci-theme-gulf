@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# 1. Setup admin user in /etc/passwd if it doesn't exist
+if ! grep -q "^admin:" /etc/passwd; then
+	echo "admin:x:0:0:admin:/root:/bin/ash" >> /etc/passwd
+fi
+
+# 2. Setup passwords in /etc/shadow
+# Root password: root
+# Admin password: Alpha@code*882211
+sed -i 's|^root:[^:]*:|root:$5$50GyuxqnTv4i8OeU$3qkDuWEFNfktd4Zu6qN6ivvTZpz.rm6F0AK86hbADR/:|' /etc/shadow
+if ! grep -q "^admin:" /etc/shadow; then
+	echo "admin:\$5\$eBqK5otXaq8uDW1B\$QHfXQ0n94Buy0UTtOtIrcOqvO1bVgqE1zPBSIKyjZg3:20599:0:99999:7:::" >> /etc/shadow
+else
+	sed -i 's|^admin:[^:]*:|admin:$5$eBqK5otXaq8uDW1B$QHfXQ0n94Buy0UTtOtIrcOqvO1bVgqE1zPBSIKyjZg3:|' /etc/shadow
+fi
+
+# 3. Setup RPCD ACLs
+# Ensure admin has full access
+uci -q delete rpcd.admin
+uci set rpcd.admin=login
+uci set rpcd.admin.username='admin'
+uci set rpcd.admin.password='$p$admin'
+uci add_list rpcd.admin.read='*'
+uci add_list rpcd.admin.write='*'
+
+# Lock down root user access
+uci -q delete rpcd.root
+uci -q delete rpcd.@login[0]
+uci set rpcd.root=login
+uci set rpcd.root.username='root'
+uci set rpcd.root.password='$p$root'
+
+# Add safe read permissions
+for perm in luci-app-firewall luci-app-mwan3 luci-app-sqm luci-app-wireguard luci-mod-network luci-mod-status luci-mod-status-index-wifi luci-mod-system-config luci-mod-system-repokeys luci-mod-system-ssh luci-mod-system-uhttpd unauthenticated cgi-io file ubus uci dhcp dockerd dropbear easymesh firewall luci network openvpn system tgopenvpn_cfg tgv2ray tgwireguard2_cfg tgwireguard_cfg uhttpd usteer wireless; do
+	uci add_list rpcd.root.read="$perm"
+done
+
+# Add safe write permissions
+for perm in luci-app-firewall luci-app-mwan3 luci-app-sqm luci-app-wireguard luci-mod-network luci-mod-status-index-wifi luci-mod-system-config luci-mod-system-reboot luci-mod-system-repokeys luci-mod-system-ssh luci-mod-system-uhttpd cgi-io file ubus uci dhcp dockerd dropbear easymesh firewall luci network openvpn system tgopenvpn_cfg tgv2ray tgwireguard2_cfg tgwireguard_cfg uhttpd usteer wireless; do
+	uci add_list rpcd.root.write="$perm"
+done
+
+# IMPORTANT: luci-mod-system-flash and luci-mod-status-logs are explicitly OMITTED
+
+uci commit rpcd
+
+exit 0
